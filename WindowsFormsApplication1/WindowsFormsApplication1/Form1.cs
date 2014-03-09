@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
                 children += list[x].NumChildren;
                 String adults = "";
                 adults += list[x].NumAdults;
-                string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].AddressLine1, list[x].AddressLine2, list[x].Phone, children, adults, date };
+                string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
                 dataGridView2.Rows.Add(row);
             }
         }
@@ -63,13 +63,13 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+  /*      private void saveButton_Click(object sender, EventArgs e)
         {
             AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text,yearTab1.Text,dayMenuTab1.Text);
             
            // MessageBox.Show("Saved Patron");
            
-        }
+        }*/
 
         private void searchTextTab2_TextChanged(object sender, EventArgs e)
         {

@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
         {
             server = "localhost";
             database = "patrondb";
-            uid = "admin";
+            uid = "root";
             password = "admin";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
@@ -165,9 +165,7 @@ namespace WindowsFormsApplication1
                         city = dataReader2.GetString(4);
                         state = dataReader2.GetString(5);
                         zip = dataReader2.GetString(6);
-                        city2 = dataReader2.GetString(7);
-                        state2 = dataReader2.GetString(8);
-                        zip2 = dataReader2.GetString(9);
+                      
 
                     }
 
@@ -204,7 +202,7 @@ namespace WindowsFormsApplication1
 
 
 
-                    Address address = new Address(Int32.Parse(id), stNum, addrLine1, addrLine2, city, state, zip);
+                    Address address = new Address(Int32.Parse(id), addrLine1, addrLine2, city, state, zip);
                     PreviousVisit prevVis = new PreviousVisit(Int32.Parse(id), numChild, numAdult, date);
                     Patron patron = new Patron(Int32.Parse(id), fName, lName, mInitial, phone, address, prevVis);
 
@@ -240,8 +238,8 @@ namespace WindowsFormsApplication1
 
                 String query2 = "INSERT INTO address VALUES ('" +
                    pat.Id + "', '" +
-                   pat.StreetNum + "', '" +
-                   pat.AddressLine1 + "', '" +
+                  
+                   pat.StreetName1 + "', '" +
                    pat.AddressLine2 + "', '" +
                    pat.City + "', '" +
                    pat.State + "', '" +

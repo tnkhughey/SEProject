@@ -5,6 +5,12 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
+
+
+    /// <summary>
+   
+    /// </summary>
+    /// add mutator method for address info.
     class Patron
     {
         private int id;
@@ -66,16 +72,12 @@ namespace WindowsFormsApplication1
             get { return phone; }
         }
 
-        public String StreetNum
+        
+     
+        public String StreetName1
         {
-            set { address.StreetNum = value; }
-            get { return address.StreetNum; }
-        }
-
-        public String AddressLine1
-        {
-            set { address.AddressLine1 = value; }
-            get { return address.AddressLine1; }
+            set { address.StreetName1 = value; }
+            get { return address.StreetName1; }
         }
 
         public String AddressLine2
@@ -83,7 +85,6 @@ namespace WindowsFormsApplication1
             set { address.AddressLine2 = value; }
             get { return address.AddressLine2; }
         }
-
         public String City
         {
             set { address.City = value; }
