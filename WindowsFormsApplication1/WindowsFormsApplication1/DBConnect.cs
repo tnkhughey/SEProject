@@ -89,6 +89,8 @@ namespace WindowsFormsApplication1
             try
             {
                 connection.Close();
+                connection2.Close();
+                connection3.Close(); 
                 return true;
             }
             catch (MySqlException ex)
@@ -96,6 +98,13 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(ex.Message);
                 return false;
             }
+        }
+
+        public void CloseAll()
+        {
+            connection.Close();
+            connection2.Close();
+            connection3.Close(); 
         }
 
         //Query statement
@@ -288,21 +297,29 @@ namespace WindowsFormsApplication1
         //Count statement
         public int Count(String query)
         {
-            int Count = -1;
+            int Count = 0;
 
             //Open Connection
             if (this.OpenConnection() == true)
             {
                 //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                //ExecuteScalar will return one value
-                Count = int.Parse(cmd.ExecuteScalar() + "");
+                    //ExecuteScalar will return one value
+                    Count = int.Parse(cmd.ExecuteScalar() + "");
 
-                //close Connection
-                this.CloseConnection();
+                    //close Connection
+                    this.CloseConnection();
 
-                return Count;
+                    return Count;
+                }
+                catch
+                {
+                }
+                return Count; 
+
             }
             else
             {

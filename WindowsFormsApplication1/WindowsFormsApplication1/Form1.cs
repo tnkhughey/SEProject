@@ -29,8 +29,50 @@ namespace WindowsFormsApplication1
             */
 
             InitializeComponent();
-            DBConnect db = new DBConnect();
 
+
+            viewAll();
+            
+        }
+
+       
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
+            adder.save(adder);
+        }
+
+        private void searchTextTab2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addrTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addrTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewAll()
+        {
+            DBConnect db = new DBConnect();
+            //<!---------VIEW ALL POPULATOR---------->
             int count = db.Count("SELECT * FROM patron");
 
             String[] rows = new String[count];
@@ -48,42 +90,8 @@ namespace WindowsFormsApplication1
                 string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
                 dataGridView2.Rows.Add(row);
             }
-        }
-
-       
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-  /*      private void saveButton_Click(object sender, EventArgs e)
-        {
-            AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text,yearTab1.Text,dayMenuTab1.Text);
-            
-           // MessageBox.Show("Saved Patron");
-           
-        }*/
-
-        private void searchTextTab2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addrTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addrTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
+            db.CloseAll(); 
+            //<!---------END VIEW ALL POPULATOR---------->
         }
     }
 }
