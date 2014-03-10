@@ -73,17 +73,19 @@ namespace WindowsFormsApplication1
         {
             bool rand = false; 
             DBConnect db = new DBConnect();
+            int count = -1;
             //need to fill in addr
             int idRand = -1; 
             while (!rand)
             {
                 idRand = rng.Next(1, 1000000);
                 String query1 = "SELECT * FROM patron WHERE id = '" + idRand + "'";
-                int count = db.Count(query1);
+                count = db.Count(query1);
                 if (count == 0)
                 {
                     rand = true;
                 }
+                db.CloseAll();
             }
             Address addr = new Address(idRand, cust.streetNumNameTextField, cust.addrTextField2, cust.cityTextField, cust.stateTextField, cust.zipTextField);
             DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), Convert.ToInt32(cust.monthTab1), Convert.ToInt32(cust.dayTab1));
