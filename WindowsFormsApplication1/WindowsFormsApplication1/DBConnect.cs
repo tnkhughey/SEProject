@@ -153,9 +153,7 @@ namespace WindowsFormsApplication1
                     String city = "";
                     String state = "";
                     String zip = "";
-                    String city2 = "";
-                    String state2 = "";
-                    String zip2 = "";
+                   
 
 
 
@@ -169,11 +167,11 @@ namespace WindowsFormsApplication1
                         //THIS NESTED LOOP WILL NOT WORK PROPERLY IF TWO PEOPLE HAVE THE SAME PATRON_ID (which shouldn't exist anyways)
                         //The loop will assign the address of the last person with the last patron id to the object being stored 
                         stNum = dataReader2.GetString(1);
-                        addrLine1 = dataReader2.GetString(2);
-                        addrLine2 = dataReader2.GetString(3);
-                        city = dataReader2.GetString(4);
-                        state = dataReader2.GetString(5);
-                        zip = dataReader2.GetString(6);
+                        //addrLine1 = dataReader2.GetString(2);
+                        addrLine2 = dataReader2.GetString(2);
+                        city = dataReader2.GetString(3);
+                        state = dataReader2.GetString(4);
+                        zip = dataReader2.GetString(5);
                       
 
                     }
@@ -254,11 +252,19 @@ namespace WindowsFormsApplication1
                    pat.State + "', '" +
                    pat.Zip + "')";
 
+                String formattedDate = pat.Date.Year + "-" + pat.Date.Month + "-" + pat.Date.Day;
 
-                String query3 = "INSERT INTO previousvisits VALUES ('" +
+                /*String query3 = "INSERT INTO previousvisits VALUES ('" +
+                   pat.Id + "', '" +
                    pat.Date + "', '" +
                    pat.NumChildren + "', '" +
-                   pat.NumAdults + "', '" + "')";
+                   pat.NumAdults + "')";*/
+
+                String query3 = "INSERT INTO previousvisits VALUES ('" +
+                   pat.Id + "', '" +
+                   formattedDate + "', '" +
+                   pat.NumChildren + "', '" +
+                   pat.NumAdults + "')";
 
                 MySqlCommand cmd1 = new MySqlCommand(query1, connection);
                 MySqlCommand cmd2 = new MySqlCommand(query2, connection);

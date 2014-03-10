@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1
         private int numAdults;
         private DateTime date = new DateTime();
         private int patronId;
+        private String date1;
         public PreviousVisit()
         {
             DateTime d=new DateTime ();
@@ -38,6 +39,11 @@ namespace WindowsFormsApplication1
         {
             set { date = value; }
             get { return date; }
+        }
+        public String Date1
+        {
+            set { date1 = value; }
+            get { return date1; }
         }
         public int PatronId
         {

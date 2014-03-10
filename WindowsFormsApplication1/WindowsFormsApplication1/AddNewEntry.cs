@@ -11,6 +11,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 namespace WindowsFormsApplication1
 {
     public class AddNewEntry
@@ -88,7 +89,9 @@ namespace WindowsFormsApplication1
                 db.CloseAll();
             }
             Address addr = new Address(idRand, cust.streetNumNameTextField, cust.addrTextField2, cust.cityTextField, cust.stateTextField, cust.zipTextField);
-            DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), Convert.ToInt32(cust.monthTab1), Convert.ToInt32(cust.dayTab1));
+            int month=DateTime.ParseExact(cust.monthTab1, "MMMM", CultureInfo.CurrentCulture).Month;
+            DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), month, Convert.ToInt32(cust.dayTab1));
+
             PreviousVisit pv = new PreviousVisit(idRand, Convert.ToInt32(cust.numChildTextField), Convert.ToInt32(cust.numAdultsTextField), d1);
             Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.phoneTextField, addr, pv);
             db.addPatron(p);
