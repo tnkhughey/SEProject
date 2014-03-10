@@ -209,7 +209,7 @@ namespace WindowsFormsApplication1
 
 
 
-                    Address address = new Address(Int32.Parse(id), addrLine1, addrLine2, city, state, zip);
+                    Address address = new Address(Int32.Parse(id), stNum, addrLine2, city, state, zip);
                     PreviousVisit prevVis = new PreviousVisit(Int32.Parse(id), numChild, numAdult, date);
                     Patron patron = new Patron(Int32.Parse(id), fName, lName, mInitial, phone, address, prevVis);
 
