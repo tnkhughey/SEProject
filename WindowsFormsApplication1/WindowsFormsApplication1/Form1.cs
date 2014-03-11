@@ -38,36 +38,14 @@ namespace WindowsFormsApplication1
        
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+       
         private void saveButton_Click(object sender, EventArgs e)
         {
             AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
             adder.save(adder);
         }
 
-        private void searchTextTab2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addrTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addrTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void viewAll()
         {
@@ -92,6 +70,14 @@ namespace WindowsFormsApplication1
             }
             db.CloseAll(); 
             //<!---------END VIEW ALL POPULATOR---------->
+        }
+
+        private void searchButtonTab2_Click(object sender, EventArgs e)
+        {
+            Search search = new Search(searchTextTab2.Text,searchMenuTab2.Text);
+            string[] rows = search.searchInformation(search);
+            dataGridView1.Rows.Add(rows);
+
         }
     }
 }
