@@ -76,19 +76,21 @@ namespace WindowsFormsApplication1
            String query = "";
            if (!(search.searchCriteriaColumn.Equals("First and Last Name")))
            {
-               query = "SELECT * FROM patron WHERE" + search.searchCriteriaColumn + "=" + search.searchTextField;
+               query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "' AND " + search.extraSearchCriteriaColumn + "='" + search.extraSearchTextField+"'";
+
                count = db.Count(query);
            }
            else
            {
-               query="SELECT * FROM patron WHERE" + search.searchCriteriaColumn + "=" + search.searchTextField + "AND" + search.extraSearchCriteriaColumn + "=" + search.extraSearchTextField;
+               query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
                count = db.Count(query);
            }
 
                String[] rows = new String[count];
 
                List<Patron> list = new List<Patron>();
-               list = db.SelectPatron(query);
+               db.CloseAll();   
+            list = db.SelectPatron(query);
 
                for (int x = 0; x < list.Count; x++)
                {

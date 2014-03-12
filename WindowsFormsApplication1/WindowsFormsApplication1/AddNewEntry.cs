@@ -95,6 +95,7 @@ namespace WindowsFormsApplication1
             PreviousVisit pv = new PreviousVisit(idRand, Convert.ToInt32(cust.numChildTextField), Convert.ToInt32(cust.numAdultsTextField), d1);
             Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.phoneTextField, addr, pv);
             db.addPatron(p);
+            db.CloseAll();
         }
     }
 }

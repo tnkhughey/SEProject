@@ -79,5 +79,7 @@ namespace WindowsFormsApplication1
             dataGridView1.Rows.Add(rows);
 
         }
+
+        
     }
 }
