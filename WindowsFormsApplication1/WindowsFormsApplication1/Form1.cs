@@ -76,7 +76,15 @@ namespace WindowsFormsApplication1
         {
             Search search = new Search(searchTextTab2.Text,searchMenuTab2.Text);
             string[] rows = search.searchInformation(search);
-            dataGridView1.Rows.Add(rows);
+            dataGridView1.Rows.Clear();
+            try
+            {
+                dataGridView1.Rows.Add(rows);
+            }
+            catch
+            {
+
+            }
 
         }
 

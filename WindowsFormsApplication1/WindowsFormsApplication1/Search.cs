@@ -38,29 +38,49 @@ namespace WindowsFormsApplication1
                 searchCriteriaColumn= "firstName";
                 extraSearchCriteriaColumn="lastName";
                 String[] splitName=textField.Split(' ');
-                searchTextField=splitName[0];
-                extraSearchTextField=splitName[1];
-                
+                try
+                {
+                    searchTextField = splitName[0];
+                    extraSearchTextField = splitName[1];
+                }
+                catch 
+                {
+                    MessageBox.Show("Please enter the first and last name again in the format:(Bob Smith)");
+                }
             }
 
             if (criteriaMenuText.Equals("Phone"))
             {
-                searchCriteriaColumn = "phone";
-                searchTextField = textField;
+                try
+                {
+                    searchCriteriaColumn = "phone";
+                    searchTextField = textField;
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter the phone # in the format:(123456789)");
+
+                }
             
             }
 
             if (criteriaMenuText.Equals("LastVisit"))
             {
-                searchCriteriaColumn = "date";
-                searchTextField = textField;
-              
+                try
+                {
+                    searchCriteriaColumn = "date";
+                    searchTextField = textField;
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter the date in the format(YYYY-MM-DD)");
+                }
             }
         }
 
-        public void fillTable(string [] rows)
+        public void fillTable()
         {
-            
+           
         }
         public void edit()
         {
@@ -74,15 +94,19 @@ namespace WindowsFormsApplication1
            String[] criteriaSelected=null;
            int count =0;
            String query = "";
-           if (!(search.searchCriteriaColumn.Equals("First and Last Name")))
+           if (search.searchCriteriaColumn.Equals("First and Last Name"))
            {
                query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "' AND " + search.extraSearchCriteriaColumn + "='" + search.extraSearchTextField+"'";
-
+               count = db.Count(query);
+           }
+           else if (search.searchCriteriaColumn.Equals("Phone"))
+           {
+               query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
                count = db.Count(query);
            }
            else
            {
-               query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
+               query = "SELECT * FROM patron,previousvisits WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
                count = db.Count(query);
            }
 
@@ -90,7 +114,7 @@ namespace WindowsFormsApplication1
 
                List<Patron> list = new List<Patron>();
                db.CloseAll();   
-            list = db.SelectPatron(query);
+               list = db.SelectPatron(query);
 
                for (int x = 0; x < list.Count; x++)
                {
@@ -107,25 +131,6 @@ namespace WindowsFormsApplication1
             db.CloseAll();
             return allInfo;
         }
-      /*  DBConnect db = new DBConnect();
-            //<!---------VIEW ALL POPULATOR---------->
-            int count = db.Count("SELECT * FROM patron");
-
-            String[] rows = new String[count];
-
-            List<Patron> list = new List<Patron>();
-            list = db.SelectPatron("SELECT * FROM patron");
-
-            for (int x = 0; x < list.Count; x++)
-            {
-                String date = list[x].Date.Month + "/" + list[x].Date.Day + "/" + list[x].Date.Year;
-                String children = "";
-                children += list[x].NumChildren;
-                String adults = "";
-                adults += list[x].NumAdults;
-                string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
-                dataGridView2.Rows.Add(row);
-            }
-            db.CloseAll(); */
+    
     }
 }
