@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
                 String adults = "";
                 adults += list[x].NumAdults;
                 string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
-                dataGridView2.Rows.Add(row);
+                viewAllDataGrid.Rows.Add(row);
             }
             db.CloseAll(); 
             //<!---------END VIEW ALL POPULATOR---------->
@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
 
         private void searchButtonTab2_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            searchDataGrid.Rows.Clear();
             Search search = new Search(searchTextTab2.Text,searchMenuTab2.Text);
             search.searchInformation(search);
           /*  try
@@ -101,6 +101,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Please select the correct criteria and a time frame.");
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         

@@ -165,7 +165,7 @@ namespace WindowsFormsApplication1
                    adults += list[x].NumAdults;
                    string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
                    allInfo = row;
-                   form.dataGridView1.Rows.Add(row);
+                   form.searchDataGrid.Rows.Add(row);
                }
            
             db.CloseAll();

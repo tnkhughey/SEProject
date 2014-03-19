@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabs = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.addNewEntryTabPage = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.addrTextBox2 = new System.Windows.Forms.TextBox();
             this.zipLabel1 = new System.Windows.Forms.Label();
@@ -63,9 +63,9 @@
             this.miLabel = new System.Windows.Forms.Label();
             this.lNameLabel = new System.Windows.Forms.Label();
             this.fNameLabel = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SearchTabPage = new System.Windows.Forms.TabPage();
             this.searchMenuTab2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.searchDataGrid = new System.Windows.Forms.DataGridView();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.midInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,15 +81,15 @@
             this.searchButtonTab2 = new System.Windows.Forms.Button();
             this.searchTextTab2 = new System.Windows.Forms.TextBox();
             this.searchLabelTab2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.statsTabPage = new System.Windows.Forms.TabPage();
             this.yearMenuTab3 = new System.Windows.Forms.TextBox();
             this.statsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.searchButtonTab3 = new System.Windows.Forms.Button();
             this.searchMenuTab3 = new System.Windows.Forms.ComboBox();
             this.monthMenuTab3 = new System.Windows.Forms.ComboBox();
             this.dayMenuTab3 = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.viewAllTabPage = new System.Windows.Forms.TabPage();
+            this.viewAllDataGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,23 +102,25 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.successLabel = new System.Windows.Forms.Label();
+            this.failureLabel = new System.Windows.Forms.Label();
             this.tabs.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.addNewEntryTabPage.SuspendLayout();
+            this.SearchTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchDataGrid)).BeginInit();
+            this.statsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statsChart)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.viewAllTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabs
             // 
-            this.tabs.Appearance = System.Windows.Forms.TabAppearance.Buttons;
-            this.tabs.Controls.Add(this.tabPage4);
-            this.tabs.Controls.Add(this.tabPage1);
-            this.tabs.Controls.Add(this.tabPage2);
-            this.tabs.Controls.Add(this.tabPage3);
+            this.tabs.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabs.Controls.Add(this.addNewEntryTabPage);
+            this.tabs.Controls.Add(this.SearchTabPage);
+            this.tabs.Controls.Add(this.statsTabPage);
+            this.tabs.Controls.Add(this.viewAllTabPage);
             this.tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabs.ItemSize = new System.Drawing.Size(150, 70);
             this.tabs.Location = new System.Drawing.Point(-3, 0);
@@ -127,45 +129,47 @@
             this.tabs.Size = new System.Drawing.Size(1487, 783);
             this.tabs.TabIndex = 0;
             // 
-            // tabPage4
+            // addNewEntryTabPage
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Controls.Add(this.addrTextBox2);
-            this.tabPage4.Controls.Add(this.zipLabel1);
-            this.tabPage4.Controls.Add(this.zipTextBox1);
-            this.tabPage4.Controls.Add(this.stateTextBox1);
-            this.tabPage4.Controls.Add(this.stateLabel1);
-            this.tabPage4.Controls.Add(this.cityTextBox1);
-            this.tabPage4.Controls.Add(this.cityLabelTab1);
-            this.tabPage4.Controls.Add(this.saveButton);
-            this.tabPage4.Controls.Add(this.dayMenuTab1);
-            this.tabPage4.Controls.Add(this.monthMenuTab1);
-            this.tabPage4.Controls.Add(this.yearTab1);
-            this.tabPage4.Controls.Add(this.numChildTextBox);
-            this.tabPage4.Controls.Add(this.numAdultsTextBox);
-            this.tabPage4.Controls.Add(this.phoneTextBox);
-            this.tabPage4.Controls.Add(this.addrNumNameTextBox1);
-            this.tabPage4.Controls.Add(this.miTextBox);
-            this.tabPage4.Controls.Add(this.lNameTextBox);
-            this.tabPage4.Controls.Add(this.fNameTextBox);
-            this.tabPage4.Controls.Add(this.dateVistLabelTab1);
-            this.tabPage4.Controls.Add(this.numChildLabel);
-            this.tabPage4.Controls.Add(this.numAdultsLabel);
-            this.tabPage4.Controls.Add(this.phoneLabel2);
-            this.tabPage4.Controls.Add(this.addrNumName1);
-            this.tabPage4.Controls.Add(this.miLabel);
-            this.tabPage4.Controls.Add(this.lNameLabel);
-            this.tabPage4.Controls.Add(this.fNameLabel);
-            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage4.ForeColor = System.Drawing.Color.Black;
-            this.tabPage4.Location = new System.Drawing.Point(4, 74);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1479, 705);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "    ADD NEW ENTRY     ";
+            this.addNewEntryTabPage.BackColor = System.Drawing.Color.White;
+            this.addNewEntryTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addNewEntryTabPage.Controls.Add(this.failureLabel);
+            this.addNewEntryTabPage.Controls.Add(this.successLabel);
+            this.addNewEntryTabPage.Controls.Add(this.label1);
+            this.addNewEntryTabPage.Controls.Add(this.addrTextBox2);
+            this.addNewEntryTabPage.Controls.Add(this.zipLabel1);
+            this.addNewEntryTabPage.Controls.Add(this.zipTextBox1);
+            this.addNewEntryTabPage.Controls.Add(this.stateTextBox1);
+            this.addNewEntryTabPage.Controls.Add(this.stateLabel1);
+            this.addNewEntryTabPage.Controls.Add(this.cityTextBox1);
+            this.addNewEntryTabPage.Controls.Add(this.cityLabelTab1);
+            this.addNewEntryTabPage.Controls.Add(this.saveButton);
+            this.addNewEntryTabPage.Controls.Add(this.dayMenuTab1);
+            this.addNewEntryTabPage.Controls.Add(this.monthMenuTab1);
+            this.addNewEntryTabPage.Controls.Add(this.yearTab1);
+            this.addNewEntryTabPage.Controls.Add(this.numChildTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.numAdultsTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.phoneTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.addrNumNameTextBox1);
+            this.addNewEntryTabPage.Controls.Add(this.miTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.lNameTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.fNameTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.dateVistLabelTab1);
+            this.addNewEntryTabPage.Controls.Add(this.numChildLabel);
+            this.addNewEntryTabPage.Controls.Add(this.numAdultsLabel);
+            this.addNewEntryTabPage.Controls.Add(this.phoneLabel2);
+            this.addNewEntryTabPage.Controls.Add(this.addrNumName1);
+            this.addNewEntryTabPage.Controls.Add(this.miLabel);
+            this.addNewEntryTabPage.Controls.Add(this.lNameLabel);
+            this.addNewEntryTabPage.Controls.Add(this.fNameLabel);
+            this.addNewEntryTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewEntryTabPage.ForeColor = System.Drawing.Color.Black;
+            this.addNewEntryTabPage.Location = new System.Drawing.Point(4, 74);
+            this.addNewEntryTabPage.Name = "addNewEntryTabPage";
+            this.addNewEntryTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.addNewEntryTabPage.Size = new System.Drawing.Size(1479, 705);
+            this.addNewEntryTabPage.TabIndex = 3;
+            this.addNewEntryTabPage.Text = "    ADD NEW ENTRY     ";
             // 
             // label1
             // 
@@ -473,21 +477,21 @@
             this.fNameLabel.TabIndex = 0;
             this.fNameLabel.Text = "FirstName";
             // 
-            // tabPage1
+            // SearchTabPage
             // 
-            this.tabPage1.Controls.Add(this.searchMenuTab2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.searchButtonTab2);
-            this.tabPage1.Controls.Add(this.searchTextTab2);
-            this.tabPage1.Controls.Add(this.searchLabelTab2);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            this.tabPage1.Location = new System.Drawing.Point(4, 74);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1479, 705);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "   SEARCH   ";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.SearchTabPage.Controls.Add(this.searchMenuTab2);
+            this.SearchTabPage.Controls.Add(this.searchDataGrid);
+            this.SearchTabPage.Controls.Add(this.searchButtonTab2);
+            this.SearchTabPage.Controls.Add(this.searchTextTab2);
+            this.SearchTabPage.Controls.Add(this.searchLabelTab2);
+            this.SearchTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            this.SearchTabPage.Location = new System.Drawing.Point(4, 74);
+            this.SearchTabPage.Name = "SearchTabPage";
+            this.SearchTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SearchTabPage.Size = new System.Drawing.Size(1479, 705);
+            this.SearchTabPage.TabIndex = 4;
+            this.SearchTabPage.Text = "   SEARCH   ";
+            this.SearchTabPage.UseVisualStyleBackColor = true;
             // 
             // searchMenuTab2
             // 
@@ -502,13 +506,13 @@
             this.searchMenuTab2.Size = new System.Drawing.Size(281, 54);
             this.searchMenuTab2.TabIndex = 20;
             // 
-            // dataGridView1
+            // searchDataGrid
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.searchDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.searchDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.searchDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.searchDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
             this.LastName,
             this.midInit,
@@ -521,14 +525,14 @@
             this.adults,
             this.children,
             this.lastVisit});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 109);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.Size = new System.Drawing.Size(1402, 499);
-            this.dataGridView1.TabIndex = 3;
+            this.searchDataGrid.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.searchDataGrid.Location = new System.Drawing.Point(0, 109);
+            this.searchDataGrid.Name = "searchDataGrid";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.searchDataGrid.Size = new System.Drawing.Size(1402, 499);
+            this.searchDataGrid.TabIndex = 3;
             // 
             // FirstName
             // 
@@ -638,22 +642,22 @@
             this.searchLabelTab2.TabIndex = 0;
             this.searchLabelTab2.Text = "Search";
             // 
-            // tabPage2
+            // statsTabPage
             // 
-            this.tabPage2.Controls.Add(this.yearMenuTab3);
-            this.tabPage2.Controls.Add(this.statsChart);
-            this.tabPage2.Controls.Add(this.searchButtonTab3);
-            this.tabPage2.Controls.Add(this.searchMenuTab3);
-            this.tabPage2.Controls.Add(this.monthMenuTab3);
-            this.tabPage2.Controls.Add(this.dayMenuTab3);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            this.tabPage2.Location = new System.Drawing.Point(4, 74);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1479, 705);
-            this.tabPage2.TabIndex = 5;
-            this.tabPage2.Text = "   STATISTICS   ";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.statsTabPage.Controls.Add(this.yearMenuTab3);
+            this.statsTabPage.Controls.Add(this.statsChart);
+            this.statsTabPage.Controls.Add(this.searchButtonTab3);
+            this.statsTabPage.Controls.Add(this.searchMenuTab3);
+            this.statsTabPage.Controls.Add(this.monthMenuTab3);
+            this.statsTabPage.Controls.Add(this.dayMenuTab3);
+            this.statsTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            this.statsTabPage.Location = new System.Drawing.Point(4, 74);
+            this.statsTabPage.Name = "statsTabPage";
+            this.statsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.statsTabPage.Size = new System.Drawing.Size(1479, 705);
+            this.statsTabPage.TabIndex = 5;
+            this.statsTabPage.Text = "   STATISTICS   ";
+            this.statsTabPage.UseVisualStyleBackColor = true;
             // 
             // yearMenuTab3
             // 
@@ -666,22 +670,22 @@
             // 
             // statsChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.statsChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.statsChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.statsChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.statsChart.Legends.Add(legend1);
             this.statsChart.Location = new System.Drawing.Point(172, 111);
             this.statsChart.Name = "statsChart";
-            series7.ChartArea = "ChartArea1";
-            series7.Color = System.Drawing.Color.Lime;
-            series7.Legend = "Legend1";
-            series7.Name = "Children";
-            series8.ChartArea = "ChartArea1";
-            series8.Color = System.Drawing.Color.Blue;
-            series8.Legend = "Legend1";
-            series8.Name = "Adults";
-            this.statsChart.Series.Add(series7);
-            this.statsChart.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.Lime;
+            series1.Legend = "Legend1";
+            series1.Name = "Children";
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.Blue;
+            series2.Legend = "Legend1";
+            series2.Name = "Adults";
+            this.statsChart.Series.Add(series1);
+            this.statsChart.Series.Add(series2);
             this.statsChart.Size = new System.Drawing.Size(880, 431);
             this.statsChart.TabIndex = 24;
             this.statsChart.Text = "chart1";
@@ -709,7 +713,6 @@
             this.searchMenuTab3.Size = new System.Drawing.Size(262, 37);
             this.searchMenuTab3.TabIndex = 22;
             this.searchMenuTab3.Text = "Search Criteria";
-//            this.searchMenuTab3.SelectedIndexChanged += new System.EventHandler(this.searchMenuTab3_SelectedIndexChanged);
             // 
             // monthMenuTab3
             // 
@@ -776,24 +779,24 @@
             this.dayMenuTab3.TabIndex = 20;
             this.dayMenuTab3.Text = "Day";
             // 
-            // tabPage3
+            // viewAllTabPage
             // 
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            this.tabPage3.Location = new System.Drawing.Point(4, 74);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1479, 705);
-            this.tabPage3.TabIndex = 6;
-            this.tabPage3.Text = "   VIEW ALL   ";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.viewAllTabPage.Controls.Add(this.viewAllDataGrid);
+            this.viewAllTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            this.viewAllTabPage.Location = new System.Drawing.Point(4, 74);
+            this.viewAllTabPage.Name = "viewAllTabPage";
+            this.viewAllTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.viewAllTabPage.Size = new System.Drawing.Size(1479, 705);
+            this.viewAllTabPage.TabIndex = 6;
+            this.viewAllTabPage.Text = "   VIEW ALL   ";
+            this.viewAllTabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // viewAllDataGrid
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.ColumnHeadersHeight = 48;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.viewAllDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.viewAllDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.viewAllDataGrid.ColumnHeadersHeight = 48;
+            this.viewAllDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -806,15 +809,15 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView2.Location = new System.Drawing.Point(63, 24);
-            this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.Size = new System.Drawing.Size(1296, 533);
-            this.dataGridView2.TabIndex = 4;
+            this.viewAllDataGrid.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.viewAllDataGrid.Location = new System.Drawing.Point(63, 24);
+            this.viewAllDataGrid.Name = "viewAllDataGrid";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.viewAllDataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.Size = new System.Drawing.Size(1296, 533);
+            this.viewAllDataGrid.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -897,6 +900,31 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 213;
             // 
+            // successLabel
+            // 
+            this.successLabel.AutoSize = true;
+            this.successLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.successLabel.ForeColor = System.Drawing.Color.LimeGreen;
+            this.successLabel.Location = new System.Drawing.Point(497, 529);
+            this.successLabel.Name = "successLabel";
+            this.successLabel.Size = new System.Drawing.Size(392, 25);
+            this.successLabel.TabIndex = 29;
+            this.successLabel.Text = "Patron Successfully Added to Database";
+            this.successLabel.Visible = false;
+            this.successLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // failureLabel
+            // 
+            this.failureLabel.AutoSize = true;
+            this.failureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.failureLabel.ForeColor = System.Drawing.Color.Red;
+            this.failureLabel.Location = new System.Drawing.Point(497, 529);
+            this.failureLabel.Name = "failureLabel";
+            this.failureLabel.Size = new System.Drawing.Size(304, 25);
+            this.failureLabel.TabIndex = 30;
+            this.failureLabel.Text = "Patron Not Added to Database";
+            this.failureLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -907,16 +935,16 @@
             this.Name = "Form1";
             this.Text = "Chard Wray Food Pantry";
             this.tabs.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.addNewEntryTabPage.ResumeLayout(false);
+            this.addNewEntryTabPage.PerformLayout();
+            this.SearchTabPage.ResumeLayout(false);
+            this.SearchTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchDataGrid)).EndInit();
+            this.statsTabPage.ResumeLayout(false);
+            this.statsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statsChart)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.viewAllTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.viewAllDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -924,30 +952,19 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabs;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label fNameLabel;
         private System.Windows.Forms.Label lNameLabel;
         private System.Windows.Forms.Label miLabel;
-        private System.Windows.Forms.TextBox fNameTextBox;
         private System.Windows.Forms.Label dateVistLabelTab1;
         private System.Windows.Forms.Label numChildLabel;
         private System.Windows.Forms.Label numAdultsLabel;
         private System.Windows.Forms.Label phoneLabel2;
         private System.Windows.Forms.Label addrNumName1;
-        private System.Windows.Forms.ComboBox dayMenuTab1;
-        private System.Windows.Forms.ComboBox monthMenuTab1;
-        private System.Windows.Forms.TextBox yearTab1;
-        private System.Windows.Forms.TextBox numChildTextBox;
-        private System.Windows.Forms.TextBox numAdultsTextBox;
-        private System.Windows.Forms.TextBox phoneTextBox;
-        private System.Windows.Forms.TextBox addrNumNameTextBox1;
-        private System.Windows.Forms.TextBox miTextBox;
-        private System.Windows.Forms.TextBox lNameTextBox;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage SearchTabPage;
         private System.Windows.Forms.Label searchLabelTab2;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage statsTabPage;
+        private System.Windows.Forms.TabPage viewAllTabPage;
         private System.Windows.Forms.TextBox searchTextTab2;
         private System.Windows.Forms.Button searchButtonTab2;
         private System.Windows.Forms.ComboBox searchMenuTab2;
@@ -956,7 +973,7 @@
         private System.Windows.Forms.ComboBox searchMenuTab3;
         private System.Windows.Forms.ComboBox monthMenuTab3;
         private System.Windows.Forms.ComboBox dayMenuTab3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView viewAllDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllMiddleInitial;
@@ -968,13 +985,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllPrevVisit;
         private System.Windows.Forms.TextBox yearMenuTab3;
         private System.Windows.Forms.Label cityLabelTab1;
-        private System.Windows.Forms.TextBox stateTextBox1;
         private System.Windows.Forms.Label stateLabel1;
-        private System.Windows.Forms.TextBox cityTextBox1;
         private System.Windows.Forms.Label zipLabel1;
-        private System.Windows.Forms.TextBox zipTextBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox addrTextBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -999,7 +1012,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adults;
         private System.Windows.Forms.DataGridViewTextBoxColumn children;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastVisit;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView searchDataGrid;
+        public System.Windows.Forms.TabPage addNewEntryTabPage;
+        public System.Windows.Forms.TextBox fNameTextBox;
+        public System.Windows.Forms.ComboBox dayMenuTab1;
+        public System.Windows.Forms.ComboBox monthMenuTab1;
+        public System.Windows.Forms.TextBox yearTab1;
+        public System.Windows.Forms.TextBox numChildTextBox;
+        public System.Windows.Forms.TextBox numAdultsTextBox;
+        public System.Windows.Forms.TextBox phoneTextBox;
+        public System.Windows.Forms.TextBox addrNumNameTextBox1;
+        public System.Windows.Forms.TextBox lNameTextBox;
+        public System.Windows.Forms.TextBox stateTextBox1;
+        public System.Windows.Forms.TextBox cityTextBox1;
+        public System.Windows.Forms.TextBox zipTextBox1;
+        public System.Windows.Forms.TextBox addrTextBox2;
+        public System.Windows.Forms.TextBox miTextBox;
+        public System.Windows.Forms.Label successLabel;
+        public System.Windows.Forms.Label failureLabel;
     }
 }
 

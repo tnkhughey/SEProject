@@ -88,14 +88,51 @@ namespace WindowsFormsApplication1
                 }
                 db.CloseAll();
             }
-            Address addr = new Address(idRand, cust.streetNumNameTextField, cust.addrTextField2, cust.cityTextField, cust.stateTextField, cust.zipTextField);
-            int month=DateTime.ParseExact(cust.monthTab1, "MMMM", CultureInfo.CurrentCulture).Month;
-            DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), month, Convert.ToInt32(cust.dayTab1));
+            try
+            {
+                Address addr = new Address(idRand, cust.streetNumNameTextField, cust.addrTextField2, cust.cityTextField, cust.stateTextField, cust.zipTextField);
+                int month = DateTime.ParseExact(cust.monthTab1, "MMMM", CultureInfo.CurrentCulture).Month;
+                DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), month, Convert.ToInt32(cust.dayTab1));
 
-            PreviousVisit pv = new PreviousVisit(idRand, Convert.ToInt32(cust.numChildTextField), Convert.ToInt32(cust.numAdultsTextField), d1);
-            Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.phoneTextField, addr, pv);
-            db.addPatron(p);
-            db.CloseAll();
+                PreviousVisit pv = new PreviousVisit(idRand, Convert.ToInt32(cust.numChildTextField), Convert.ToInt32(cust.numAdultsTextField), d1);
+                Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.phoneTextField, addr, pv);
+                db.addPatron(p);
+                db.CloseAll();
+                EmptyTextBoxes();
+            }
+            catch
+            {
+                var form = Form1.ActiveForm as Form1;
+                form.failureLabel.Visible = true;
+            }
+        }
+
+        public static void EmptyTextBoxes()
+        {
+            var form = Form1.ActiveForm as Form1;
+            form.fNameTextBox.Clear();
+            form.lNameTextBox.Clear();
+            form.miTextBox.Clear();
+            form.addrNumNameTextBox1.Clear();
+            form.addrTextBox2.Clear();
+            form.cityTextBox1.Clear();
+            form.stateTextBox1.Clear();
+            form.zipTextBox1.Clear();
+            form.numAdultsTextBox.Clear();
+            form.numChildTextBox.Clear();
+            form.phoneTextBox.Clear();
+            form.monthMenuTab1.SelectedIndex = 0;
+            form.dayMenuTab1.SelectedIndex = 0;
+            form.yearTab1.Text = "Year";
+            form.failureLabel.Visible = false;
+            form.successLabel.Visible = true;
+            /*foreach (var field in typeof(Form1).GetFields())
+            {
+                if (field.FieldType == typeof(TextBox))
+                {
+                    //Clear field
+                }
+            }*/
         }
     }
 }
