@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
                 query ="SELECT numAdults, numChildren FROM previousvisits WHERE date = '"+s.year+"-"+s.month+"-"+s.day+"'";
                 db.Count(query);
             }
-            int[] numbers = db.SelectPatron(query);
+            //int[] numbers = db.SelectPatron(query);
         }
         */
         public void showStats()
