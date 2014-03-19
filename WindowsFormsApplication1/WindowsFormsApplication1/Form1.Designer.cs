@@ -709,7 +709,7 @@
             this.searchMenuTab3.Size = new System.Drawing.Size(262, 37);
             this.searchMenuTab3.TabIndex = 22;
             this.searchMenuTab3.Text = "Search Criteria";
-            this.searchMenuTab3.SelectedIndexChanged += new System.EventHandler(this.searchMenuTab3_SelectedIndexChanged);
+//            this.searchMenuTab3.SelectedIndexChanged += new System.EventHandler(this.searchMenuTab3_SelectedIndexChanged);
             // 
             // monthMenuTab3
             // 

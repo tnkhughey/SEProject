@@ -44,7 +44,7 @@ namespace WindowsFormsApplication1
             server = "localhost";
             database = "patrondb";
             uid = "root";
-            password = "root";
+            password = "admin";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -334,9 +334,15 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void getStats(Statistics s)
+        //Get adult and children statistics based on time
+        public int[] getStats(String query)
         {
-
+            int[] stats=new int[1];
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            stats[0] = (int)dataReader.GetValue(0);//get adults
+            stats[1] = (int)dataReader.GetValue(1);//get children
+            return stats;
         }
 
         //Backup

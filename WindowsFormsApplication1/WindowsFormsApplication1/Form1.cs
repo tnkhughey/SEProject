@@ -88,15 +88,19 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void searchMenuTab3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void searchButtonTab3_Click(object sender, EventArgs e)
         {
-            Statistics stat = new Statistics();
-
+            try
+            {
+                Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), Int32.Parse(monthMenuTab1.Text), Int32.Parse(dayMenuTab1.Text), searchMenuTab3.Text);
+                stat.showStats();
+            }
+            catch
+            {
+                MessageBox.Show("Please select the correct criteria and a time frame.");
+            }
         }
 
         
