@@ -74,17 +74,28 @@ namespace WindowsFormsApplication1
 
         private void searchButtonTab2_Click(object sender, EventArgs e)
         {
-            Search search = new Search(searchTextTab2.Text,searchMenuTab2.Text);
-            string[] rows = search.searchInformation(search);
             dataGridView1.Rows.Clear();
-            try
+            Search search = new Search(searchTextTab2.Text,searchMenuTab2.Text);
+            search.searchInformation(search);
+          /*  try
             {
                 dataGridView1.Rows.Add(rows);
             }
             catch
             {
 
-            }
+            }*/
+
+        }
+
+        private void searchMenuTab3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchButtonTab3_Click(object sender, EventArgs e)
+        {
+            Statistics stat = new Statistics();
 
         }
 

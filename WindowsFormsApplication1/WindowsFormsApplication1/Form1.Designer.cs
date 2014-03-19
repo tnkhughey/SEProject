@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -115,11 +114,12 @@
             // 
             // tabs
             // 
+            this.tabs.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabs.Controls.Add(this.tabPage4);
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
             this.tabs.Controls.Add(this.tabPage3);
-            this.tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F);
+            this.tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabs.ItemSize = new System.Drawing.Size(150, 70);
             this.tabs.Location = new System.Drawing.Point(-3, 0);
             this.tabs.Name = "tabs";
@@ -129,7 +129,8 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.addrTextBox2);
             this.tabPage4.Controls.Add(this.zipLabel1);
@@ -157,13 +158,14 @@
             this.tabPage4.Controls.Add(this.miLabel);
             this.tabPage4.Controls.Add(this.lNameLabel);
             this.tabPage4.Controls.Add(this.fNameLabel);
-            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage4.ForeColor = System.Drawing.Color.Black;
             this.tabPage4.Location = new System.Drawing.Point(4, 74);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1479, 705);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "ADD NEW ENTRY";
+            this.tabPage4.Text = "    ADD NEW ENTRY     ";
             // 
             // label1
             // 
@@ -484,7 +486,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1479, 705);
             this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "SEARCH";
+            this.tabPage1.Text = "   SEARCH   ";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // searchMenuTab2
@@ -505,14 +507,6 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
@@ -530,9 +524,9 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(0, 109);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.Size = new System.Drawing.Size(1402, 499);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -542,80 +536,80 @@
             this.FirstName.FillWeight = 10F;
             this.FirstName.HeaderText = "FirstName";
             this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 135;
+            this.FirstName.Width = 236;
             // 
             // LastName
             // 
             this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.LastName.HeaderText = "LastName";
             this.LastName.Name = "LastName";
-            this.LastName.Width = 134;
+            this.LastName.Width = 233;
             // 
             // midInit
             // 
             this.midInit.HeaderText = "MI";
             this.midInit.Name = "midInit";
-            this.midInit.Width = 60;
+            this.midInit.Width = 90;
             // 
             // streetNameNumColumn1
             // 
             this.streetNameNumColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.streetNameNumColumn1.HeaderText = "St.Num/Name";
             this.streetNameNumColumn1.Name = "streetNameNumColumn1";
-            this.streetNameNumColumn1.Width = 169;
+            this.streetNameNumColumn1.Width = 302;
             // 
             // cityColumnSearch
             // 
             this.cityColumnSearch.HeaderText = "City";
             this.cityColumnSearch.Name = "cityColumnSearch";
-            this.cityColumnSearch.Width = 74;
+            this.cityColumnSearch.Width = 117;
             // 
             // stateColumnSearch
             // 
             this.stateColumnSearch.HeaderText = "State";
             this.stateColumnSearch.Name = "stateColumnSearch";
-            this.stateColumnSearch.Width = 87;
+            this.stateColumnSearch.Width = 140;
             // 
             // zipColumnSearch
             // 
             this.zipColumnSearch.HeaderText = "Zip";
             this.zipColumnSearch.Name = "zipColumnSearch";
-            this.zipColumnSearch.Width = 67;
+            this.zipColumnSearch.Width = 103;
             // 
             // addr2
             // 
             this.addr2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.addr2.HeaderText = "Address Line 2";
             this.addr2.Name = "addr2";
-            this.addr2.Width = 149;
+            this.addr2.Width = 260;
             // 
             // phone
             // 
             this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.phone.HeaderText = "Phone";
             this.phone.Name = "phone";
-            this.phone.Width = 99;
+            this.phone.Width = 164;
             // 
             // adults
             // 
             this.adults.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.adults.HeaderText = "Adults";
             this.adults.Name = "adults";
-            this.adults.Width = 97;
+            this.adults.Width = 160;
             // 
             // children
             // 
             this.children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.children.HeaderText = "Children";
             this.children.Name = "children";
-            this.children.Width = 117;
+            this.children.Width = 201;
             // 
             // lastVisit
             // 
             this.lastVisit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.lastVisit.HeaderText = "Last Visit";
             this.lastVisit.Name = "lastVisit";
-            this.lastVisit.Width = 78;
+            this.lastVisit.Width = 194;
             // 
             // searchButtonTab2
             // 
@@ -658,70 +652,127 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1479, 705);
             this.tabPage2.TabIndex = 5;
-            this.tabPage2.Text = "STATISTICS";
+            this.tabPage2.Text = "   STATISTICS   ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // yearMenuTab3
             // 
-            this.yearMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.25F);
-            this.yearMenuTab3.Location = new System.Drawing.Point(913, 66);
+            this.yearMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearMenuTab3.Location = new System.Drawing.Point(920, 34);
             this.yearMenuTab3.Name = "yearMenuTab3";
-            this.yearMenuTab3.Size = new System.Drawing.Size(173, 44);
+            this.yearMenuTab3.Size = new System.Drawing.Size(173, 35);
             this.yearMenuTab3.TabIndex = 25;
             this.yearMenuTab3.Text = "Year";
             // 
             // statsChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.statsChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.statsChart.Legends.Add(legend1);
-            this.statsChart.Location = new System.Drawing.Point(273, 146);
+            chartArea4.Name = "ChartArea1";
+            this.statsChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.statsChart.Legends.Add(legend4);
+            this.statsChart.Location = new System.Drawing.Point(172, 111);
             this.statsChart.Name = "statsChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.statsChart.Series.Add(series1);
-            this.statsChart.Size = new System.Drawing.Size(813, 431);
+            series7.ChartArea = "ChartArea1";
+            series7.Color = System.Drawing.Color.Lime;
+            series7.Legend = "Legend1";
+            series7.Name = "Children";
+            series8.ChartArea = "ChartArea1";
+            series8.Color = System.Drawing.Color.Blue;
+            series8.Legend = "Legend1";
+            series8.Name = "Adults";
+            this.statsChart.Series.Add(series7);
+            this.statsChart.Series.Add(series8);
+            this.statsChart.Size = new System.Drawing.Size(880, 431);
             this.statsChart.TabIndex = 24;
             this.statsChart.Text = "chart1";
             // 
             // searchButtonTab3
             // 
-            this.searchButtonTab3.Location = new System.Drawing.Point(1099, 66);
+            this.searchButtonTab3.Location = new System.Drawing.Point(1108, 33);
             this.searchButtonTab3.Name = "searchButtonTab3";
             this.searchButtonTab3.Size = new System.Drawing.Size(216, 51);
             this.searchButtonTab3.TabIndex = 23;
             this.searchButtonTab3.Text = "SEARCH";
             this.searchButtonTab3.UseVisualStyleBackColor = true;
+            this.searchButtonTab3.Click += new System.EventHandler(this.searchButtonTab3_Click);
             // 
             // searchMenuTab3
             // 
-            this.searchMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.25F);
+            this.searchMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchMenuTab3.FormattingEnabled = true;
-            this.searchMenuTab3.Location = new System.Drawing.Point(46, 66);
+            this.searchMenuTab3.Items.AddRange(new object[] {
+            "Year",
+            "Month",
+            "Day"});
+            this.searchMenuTab3.Location = new System.Drawing.Point(42, 33);
             this.searchMenuTab3.Name = "searchMenuTab3";
-            this.searchMenuTab3.Size = new System.Drawing.Size(262, 45);
+            this.searchMenuTab3.Size = new System.Drawing.Size(262, 37);
             this.searchMenuTab3.TabIndex = 22;
             this.searchMenuTab3.Text = "Search Criteria";
+            this.searchMenuTab3.SelectedIndexChanged += new System.EventHandler(this.searchMenuTab3_SelectedIndexChanged);
             // 
             // monthMenuTab3
             // 
-            this.monthMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.25F);
+            this.monthMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthMenuTab3.FormattingEnabled = true;
-            this.monthMenuTab3.Location = new System.Drawing.Point(378, 66);
+            this.monthMenuTab3.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.monthMenuTab3.Location = new System.Drawing.Point(362, 33);
             this.monthMenuTab3.Name = "monthMenuTab3";
-            this.monthMenuTab3.Size = new System.Drawing.Size(229, 45);
+            this.monthMenuTab3.Size = new System.Drawing.Size(229, 37);
             this.monthMenuTab3.TabIndex = 21;
             this.monthMenuTab3.Text = "January";
             // 
             // dayMenuTab3
             // 
-            this.dayMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.25F);
+            this.dayMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dayMenuTab3.FormattingEnabled = true;
-            this.dayMenuTab3.Location = new System.Drawing.Point(654, 66);
+            this.dayMenuTab3.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.dayMenuTab3.Location = new System.Drawing.Point(656, 33);
             this.dayMenuTab3.Name = "dayMenuTab3";
-            this.dayMenuTab3.Size = new System.Drawing.Size(223, 45);
+            this.dayMenuTab3.Size = new System.Drawing.Size(223, 37);
             this.dayMenuTab3.TabIndex = 20;
             this.dayMenuTab3.Text = "Day";
             // 
@@ -734,21 +785,13 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1479, 705);
             this.tabPage3.TabIndex = 6;
-            this.tabPage3.Text = "VIEW ALL";
+            this.tabPage3.Text = "   VIEW ALL   ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeight = 48;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -766,9 +809,9 @@
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView2.Location = new System.Drawing.Point(63, 24);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.Size = new System.Drawing.Size(1296, 533);
             this.dataGridView2.TabIndex = 4;
@@ -779,80 +822,80 @@
             this.dataGridViewTextBoxColumn1.FillWeight = 10F;
             this.dataGridViewTextBoxColumn1.HeaderText = "FirstName";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 135;
+            this.dataGridViewTextBoxColumn1.Width = 236;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.HeaderText = "LastName";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 134;
+            this.dataGridViewTextBoxColumn2.Width = 233;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "MI";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 60;
+            this.dataGridViewTextBoxColumn3.Width = 90;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn4.HeaderText = "StreetName/Num";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 200;
+            this.dataGridViewTextBoxColumn4.Width = 362;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn5.HeaderText = "Address Line 2";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 181;
+            this.dataGridViewTextBoxColumn5.Width = 321;
             // 
             // City
             // 
             this.City.HeaderText = "City";
             this.City.Name = "City";
-            this.City.Width = 74;
+            this.City.Width = 117;
             // 
             // State
             // 
             this.State.HeaderText = "State";
             this.State.Name = "State";
-            this.State.Width = 87;
+            this.State.Width = 140;
             // 
             // Zip
             // 
             this.Zip.HeaderText = "Zip";
             this.Zip.Name = "Zip";
-            this.Zip.Width = 67;
+            this.Zip.Width = 103;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn6.HeaderText = "Phone";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 99;
+            this.dataGridViewTextBoxColumn6.Width = 164;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.HeaderText = "Adults";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 97;
+            this.dataGridViewTextBoxColumn7.Width = 160;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.HeaderText = "Children";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 117;
+            this.dataGridViewTextBoxColumn8.Width = 201;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.HeaderText = "Last Visit";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
+            this.dataGridViewTextBoxColumn9.Width = 213;
             // 
             // Form1
             // 
@@ -862,7 +905,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.tabs);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Chard Wray Food Pantry";
             this.tabs.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -906,7 +949,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox searchTextTab2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button searchButtonTab2;
         private System.Windows.Forms.ComboBox searchMenuTab2;
         private System.Windows.Forms.DataVisualization.Charting.Chart statsChart;
@@ -957,6 +999,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adults;
         private System.Windows.Forms.DataGridViewTextBoxColumn children;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastVisit;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

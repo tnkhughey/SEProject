@@ -315,7 +315,7 @@ namespace WindowsFormsApplication1
 
                     //ExecuteScalar will return one value
                     Count = int.Parse(cmd.ExecuteScalar() + "");
-
+                    
                     //close Connection
                     this.CloseConnection();
 
@@ -323,6 +323,7 @@ namespace WindowsFormsApplication1
                 }
                 catch
                 {
+
                 }
                 return Count; 
 
@@ -331,6 +332,11 @@ namespace WindowsFormsApplication1
             {
                 return Count;
             }
+        }
+
+        public void getStats(Statistics s)
+        {
+
         }
 
         //Backup
