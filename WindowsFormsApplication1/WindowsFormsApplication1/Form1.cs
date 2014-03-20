@@ -88,14 +88,18 @@ namespace WindowsFormsApplication1
 
         }
 
-      
+
 
         private void searchButtonTab3_Click(object sender, EventArgs e)
         {
             try
             {
-                Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), Int32.Parse(monthMenuTab1.Text), Int32.Parse(dayMenuTab1.Text), searchMenuTab3.Text);
+                MessageBox.Show(DateTime.ParseExact(monthMenuTab3.Text, "MMMM", CultureInfo.CurrentCulture).Month + " ");
+                int month = DateTime.ParseExact(monthMenuTab3.Text, "MMMM", CultureInfo.CurrentCulture).Month;
+
+                Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), month, Int32.Parse(dayMenuTab3.Text), searchMenuTab3.Text);
                 stat.showStats();
+
             }
             catch
             {

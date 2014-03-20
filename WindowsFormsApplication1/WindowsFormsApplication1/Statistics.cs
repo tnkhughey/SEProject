@@ -61,7 +61,9 @@ namespace WindowsFormsApplication1
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";
             }
             numbers=db.getStats(query);
-            MessageBox.Show(numbers[0]+" ");
+            MessageBox.Show(numbers[0]+" "+numbers[1]);
+            var form = Form1.ActiveForm as Form1;
+            //form.stat
         }
     }
 }

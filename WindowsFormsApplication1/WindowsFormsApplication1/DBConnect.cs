@@ -26,6 +26,7 @@ namespace WindowsFormsApplication1
         private MySqlConnection connection;//for connecting to patron database
         private MySqlConnection connection2;
         private MySqlConnection connection3;
+        private MySqlConnection connection4;
 
         private string server;
         private string database;
@@ -52,7 +53,7 @@ namespace WindowsFormsApplication1
             connection = new MySqlConnection(connectionString);
             connection2 = new MySqlConnection(connectionString);
             connection3 = new MySqlConnection(connectionString);
-
+            connection4 = new MySqlConnection(connectionString);
         }
 
         private bool OpenConnection()
@@ -337,11 +338,20 @@ namespace WindowsFormsApplication1
         //Get adult and children statistics based on time
         public int[] getStats(String query)
         {
-            int[] stats=new int[1];
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            stats[0] = (int)dataReader.GetValue(0);//get adults
-            stats[1] = (int)dataReader.GetValue(1);//get children
+            int[] stats = new int[2];
+            //DBConnect db = new DBConnect();
+            connection4.Open();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection4);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int count = 0;
+                while (dataReader.Read())
+                {
+                    stats[0] = stats[0] + (int)dataReader.GetInt32(0);//get adults
+                    stats[1] = stats[1] + (int)dataReader.GetInt32(1);//get children
+                }
+            }
             return stats;
         }
 
