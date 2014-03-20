@@ -36,6 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabs = new System.Windows.Forms.TabControl();
             this.addNewEntryTabPage = new System.Windows.Forms.TabPage();
+            this.failureLabel = new System.Windows.Forms.Label();
+            this.successLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.addrTextBox2 = new System.Windows.Forms.TextBox();
             this.zipLabel1 = new System.Windows.Forms.Label();
@@ -102,8 +104,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.successLabel = new System.Windows.Forms.Label();
-            this.failureLabel = new System.Windows.Forms.Label();
             this.tabs.SuspendLayout();
             this.addNewEntryTabPage.SuspendLayout();
             this.SearchTabPage.SuspendLayout();
@@ -170,6 +170,31 @@
             this.addNewEntryTabPage.Size = new System.Drawing.Size(1479, 705);
             this.addNewEntryTabPage.TabIndex = 3;
             this.addNewEntryTabPage.Text = "    ADD NEW ENTRY     ";
+            // 
+            // failureLabel
+            // 
+            this.failureLabel.AutoSize = true;
+            this.failureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.failureLabel.ForeColor = System.Drawing.Color.Red;
+            this.failureLabel.Location = new System.Drawing.Point(497, 529);
+            this.failureLabel.Name = "failureLabel";
+            this.failureLabel.Size = new System.Drawing.Size(304, 25);
+            this.failureLabel.TabIndex = 30;
+            this.failureLabel.Text = "Patron Not Added to Database";
+            this.failureLabel.Visible = false;
+            // 
+            // successLabel
+            // 
+            this.successLabel.AutoSize = true;
+            this.successLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.successLabel.ForeColor = System.Drawing.Color.LimeGreen;
+            this.successLabel.Location = new System.Drawing.Point(497, 529);
+            this.successLabel.Name = "successLabel";
+            this.successLabel.Size = new System.Drawing.Size(392, 25);
+            this.successLabel.TabIndex = 29;
+            this.successLabel.Text = "Patron Successfully Added to Database";
+            this.successLabel.Visible = false;
+            this.successLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -900,31 +925,6 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 213;
             // 
-            // successLabel
-            // 
-            this.successLabel.AutoSize = true;
-            this.successLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.successLabel.ForeColor = System.Drawing.Color.LimeGreen;
-            this.successLabel.Location = new System.Drawing.Point(497, 529);
-            this.successLabel.Name = "successLabel";
-            this.successLabel.Size = new System.Drawing.Size(392, 25);
-            this.successLabel.TabIndex = 29;
-            this.successLabel.Text = "Patron Successfully Added to Database";
-            this.successLabel.Visible = false;
-            this.successLabel.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // failureLabel
-            // 
-            this.failureLabel.AutoSize = true;
-            this.failureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.failureLabel.ForeColor = System.Drawing.Color.Red;
-            this.failureLabel.Location = new System.Drawing.Point(497, 529);
-            this.failureLabel.Name = "failureLabel";
-            this.failureLabel.Size = new System.Drawing.Size(304, 25);
-            this.failureLabel.TabIndex = 30;
-            this.failureLabel.Text = "Patron Not Added to Database";
-            this.failureLabel.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -968,7 +968,6 @@
         private System.Windows.Forms.TextBox searchTextTab2;
         private System.Windows.Forms.Button searchButtonTab2;
         private System.Windows.Forms.ComboBox searchMenuTab2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart statsChart;
         private System.Windows.Forms.Button searchButtonTab3;
         private System.Windows.Forms.ComboBox searchMenuTab3;
         private System.Windows.Forms.ComboBox monthMenuTab3;
@@ -1030,6 +1029,7 @@
         public System.Windows.Forms.TextBox miTextBox;
         public System.Windows.Forms.Label successLabel;
         public System.Windows.Forms.Label failureLabel;
+        public System.Windows.Forms.DataVisualization.Charting.Chart statsChart;
     }
 }
 

@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
             server = "localhost";
             database = "patrondb";
             uid = "root";
-            password = "admin";
+            password = "root";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

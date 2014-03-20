@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
             numbers=db.getStats(query);
             MessageBox.Show(numbers[0]+" "+numbers[1]);
             var form = Form1.ActiveForm as Form1;
-            //form.stat
+            form.statsChart.Series["Children"].Points.AddXY("NumChild",numbers[1]);
         }
     }
 }
