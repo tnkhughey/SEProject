@@ -23,12 +23,13 @@ namespace WindowsFormsApplication1
              searchBy = "";
         }
 
-        public Statistics(int y, int d, int m, String searchCriteria)
+        public Statistics(int y, int m, int d, String searchCriteria)
         {
             day = d;
-            month = 1;
+            month = m;
             year = y;
             searchBy = searchCriteria;
+            MessageBox.Show(y+" "+m+" "+d+" "+searchBy);
         }
 
        /* public void showStats(Statistics s)
@@ -48,22 +49,31 @@ namespace WindowsFormsApplication1
             DBConnect db = new DBConnect();
             String query = "";
             int[] numbers = new int[1];
+            //month = Int32.Parse(month.ToString("#0"));
+            //day = Int32.Parse(day.ToString("#0"));
+            MessageBox.Show(month.ToString("D2")+" " +day.ToString("D2"));
             if (searchBy.Equals("Day"))
             {
-                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date = '" + year + "-" + month + "-" + day + "'";
+                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date = '" + year + "-" + month.ToString("D2") + "-" + day.ToString("D2") + "'";
+                MessageBox.Show(query);
             }
             else if (searchBy.Equals("Month"))
             {
-                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-" + month + "-__'";
+                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__'";
+                MessageBox.Show(query);
             }
             else
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";
+                MessageBox.Show(query);
             }
             numbers=db.getStats(query);
-            MessageBox.Show(numbers[0]+" "+numbers[1]);
             var form = Form1.ActiveForm as Form1;
-            form.statsChart.Series["Children"].Points.AddXY("NumChild",numbers[1]);
+            form.statsChart.Series["Adults"].Points.Clear();
+            form.statsChart.Series["Children"].Points.Clear();
+
+            form.statsChart.Series["Children"].Points.AddXY("Number of Children:"+numbers[1]+"       Number of Adults:"+numbers[0] ,numbers[1]);
+            form.statsChart.Series["Adults"].Points.AddXY("", numbers[0]);
         }
     }
 }
