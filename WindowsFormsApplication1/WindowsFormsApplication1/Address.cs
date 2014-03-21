@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    class Address
+    public class Address
     {
         private int id; 
        

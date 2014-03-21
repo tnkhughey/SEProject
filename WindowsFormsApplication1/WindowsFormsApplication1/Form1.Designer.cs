@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabs = new System.Windows.Forms.TabControl();
             this.addNewEntryTabPage = new System.Windows.Forms.TabPage();
             this.failureLabel = new System.Windows.Forms.Label();
@@ -68,18 +70,6 @@
             this.SearchTabPage = new System.Windows.Forms.TabPage();
             this.searchMenuTab2 = new System.Windows.Forms.ComboBox();
             this.searchDataGrid = new System.Windows.Forms.DataGridView();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.midInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetNameNumColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addr2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adults = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.children = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastVisit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchButtonTab2 = new System.Windows.Forms.Button();
             this.searchTextTab2 = new System.Windows.Forms.TextBox();
             this.searchLabelTab2 = new System.Windows.Forms.Label();
@@ -104,6 +94,19 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.midInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetNameNumColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adults = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.children = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastVisit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabs.SuspendLayout();
             this.addNewEntryTabPage.SuspendLayout();
             this.SearchTabPage.SuspendLayout();
@@ -116,6 +119,9 @@
             // 
             // tabs
             // 
+            this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabs.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabs.Controls.Add(this.addNewEntryTabPage);
             this.tabs.Controls.Add(this.SearchTabPage);
@@ -123,7 +129,7 @@
             this.tabs.Controls.Add(this.viewAllTabPage);
             this.tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabs.ItemSize = new System.Drawing.Size(150, 70);
-            this.tabs.Location = new System.Drawing.Point(-3, 0);
+            this.tabs.Location = new System.Drawing.Point(2, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(1487, 783);
@@ -194,7 +200,6 @@
             this.successLabel.TabIndex = 29;
             this.successLabel.Text = "Patron Successfully Added to Database";
             this.successLabel.Visible = false;
-            this.successLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -536,8 +541,17 @@
             this.searchDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.searchDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.searchDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.searchDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.FirstName,
             this.LastName,
             this.midInit,
@@ -550,95 +564,17 @@
             this.adults,
             this.children,
             this.lastVisit});
+            this.searchDataGrid.EnableHeadersVisualStyles = false;
             this.searchDataGrid.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.searchDataGrid.Location = new System.Drawing.Point(0, 109);
             this.searchDataGrid.Name = "searchDataGrid";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.searchDataGrid.Size = new System.Drawing.Size(1402, 499);
+            this.searchDataGrid.ReadOnly = true;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.searchDataGrid.Size = new System.Drawing.Size(1365, 499);
             this.searchDataGrid.TabIndex = 3;
-            // 
-            // FirstName
-            // 
-            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.FirstName.FillWeight = 10F;
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 236;
-            // 
-            // LastName
-            // 
-            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LastName.HeaderText = "LastName";
-            this.LastName.Name = "LastName";
-            this.LastName.Width = 233;
-            // 
-            // midInit
-            // 
-            this.midInit.HeaderText = "MI";
-            this.midInit.Name = "midInit";
-            this.midInit.Width = 90;
-            // 
-            // streetNameNumColumn1
-            // 
-            this.streetNameNumColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.streetNameNumColumn1.HeaderText = "St.Num/Name";
-            this.streetNameNumColumn1.Name = "streetNameNumColumn1";
-            this.streetNameNumColumn1.Width = 302;
-            // 
-            // cityColumnSearch
-            // 
-            this.cityColumnSearch.HeaderText = "City";
-            this.cityColumnSearch.Name = "cityColumnSearch";
-            this.cityColumnSearch.Width = 117;
-            // 
-            // stateColumnSearch
-            // 
-            this.stateColumnSearch.HeaderText = "State";
-            this.stateColumnSearch.Name = "stateColumnSearch";
-            this.stateColumnSearch.Width = 140;
-            // 
-            // zipColumnSearch
-            // 
-            this.zipColumnSearch.HeaderText = "Zip";
-            this.zipColumnSearch.Name = "zipColumnSearch";
-            this.zipColumnSearch.Width = 103;
-            // 
-            // addr2
-            // 
-            this.addr2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.addr2.HeaderText = "Address Line 2";
-            this.addr2.Name = "addr2";
-            this.addr2.Width = 260;
-            // 
-            // phone
-            // 
-            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phone.HeaderText = "Phone";
-            this.phone.Name = "phone";
-            this.phone.Width = 164;
-            // 
-            // adults
-            // 
-            this.adults.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.adults.HeaderText = "Adults";
-            this.adults.Name = "adults";
-            this.adults.Width = 160;
-            // 
-            // children
-            // 
-            this.children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.children.HeaderText = "Children";
-            this.children.Name = "children";
-            this.children.Width = 201;
-            // 
-            // lastVisit
-            // 
-            this.lastVisit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lastVisit.HeaderText = "Last Visit";
-            this.lastVisit.Name = "lastVisit";
-            this.lastVisit.Width = 194;
+            this.searchDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchDataGrid_CellContentClick);
             // 
             // searchButtonTab2
             // 
@@ -820,7 +756,15 @@
             // 
             this.viewAllDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.viewAllDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.viewAllDataGrid.ColumnHeadersHeight = 48;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.viewAllDataGrid.ColumnHeadersHeight = 41;
             this.viewAllDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -834,14 +778,16 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
+            this.viewAllDataGrid.EnableHeadersVisualStyles = false;
             this.viewAllDataGrid.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.viewAllDataGrid.Location = new System.Drawing.Point(63, 24);
+            this.viewAllDataGrid.Location = new System.Drawing.Point(3, 0);
             this.viewAllDataGrid.Name = "viewAllDataGrid";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.viewAllDataGrid.ReadOnly = true;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.viewAllDataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewAllDataGrid.Size = new System.Drawing.Size(1296, 533);
+            this.viewAllDataGrid.Size = new System.Drawing.Size(1480, 533);
             this.viewAllDataGrid.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -850,87 +796,200 @@
             this.dataGridViewTextBoxColumn1.FillWeight = 10F;
             this.dataGridViewTextBoxColumn1.HeaderText = "FirstName";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 236;
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 126;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.HeaderText = "LastName";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 233;
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 126;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "MI";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 90;
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 59;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn4.HeaderText = "StreetName/Num";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 362;
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 188;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn5.HeaderText = "Address Line 2";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 321;
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 168;
             // 
             // City
             // 
             this.City.HeaderText = "City";
             this.City.Name = "City";
-            this.City.Width = 117;
+            this.City.ReadOnly = true;
+            this.City.Width = 71;
             // 
             // State
             // 
             this.State.HeaderText = "State";
             this.State.Name = "State";
-            this.State.Width = 140;
+            this.State.ReadOnly = true;
+            this.State.Width = 83;
             // 
             // Zip
             // 
             this.Zip.HeaderText = "Zip";
             this.Zip.Name = "Zip";
-            this.Zip.Width = 103;
+            this.Zip.ReadOnly = true;
+            this.Zip.Width = 64;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn6.HeaderText = "Phone";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 164;
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 94;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.HeaderText = "Adults";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 160;
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 92;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.HeaderText = "Children";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 201;
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 110;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.HeaderText = "Last Visit";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 213;
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 116;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 53;
+            // 
+            // FirstName
+            // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.FirstName.FillWeight = 10F;
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Width = 126;
+            // 
+            // LastName
+            // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Width = 126;
+            // 
+            // midInit
+            // 
+            this.midInit.HeaderText = "MI";
+            this.midInit.Name = "midInit";
+            this.midInit.ReadOnly = true;
+            this.midInit.Width = 59;
+            // 
+            // streetNameNumColumn1
+            // 
+            this.streetNameNumColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.streetNameNumColumn1.HeaderText = "St.Num/Name";
+            this.streetNameNumColumn1.Name = "streetNameNumColumn1";
+            this.streetNameNumColumn1.ReadOnly = true;
+            this.streetNameNumColumn1.Width = 160;
+            // 
+            // cityColumnSearch
+            // 
+            this.cityColumnSearch.HeaderText = "City";
+            this.cityColumnSearch.Name = "cityColumnSearch";
+            this.cityColumnSearch.ReadOnly = true;
+            this.cityColumnSearch.Width = 71;
+            // 
+            // stateColumnSearch
+            // 
+            this.stateColumnSearch.HeaderText = "State";
+            this.stateColumnSearch.Name = "stateColumnSearch";
+            this.stateColumnSearch.ReadOnly = true;
+            this.stateColumnSearch.Width = 83;
+            // 
+            // zipColumnSearch
+            // 
+            this.zipColumnSearch.HeaderText = "Zip";
+            this.zipColumnSearch.Name = "zipColumnSearch";
+            this.zipColumnSearch.ReadOnly = true;
+            this.zipColumnSearch.Width = 64;
+            // 
+            // addr2
+            // 
+            this.addr2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.addr2.HeaderText = "Address Line 2";
+            this.addr2.Name = "addr2";
+            this.addr2.ReadOnly = true;
+            this.addr2.Width = 168;
+            // 
+            // phone
+            // 
+            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phone.HeaderText = "Phone";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            this.phone.Width = 94;
+            // 
+            // adults
+            // 
+            this.adults.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.adults.HeaderText = "Adults";
+            this.adults.Name = "adults";
+            this.adults.ReadOnly = true;
+            this.adults.Width = 92;
+            // 
+            // children
+            // 
+            this.children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.children.HeaderText = "Children";
+            this.children.Name = "children";
+            this.children.ReadOnly = true;
+            this.children.Width = 110;
+            // 
+            // lastVisit
+            // 
+            this.lastVisit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lastVisit.HeaderText = "Last Visit";
+            this.lastVisit.Name = "lastVisit";
+            this.lastVisit.ReadOnly = true;
+            this.lastVisit.Width = 116;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1489, 797);
             this.Controls.Add(this.tabs);
             this.Name = "Form1";
             this.Text = "Chard Wray Food Pantry";
@@ -999,18 +1058,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn midInit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn streetNameNumColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityColumnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateColumnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zipColumnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addr2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adults;
-        private System.Windows.Forms.DataGridViewTextBoxColumn children;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisit;
         public System.Windows.Forms.DataGridView searchDataGrid;
         public System.Windows.Forms.TabPage addNewEntryTabPage;
         public System.Windows.Forms.TextBox fNameTextBox;
@@ -1030,6 +1077,19 @@
         public System.Windows.Forms.Label successLabel;
         public System.Windows.Forms.Label failureLabel;
         public System.Windows.Forms.DataVisualization.Charting.Chart statsChart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn midInit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn streetNameNumColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityColumnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateColumnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zipColumnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addr2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn children;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisit;
     }
 }
 

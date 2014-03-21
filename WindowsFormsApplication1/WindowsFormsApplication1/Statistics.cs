@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//namespace ChardWayFoodPantryProject
+
+//Statistics class allows for user to find stats on number of adults and children who visited during a certain time
 namespace WindowsFormsApplication1
 {
     class Statistics
     {
-        private int numChild;
-        private int numAdult;
+        
         private int day;
         private int month;
         private int year;
-        private String searchBy;
+        private String searchBy;//user's can get stats by day, month or year
 
         public Statistics(){
              day=1;
@@ -23,57 +23,46 @@ namespace WindowsFormsApplication1
              searchBy = "";
         }
 
+       
         public Statistics(int y, int m, int d, String searchCriteria)
         {
             day = d;
             month = m;
             year = y;
             searchBy = searchCriteria;
-            MessageBox.Show(y+" "+m+" "+d+" "+searchBy);
         }
 
-       /* public void showStats(Statistics s)
-        {
-            DBConnect db= new DBConnect();
-            String query = "";
-            if (s.searchBy.Equals("Day"))
-            {
-                query ="SELECT numAdults, numChildren FROM previousvisits WHERE date = '"+s.year+"-"+s.month+"-"+s.day+"'";
-                db.Count(query);
-            }
-            //int[] numbers = db.SelectPatron(query);
-        }
-        */
+     
         public void showStats()
         {
             DBConnect db = new DBConnect();
             String query = "";
-            int[] numbers = new int[1];
-            //month = Int32.Parse(month.ToString("#0"));
-            //day = Int32.Parse(day.ToString("#0"));
-            MessageBox.Show(month.ToString("D2")+" " +day.ToString("D2"));
+            int[] numbers = new int[1];//holds the number of children in first element and adults in second element
+            
+            //user wants to see stats on a specific day of the year
             if (searchBy.Equals("Day"))
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date = '" + year + "-" + month.ToString("D2") + "-" + day.ToString("D2") + "'";
-                MessageBox.Show(query);
             }
+            //user wants to see stats for certain month of year
             else if (searchBy.Equals("Month"))
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__'";
-                MessageBox.Show(query);
             }
+            //get stats for whole year
             else
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";
-                MessageBox.Show(query);
             }
             numbers=db.getStats(query);
-            var form = Form1.ActiveForm as Form1;
+            var form = Form1.ActiveForm as Form1;//to access GUI elements
+            //clear any data already on the chart
             form.statsChart.Series["Adults"].Points.Clear();
             form.statsChart.Series["Children"].Points.Clear();
 
+            //Display number of children and adults for certain d
             form.statsChart.Series["Children"].Points.AddXY("Number of Children:"+numbers[1]+"       Number of Adults:"+numbers[0] ,numbers[1]);
-            form.statsChart.Series["Adults"].Points.AddXY("", numbers[0]);
+            form.statsChart.Series["Adults"].Points.AddXY("",numbers[0]);
         }
     }
 }

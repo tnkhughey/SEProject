@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    class PreviousVisit
+    public class PreviousVisit
     {
         private int numChildren;
         private int numAdults;

@@ -8,15 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-/*
- * Work left to do on this database:
- * 
- * -DeletePatron: to delete patron and associated address and visits.
- * -UpdatePatron: should be simple enough
- * -PreviousVisits: I havent given this much thought. Havn't even
- *      written the object yet. I dunno how mutators or accessors 
- *      will work yet either.
- */
+
 
 
 namespace WindowsFormsApplication1
@@ -91,7 +83,8 @@ namespace WindowsFormsApplication1
             {
                 connection.Close();
                 connection2.Close();
-                connection3.Close(); 
+                connection3.Close();
+                connection4.Close();
                 return true;
             }
             catch (MySqlException ex)
@@ -105,7 +98,8 @@ namespace WindowsFormsApplication1
         {
             connection.Close();
             connection2.Close();
-            connection3.Close(); 
+            connection3.Close();
+            connection4.Close();
         }
 
         //Query statement
@@ -168,7 +162,6 @@ namespace WindowsFormsApplication1
                         //THIS NESTED LOOP WILL NOT WORK PROPERLY IF TWO PEOPLE HAVE THE SAME PATRON_ID (which shouldn't exist anyways)
                         //The loop will assign the address of the last person with the last patron id to the object being stored 
                         stNum = dataReader2.GetString(1);
-                        //addrLine1 = dataReader2.GetString(2);
                         addrLine2 = dataReader2.GetString(2);
                         city = dataReader2.GetString(3);
                         state = dataReader2.GetString(4);
@@ -255,11 +248,7 @@ namespace WindowsFormsApplication1
 
                 String formattedDate = pat.Date.Year + "-" + pat.Date.Month + "-" + pat.Date.Day;
 
-                /*String query3 = "INSERT INTO previousvisits VALUES ('" +
-                   pat.Id + "', '" +
-                   pat.Date + "', '" +
-                   pat.NumChildren + "', '" +
-                   pat.NumAdults + "')";*/
+                
 
                 String query3 = "INSERT INTO previousvisits VALUES ('" +
                    pat.Id + "', '" +
@@ -316,7 +305,7 @@ namespace WindowsFormsApplication1
 
                     //ExecuteScalar will return one value
                     Count = int.Parse(cmd.ExecuteScalar() + "");
-                    
+ 
                     //close Connection
                     this.CloseConnection();
 

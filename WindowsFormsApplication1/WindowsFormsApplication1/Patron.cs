@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
    
     /// </summary>
     /// add mutator method for address info.
-    class Patron
+    public class Patron
     {
         private int id;
         private String firstName;

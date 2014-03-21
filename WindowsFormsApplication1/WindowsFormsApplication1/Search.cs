@@ -76,7 +76,6 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Please enter the phone # in the format:(123456789)");
 
                 }
-                MessageBox.Show("phone works");
 
             }
             //user wants to search records by date of patron's last visit
@@ -93,15 +92,11 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show("Please enter the date in the format(YYYY-MM-DD)");
                 }
-                MessageBox.Show("date works");
 
             }
         }
 
-        public void fillTable()
-        {
-           
-        }
+       
         public void edit()
         {
 
@@ -145,14 +140,7 @@ namespace WindowsFormsApplication1
                db.CloseAll();  //close all the connections. they no longer need to be open
                list = db.SelectPatron(query);//Put patron info. into list which matches query
               
-    /*        Int32 index = 0;
-            while (index < list.Count - 1)
-            {
-                if (list[index].Date == list[index + 1].Date)
-                list.RemoveAt(index);
-                else
-                index++;
-            }*/
+   
             
                var form = Form1.ActiveForm as Form1;
             //For each patorn, grab all their info. and store it into a row and add it to the GUI
@@ -163,7 +151,7 @@ namespace WindowsFormsApplication1
                    children += list[x].NumChildren;
                    String adults = "";
                    adults += list[x].NumAdults;
-                   string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
+                   string[] row = { Convert.ToString(list[x].Id), list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
                    allInfo = row;
                    form.searchDataGrid.Rows.Add(row);
                }
