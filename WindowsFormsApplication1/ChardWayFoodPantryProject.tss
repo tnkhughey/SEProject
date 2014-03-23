@@ -2,13 +2,7 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Statistics.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Patron.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Program.cs</string>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Address.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\AddNewEntry.cs</string>
@@ -17,12 +11,21 @@
       <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Search.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form1.cs</string>
-      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form1.cs</string>
-      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form1.Designer.cs</string>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form2.cs</string>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form2.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\DBConnect.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form1.cs</string>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form1.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Edit.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\RG\Documents\GitHub\SEProject\WindowsFormsApplication1\WindowsFormsApplication1\Form1.Designer.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

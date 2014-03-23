@@ -48,7 +48,7 @@ namespace WindowsFormsApplication1
         }
 
       
-
+        //When user goes to view all tab, he or she can see a table of all patrons
         private void viewAll()
         {
             DBConnect db = new DBConnect();
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
                 children += list[x].NumChildren;
                 String adults = "";
                 adults += list[x].NumAdults;
-                string[] row = { list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
+                string[] row = { Convert.ToString(list[x].Id),list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
                 viewAllDataGrid.Rows.Add(row);
             }
             db.CloseAll();
@@ -104,15 +104,27 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void searchDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void searchDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             DBConnect db = new DBConnect();
             List<Patron> list = new List<Patron>();
             String patronId = searchDataGrid[0, e.RowIndex].Value.ToString();
             list = db.SelectPatron("SELECT * FROM patron WHERE patron_id = '" + patronId + "'");
             Form2 f = new Form2();
-            f.ShowDialog();
-            Edit edit = new Edit(list[0]);
+            f.Show();     
+            Edit edit = new Edit(list[0],f);
+        }
+
+        private void viewAllDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            List<Patron> list = new List<Patron>();
+            String patronId = viewAllDataGrid[0, e.RowIndex].Value.ToString();
+            list = db.SelectPatron("SELECT * FROM patron WHERE patron_id = '" + patronId + "'");
+            Form2 f = new Form2();
+            f.Show();
+            Edit edit = new Edit(list[0], f);
         }
 
       

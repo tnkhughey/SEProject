@@ -75,6 +75,7 @@
     <Compile Include="runner.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="Statistics.cs" />
+    <Compile Include="ViewAllinfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace WindowsFormsApplication1
 {
@@ -31,5 +32,19 @@ namespace WindowsFormsApplication1
         {
 
         }
+        //Updates a patron's info. to the database 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            //Grab the textfields and store those using the update method
+            Edit updater = new Edit();
+            try
+            {
+                updater.update(fNameUpdateTextBox.Text, lNameUpdateTextBox.Text, miUpdateTextBox.Text, addrNumNameUpdateTextBox1.Text, addrUpdateTextBox2.Text, cityUpdateTextBox1.Text, stateUpdateTextBox1.Text, zipUpdateTextBox1.Text, phoneUpdateTextBox.Text, numUpdateChildTextBox.Text, numAdultsUpdateTextBox.Text, monthUpdateMenuTab1.Text, yearUpdateTab1.Text, dayUpdateMenuTab1.Text);
+            }
+            catch
+            {
+
+            }
+         }
     }
 }

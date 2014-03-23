@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         private String monthTab1;
         private String yearTab1;
         private String dayTab1;
-        Random rng = new Random();
+        Random rng = new Random();//for creating patron id
 
         public AddNewEntry()
         {
@@ -52,6 +52,7 @@ namespace WindowsFormsApplication1
             dayTab1 = "";
             
         }
+        //Takes patron info. from GUI textfields and stores
         public AddNewEntry(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String numC, String numA, String month, String year, String day)
         {
             fNameTextField = fName;
@@ -63,13 +64,13 @@ namespace WindowsFormsApplication1
             cityTextField = city;
             stateTextField = state;
             zipTextField = zip;
-            //prevVisTextField = prevVis;
             numChildTextField = numC;
             numAdultsTextField = numA;
             monthTab1 = month;
             yearTab1 = year;
             dayTab1 = day;
         }
+        //Save the patron to the database
         public void save(AddNewEntry cust)
         {
             bool rand = false; 
@@ -77,11 +78,12 @@ namespace WindowsFormsApplication1
             int count = -1;
             //need to fill in addr
             int idRand = -1; 
+            //generate a pat. id(which will be randomly generated and unique for each patron
             while (!rand)
             {
-                idRand = rng.Next(1, 1000000);
+                idRand = rng.Next(1, 1000000);//id between 1 and 1,000,000
                 String query1 = "SELECT * FROM patron WHERE id = '" + idRand + "'";
-                count = db.Count(query1);
+                count = db.Count(query1);//check to see if pat. id is taken
                 if (count == 0)
                 {
                     rand = true;
@@ -102,11 +104,11 @@ namespace WindowsFormsApplication1
             }
             catch
             {
-                var form = Form1.ActiveForm as Form1;
+                var form = Form1.ActiveForm as Form1;//produce info. message that patron did not get added
                 form.failureLabel.Visible = true;
             }
         }
-
+        //Clear textfields in GUI after patron added
         public static void EmptyTextBoxes()
         {
             var form = Form1.ActiveForm as Form1;
@@ -126,13 +128,7 @@ namespace WindowsFormsApplication1
             form.yearTab1.Text = "Year";
             form.failureLabel.Visible = false;
             form.successLabel.Visible = true;
-            /*foreach (var field in typeof(Form1).GetFields())
-            {
-                if (field.FieldType == typeof(TextBox))
-                {
-                    //Clear field
-                }
-            }*/
+            
         }
     }
 }

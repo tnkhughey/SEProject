@@ -360,30 +360,19 @@
             // 
             this.updateButton.AutoEllipsis = true;
             this.updateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.Location = new System.Drawing.Point(1025, 449);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(275, 66);
             this.updateButton.TabIndex = 55;
             this.updateButton.Text = "UPDATE";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // prevVisitsUpdate
             // 
             this.prevVisitsUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.prevVisitsUpdate.FormattingEnabled = true;
-            this.prevVisitsUpdate.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
             this.prevVisitsUpdate.Location = new System.Drawing.Point(207, 464);
             this.prevVisitsUpdate.Name = "prevVisitsUpdate";
             this.prevVisitsUpdate.Size = new System.Drawing.Size(215, 33);
@@ -427,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 607);
+            this.ClientSize = new System.Drawing.Size(1370, 607);
             this.Controls.Add(this.failureLabel);
             this.Controls.Add(this.successLabel);
             this.Controls.Add(this.prevVisitsUpdate);

@@ -15,7 +15,8 @@ namespace WindowsFormsApplication1
 {
     class DBConnect
     {
-        private MySqlConnection connection;//for connecting to patron database
+        //connections are used for connecting to database and tables
+        private MySqlConnection connection;
         private MySqlConnection connection2;
         private MySqlConnection connection3;
         private MySqlConnection connection4;
@@ -37,7 +38,7 @@ namespace WindowsFormsApplication1
             server = "localhost";
             database = "patrondb";
             uid = "root";
-            password = "admin";
+            password = "root";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -112,8 +113,10 @@ namespace WindowsFormsApplication1
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
-
+                
+                    cmd.ExecuteNonQuery();
+                
+       
                 //close connection
                 this.CloseConnection();
             }
@@ -136,14 +139,13 @@ namespace WindowsFormsApplication1
 
                 while (dataReader.Read())
                 {
-                    String id = dataReader.GetString(0);
-                    String fName = dataReader.GetString(1);
-                    String lName = dataReader.GetString(2);
+                    String id = dataReader.GetString(0);//gets id column data 
+                    String fName = dataReader.GetString(1);//gets first name column data
+                    String lName = dataReader.GetString(2);//continues...
                     String mInitial = dataReader.GetString(3);
                     String phone = dataReader.GetString(4);
 
                     String stNum = "";
-                    String addrLine1 = "";
                     String addrLine2 = "";
                     String city = "";
                     String state = "";
@@ -179,10 +181,10 @@ namespace WindowsFormsApplication1
 
 
                     connection3.Open();
+                    //get patron prev.visit data based on id
                     String query3 = "SELECT * FROM previousvisits WHERE patron_id = '" + id + "'";
                     MySqlCommand cmd3 = new MySqlCommand(query3, connection3);
                     MySqlDataReader dataReader3 = cmd3.ExecuteReader();
-                    //  MessageBox.Show("jjd" + date.ToString() + " " + numChild + " " + numAdult);
 
                     while (dataReader3.Read())
                     {
@@ -202,12 +204,12 @@ namespace WindowsFormsApplication1
 
 
 
-
+                    //Build data for patron
                     Address address = new Address(Int32.Parse(id), stNum, addrLine2, city, state, zip);
                     PreviousVisit prevVis = new PreviousVisit(Int32.Parse(id), numChild, numAdult, date);
                     Patron patron = new Patron(Int32.Parse(id), fName, lName, mInitial, phone, address, prevVis);
 
-                    list.Add(patron);
+                    list.Add(patron);//add the patron to the list until all patrons of query are selected
                 }
 
                 //close Data Reader
@@ -226,17 +228,19 @@ namespace WindowsFormsApplication1
             }
         }
 
+        //Add a new patron to the database
         public void addPatron(Patron pat)
         {
             if (this.OpenConnection() == true)
             {
+                //patron table 
                 String query1 = "INSERT INTO patron VALUES ('" +
                     pat.Id + "', '" +
                     pat.FirstName + "', '" +
                     pat.LastName + "', '" +
                     pat.MiddleInitial + "', '" +
                     pat.Phone + "')";
-
+                //address table
                 String query2 = "INSERT INTO address VALUES ('" +
                    pat.Id + "', '" +
                   
@@ -246,10 +250,11 @@ namespace WindowsFormsApplication1
                    pat.State + "', '" +
                    pat.Zip + "')";
 
+                //Date should be YYYY-MM-DD format
                 String formattedDate = pat.Date.Year + "-" + pat.Date.Month + "-" + pat.Date.Day;
 
                 
-
+                //previsousvisits table
                 String query3 = "INSERT INTO previousvisits VALUES ('" +
                    pat.Id + "', '" +
                    formattedDate + "', '" +
@@ -267,6 +272,7 @@ namespace WindowsFormsApplication1
             }
         }
 
+        //Delete a patron from the database based on patron id
         public void deletePatron(int id)
         {
 
@@ -327,21 +333,27 @@ namespace WindowsFormsApplication1
         //Get adult and children statistics based on time
         public int[] getStats(String query)
         {
-            int[] stats = new int[2];
-            //DBConnect db = new DBConnect();
-            connection4.Open();
-            if (this.OpenConnection() == true)
+            int[] stats = new int[2];//first element will have number of children and second element will have adults
+
+            try
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection4);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-                int count = 0;
-                while (dataReader.Read())
+                connection4.Open();//open a connection
+                if (this.OpenConnection() == true)
                 {
-                    stats[0] = stats[0] + (int)dataReader.GetInt32(0);//get adults
-                    stats[1] = stats[1] + (int)dataReader.GetInt32(1);//get children
+                    MySqlCommand cmd = new MySqlCommand(query, connection4);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        stats[0] = stats[0] + (int)dataReader.GetInt32(0);//get sum of adults
+                        stats[1] = stats[1] + (int)dataReader.GetInt32(1);//get sum of children
+                    }
                 }
+                return stats;
             }
-            return stats;
+            catch
+            {
+                return stats;
+            }
         }
 
         //Backup

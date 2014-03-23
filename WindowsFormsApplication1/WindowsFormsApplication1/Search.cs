@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
                 }
             }
             //user wants to search records by phone number
-            if (criteriaMenuText.Equals("Phone"))
+            else if (criteriaMenuText.Equals("Phone"))
             {
                 try
                 {
@@ -80,7 +80,7 @@ namespace WindowsFormsApplication1
             }
             //user wants to search records by date of patron's last visit
             //format of date is YYYY-MM-DD
-            if (criteriaMenuText.Equals("LastVisit"))
+            else if (criteriaMenuText.Equals("LastVisit"))
             {
                 try
                 {
@@ -94,20 +94,44 @@ namespace WindowsFormsApplication1
                 }
 
             }
+            else if (criteriaMenuText.Equals("First Name"))
+            {
+                try
+                {
+                    searchCriteriaColumn = "firstName";
+                    searchTextField = textField;
+                    selection = criteriaMenuText;
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter first name in this format: Bob");
+                }
+
+            }
+            else if(criteriaMenuText.Equals("Last Name"))
+            {
+                try
+                {
+                    searchCriteriaColumn = "lastName";
+                    searchTextField = textField;
+                    selection = criteriaMenuText;
+                }
+                catch
+                {
+                    MessageBox.Show("Please enter last name in this format: Smith");
+                }
+
+            }
+
         }
 
        
-        public void edit()
-        {
-
-
-        }
+        
         //Takes a Search obj that has all user input
         public void searchInformation(Search search)
         {
-           String[] allInfo=null;
+
            DBConnect db = new DBConnect();
-           String[] criteriaSelected=null;
            int count =0;//the number of patrons to be added to the table
            String query = "";//the SQL query for the database
             //Create SQL statements. Look at database for column names and variable information.
@@ -124,13 +148,21 @@ namespace WindowsFormsApplication1
                query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
                count = db.Count(query);
            }
+           else if(search.selection.Equals("First Name")){
+              //get just data that matches first name of patron
+               query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
+               count = db.Count(query);
+           }
+           else if (search.selection.Equals("Last Name"))
+           {
+               //get data that just matches last name of patron
+               query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
+               count = db.Count(query);
+           }
            else
            {
                //get all patron info. where their previous visit matches user input
-              // query = "SELECT * FROM patron WHERE patron_id= (SELECT patron_id FROM previousvisits WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "')";
-             //  query = "SELECT * FROM patron,previousvisits WHERE p.patron_id=v.patron_id AND v.date=" + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
                 query = "SELECT * FROM patron WHERE patron_id IN (SELECT patron_id FROM previousvisits WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "')";
-
                count = db.Count(query);
            }
                
@@ -146,13 +178,14 @@ namespace WindowsFormsApplication1
             //For each patorn, grab all their info. and store it into a row and add it to the GUI
                for (int x = 0; x < list.Count; x++)
                {
+                   //Format the date
                    String date = list[x].Date.Month + "/" + list[x].Date.Day + "/" + list[x].Date.Year;
                    String children = "";
                    children += list[x].NumChildren;
                    String adults = "";
                    adults += list[x].NumAdults;
+                   //Insert data into rows. The id goes into a hidden column. It is used for identifying patrons using the Edit class
                    string[] row = { Convert.ToString(list[x].Id), list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
-                   allInfo = row;
                    form.searchDataGrid.Rows.Add(row);
                }
            
