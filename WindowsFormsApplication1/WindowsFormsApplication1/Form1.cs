@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
 
             viewAll();
             
+            
         }
 
        
@@ -43,23 +44,24 @@ namespace WindowsFormsApplication1
         {
             AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
             adder.save(adder);
-            viewAllDataGrid.Rows.Clear();
             viewAll();
         }
 
       
         //When user goes to view all tab, he or she can see a table of all patrons
-        private void viewAll()
+        public void viewAll()
         {
+            viewAllDataGrid.Rows.Clear(); //To prevent repeat entries
             DBConnect db = new DBConnect();
             //<!---------VIEW ALL POPULATOR---------->
             int count = db.Count("SELECT * FROM patron");
 
             String[] rows = new String[count];
 
-            List<Patron> list = new List<Patron>();
+            List<Patron> list = new List<Patron>();         //Get all patron information in database, put them in a list
             list = db.SelectPatron("SELECT * FROM patron");
 
+            //for each patron in list, add their information into their own row in the viewAll grid
             for (int x = 0; x < list.Count; x++)
             {
                 String date = list[x].Date.Month + "/" + list[x].Date.Day + "/" + list[x].Date.Year;
@@ -70,11 +72,13 @@ namespace WindowsFormsApplication1
                 string[] row = { Convert.ToString(list[x].Id),list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
                 viewAllDataGrid.Rows.Add(row);
             }
-            db.CloseAll();
-            dataGridViewTextBoxColumn2.DataGridView.Sort(dataGridViewTextBoxColumn2, ListSortDirection.Ascending);
+            db.CloseAll(); //close all database connections
+            dataGridViewTextBoxColumn2.DataGridView.Sort(dataGridViewTextBoxColumn2, ListSortDirection.Ascending); //sort the viewAll grid alphabetically
             viewAllDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans", 15F,
-            System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))); //set font style
             //<!---------END VIEW ALL POPULATOR---------->
+
+            MessageBox.Show("This  works, yo");
         }
 
         //Searches for a patron based on first and last name, last time visited, or phone number
@@ -125,6 +129,12 @@ namespace WindowsFormsApplication1
             Form2 f = new Form2();
             f.Show();
             Edit edit = new Edit(list[0], f);
+        }
+
+        private void tab1Button1_Click(object sender, System.EventArgs e)
+        {
+            //if (e.
+            viewAll();
         }
 
       

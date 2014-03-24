@@ -59,6 +59,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.failureLabel = new System.Windows.Forms.Label();
             this.successLabel = new System.Windows.Forms.Label();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.idLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -395,9 +397,9 @@
             this.failureLabel.ForeColor = System.Drawing.Color.Red;
             this.failureLabel.Location = new System.Drawing.Point(609, 472);
             this.failureLabel.Name = "failureLabel";
-            this.failureLabel.Size = new System.Drawing.Size(304, 25);
+            this.failureLabel.Size = new System.Drawing.Size(323, 25);
             this.failureLabel.TabIndex = 59;
-            this.failureLabel.Text = "Patron Not Added to Database";
+            this.failureLabel.Text = "Patron Not Updated to Database";
             this.failureLabel.Visible = false;
             // 
             // successLabel
@@ -407,16 +409,40 @@
             this.successLabel.ForeColor = System.Drawing.Color.LimeGreen;
             this.successLabel.Location = new System.Drawing.Point(609, 472);
             this.successLabel.Name = "successLabel";
-            this.successLabel.Size = new System.Drawing.Size(392, 25);
+            this.successLabel.Size = new System.Drawing.Size(411, 25);
             this.successLabel.TabIndex = 58;
-            this.successLabel.Text = "Patron Successfully Added to Database";
+            this.successLabel.Text = "Patron Successfully Updated to Database";
             this.successLabel.Visible = false;
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.idTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.idTextBox.Location = new System.Drawing.Point(582, 29);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(315, 31);
+            this.idTextBox.TabIndex = 60;
+            this.idTextBox.Visible = false;
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.idLabel.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.idLabel.Location = new System.Drawing.Point(544, 33);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(32, 25);
+            this.idLabel.TabIndex = 61;
+            this.idLabel.Text = "ID";
+            this.idLabel.Visible = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 607);
+            this.Controls.Add(this.idLabel);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.failureLabel);
             this.Controls.Add(this.successLabel);
             this.Controls.Add(this.prevVisitsUpdate);
@@ -489,5 +515,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label failureLabel;
         public System.Windows.Forms.Label successLabel;
+        public System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.Label idLabel;
     }
 }

@@ -130,7 +130,6 @@ namespace WindowsFormsApplication1
         //Takes a Search obj that has all user input
         public void searchInformation(Search search)
         {
-
            DBConnect db = new DBConnect();
            int count =0;//the number of patrons to be added to the table
            String query = "";//the SQL query for the database

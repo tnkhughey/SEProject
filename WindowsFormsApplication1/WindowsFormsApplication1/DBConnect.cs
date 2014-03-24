@@ -37,8 +37,8 @@ namespace WindowsFormsApplication1
         {
             server = "localhost";
             database = "patrondb";
-            uid = "root";
-            password = "root";
+            uid = "admin";
+            password = "admin";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -120,6 +120,37 @@ namespace WindowsFormsApplication1
                 //close connection
                 this.CloseConnection();
             }
+        }
+
+        public List<PreviousVisit> SelectPreviousVisit(String query)
+        {
+            List<PreviousVisit> list = new List<PreviousVisit>();
+            if (this.OpenConnection() == true)
+            {
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int id = 0;
+                    int numChild = 0;
+                    int numAdult = 0;
+                    DateTime date = new DateTime();
+                    //get patron prev.visit data based on id
+                    id = (int)dataReader.GetValue(0);
+                    date = (DateTime)dataReader.GetValue(1);
+                    numChild = (int)dataReader.GetValue(2);
+                    numAdult = (int)dataReader.GetValue(3);
+                    PreviousVisit prevVis = new PreviousVisit(id, numChild, numAdult, date);
+                    list.Add(prevVis);
+                }
+                connection.Close();
+                dataReader.Close();
+            }
+            return list;
         }
 
         //Select statement
