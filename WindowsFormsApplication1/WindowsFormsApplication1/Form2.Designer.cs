@@ -61,6 +61,7 @@
             this.successLabel = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
+            this.addNewVisit = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -175,11 +176,12 @@
             "29",
             "30",
             "31"});
-            this.dayUpdateMenuTab1.Location = new System.Drawing.Point(349, 420);
+            this.dayUpdateMenuTab1.Location = new System.Drawing.Point(349, 516);
             this.dayUpdateMenuTab1.Name = "dayUpdateMenuTab1";
             this.dayUpdateMenuTab1.Size = new System.Drawing.Size(121, 33);
             this.dayUpdateMenuTab1.TabIndex = 46;
             this.dayUpdateMenuTab1.Text = "Day";
+            this.dayUpdateMenuTab1.Visible = false;
             // 
             // monthUpdateMenuTab1
             // 
@@ -198,39 +200,43 @@
             "October",
             "November",
             "December"});
-            this.monthUpdateMenuTab1.Location = new System.Drawing.Point(165, 416);
+            this.monthUpdateMenuTab1.Location = new System.Drawing.Point(165, 512);
             this.monthUpdateMenuTab1.Name = "monthUpdateMenuTab1";
             this.monthUpdateMenuTab1.Size = new System.Drawing.Size(121, 33);
             this.monthUpdateMenuTab1.TabIndex = 45;
             this.monthUpdateMenuTab1.Text = "Month";
+            this.monthUpdateMenuTab1.Visible = false;
             // 
             // yearUpdateTab1
             // 
             this.yearUpdateTab1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.yearUpdateTab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.yearUpdateTab1.Location = new System.Drawing.Point(549, 422);
+            this.yearUpdateTab1.Location = new System.Drawing.Point(549, 518);
             this.yearUpdateTab1.Name = "yearUpdateTab1";
             this.yearUpdateTab1.Size = new System.Drawing.Size(208, 31);
             this.yearUpdateTab1.TabIndex = 44;
             this.yearUpdateTab1.Text = "Year";
+            this.yearUpdateTab1.Visible = false;
             // 
             // numUpdateChildTextBox
             // 
             this.numUpdateChildTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numUpdateChildTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numUpdateChildTextBox.Location = new System.Drawing.Point(217, 366);
+            this.numUpdateChildTextBox.Location = new System.Drawing.Point(217, 462);
             this.numUpdateChildTextBox.Name = "numUpdateChildTextBox";
             this.numUpdateChildTextBox.Size = new System.Drawing.Size(315, 31);
             this.numUpdateChildTextBox.TabIndex = 43;
+            this.numUpdateChildTextBox.Visible = false;
             // 
             // numAdultsUpdateTextBox
             // 
             this.numAdultsUpdateTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numAdultsUpdateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numAdultsUpdateTextBox.Location = new System.Drawing.Point(207, 308);
+            this.numAdultsUpdateTextBox.Location = new System.Drawing.Point(207, 404);
             this.numAdultsUpdateTextBox.Name = "numAdultsUpdateTextBox";
             this.numAdultsUpdateTextBox.Size = new System.Drawing.Size(315, 31);
             this.numAdultsUpdateTextBox.TabIndex = 42;
+            this.numAdultsUpdateTextBox.Visible = false;
             this.numAdultsUpdateTextBox.TextChanged += new System.EventHandler(this.numAdultsTextBox_TextChanged);
             // 
             // phoneUpdateTextBox
@@ -282,31 +288,34 @@
             // 
             this.dateVistLabelTab1.AutoSize = true;
             this.dateVistLabelTab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.dateVistLabelTab1.Location = new System.Drawing.Point(17, 420);
+            this.dateVistLabelTab1.Location = new System.Drawing.Point(17, 516);
             this.dateVistLabelTab1.Name = "dateVistLabelTab1";
             this.dateVistLabelTab1.Size = new System.Drawing.Size(128, 25);
             this.dateVistLabelTab1.TabIndex = 36;
             this.dateVistLabelTab1.Text = "Date of Visit";
+            this.dateVistLabelTab1.Visible = false;
             // 
             // numChildLabel
             // 
             this.numChildLabel.AutoSize = true;
             this.numChildLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numChildLabel.Location = new System.Drawing.Point(14, 366);
+            this.numChildLabel.Location = new System.Drawing.Point(14, 462);
             this.numChildLabel.Name = "numChildLabel";
             this.numChildLabel.Size = new System.Drawing.Size(197, 25);
             this.numChildLabel.TabIndex = 35;
             this.numChildLabel.Text = "Number of Children";
+            this.numChildLabel.Visible = false;
             // 
             // numAdultsLabel
             // 
             this.numAdultsLabel.AutoSize = true;
             this.numAdultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numAdultsLabel.Location = new System.Drawing.Point(15, 314);
+            this.numAdultsLabel.Location = new System.Drawing.Point(15, 410);
             this.numAdultsLabel.Name = "numAdultsLabel";
             this.numAdultsLabel.Size = new System.Drawing.Size(177, 25);
             this.numAdultsLabel.TabIndex = 34;
             this.numAdultsLabel.Text = "Number of Adults";
+            this.numAdultsLabel.Visible = false;
             // 
             // phoneLabel2
             // 
@@ -375,7 +384,7 @@
             // 
             this.prevVisitsUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.prevVisitsUpdate.FormattingEnabled = true;
-            this.prevVisitsUpdate.Location = new System.Drawing.Point(207, 464);
+            this.prevVisitsUpdate.Location = new System.Drawing.Point(210, 313);
             this.prevVisitsUpdate.Name = "prevVisitsUpdate";
             this.prevVisitsUpdate.Size = new System.Drawing.Size(215, 33);
             this.prevVisitsUpdate.TabIndex = 57;
@@ -384,7 +393,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label2.Location = new System.Drawing.Point(14, 472);
+            this.label2.Location = new System.Drawing.Point(17, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 25);
             this.label2.TabIndex = 56;
@@ -436,11 +445,24 @@
             this.idLabel.Text = "ID";
             this.idLabel.Visible = false;
             // 
+            // addNewVisit
+            // 
+            this.addNewVisit.AutoSize = true;
+            this.addNewVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.addNewVisit.Location = new System.Drawing.Point(32, 369);
+            this.addNewVisit.Name = "addNewVisit";
+            this.addNewVisit.Size = new System.Drawing.Size(147, 28);
+            this.addNewVisit.TabIndex = 62;
+            this.addNewVisit.Text = "Add New Visit";
+            this.addNewVisit.UseVisualStyleBackColor = true;
+            this.addNewVisit.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 607);
+            this.Controls.Add(this.addNewVisit);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.failureLabel);
@@ -502,9 +524,6 @@
         public System.Windows.Forms.TextBox miUpdateTextBox;
         public System.Windows.Forms.TextBox lNameUpdateTextBox;
         public System.Windows.Forms.TextBox fNameUpdateTextBox;
-        private System.Windows.Forms.Label dateVistLabelTab1;
-        private System.Windows.Forms.Label numChildLabel;
-        private System.Windows.Forms.Label numAdultsLabel;
         private System.Windows.Forms.Label phoneLabel2;
         private System.Windows.Forms.Label addrNumName1;
         private System.Windows.Forms.Label miLabel;
@@ -517,5 +536,9 @@
         public System.Windows.Forms.Label successLabel;
         public System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label idLabel;
+        public System.Windows.Forms.CheckBox addNewVisit;
+        public System.Windows.Forms.Label dateVistLabelTab1;
+        public System.Windows.Forms.Label numChildLabel;
+        public System.Windows.Forms.Label numAdultsLabel;
     }
 }

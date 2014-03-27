@@ -29,8 +29,15 @@ namespace WindowsFormsApplication1
             */
 
             InitializeComponent();
-            
 
+            tabs.ImageList = imageList1;
+           // tabs.TabPages.IndexOf(addNewEntryTabPage).
+            ///imageList1.
+            //tabs.TabPages.
+            //tabs.SelectedTab.ImageKey.Insert(0, "tabKey1");
+            //tabs.TabPages.
+            //tabs.TabPages.Add("tabKey1", "ADD NEW ENTRY", 0);
+            //tabs.TabPages.
             viewAll();
             
             
@@ -77,8 +84,6 @@ namespace WindowsFormsApplication1
             viewAllDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans", 15F,
             System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))); //set font style
             //<!---------END VIEW ALL POPULATOR---------->
-
-            MessageBox.Show("This  works, yo");
         }
 
         //Searches for a patron based on first and last name, last time visited, or phone number
@@ -133,7 +138,7 @@ namespace WindowsFormsApplication1
 
         private void tab1Button1_Click(object sender, System.EventArgs e)
         {
-            //if (e.
+            //if (e.TabNumber -this doesnt work
             viewAll();
         }
 

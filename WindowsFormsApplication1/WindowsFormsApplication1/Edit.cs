@@ -44,12 +44,12 @@ namespace WindowsFormsApplication1
             form.cityUpdateTextBox1.Text = pat.City;
             form.stateUpdateTextBox1.Text = pat.State;
             form.zipUpdateTextBox1.Text = pat.Zip;
-            form.numAdultsUpdateTextBox.Text = Convert.ToString(pat.NumAdults);
-            form.numUpdateChildTextBox.Text = Convert.ToString(pat.NumChildren);
+            form.numAdultsUpdateTextBox.Text = ""; //Convert.ToString(pat.NumAdults);
+            form.numUpdateChildTextBox.Text = ""; // Convert.ToString(pat.NumChildren);
             form.phoneUpdateTextBox.Text = pat.Phone;
-            form.monthUpdateMenuTab1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(pat.Date.Month);
-            form.dayUpdateMenuTab1.Text = pat.Date.Day.ToString();
-            form.yearUpdateTab1.Text = pat.Date.Year.ToString();
+            form.monthUpdateMenuTab1.Text = "Month";//CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(pat.Date.Month);
+            form.dayUpdateMenuTab1.Text = "Day";//pat.Date.Day.ToString();
+            form.yearUpdateTab1.Text = "Year"; // pat.Date.Year.ToString();
             form.idTextBox.Text = pat.Id.ToString();
             //id = pat.Id.ToString(); 
 
@@ -102,6 +102,45 @@ namespace WindowsFormsApplication1
                 db.Query(query1);
                 db.Query(query2);
                 db.Query(query3);
+
+                db.CloseAll();
+                var form = Form2.ActiveForm as Form2;
+                form.failureLabel.Visible = false;
+                form.successLabel.Visible = true;//Display success
+            }
+            catch
+            {
+                var form = Form2.ActiveForm as Form2;
+                form.failureLabel.Visible = true;//Display patron not updated
+            }
+        }
+        public void updateNoPrevVisit(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String id)
+        {
+            DBConnect db = new DBConnect();
+            //query1 and 2 are not fully correct. Need to add in correct patron id. All ids we are currently getting are 0
+            //We may want to just do a select query using fname, lastname, phone, addr, to identify correct patron. Then we can get id
+            //Also, do we need to update previousvisits?
+            try
+            {
+                //Different queries for different tables
+                String query1 = "UPDATE patron SET firstName = '" +
+                    fName + "', lastName = '" +
+                    lName + "', middleInitial = '" +
+                    mi + "', phone = '" +
+                    phone +
+                    "' WHERE patron_id = '" + id + "'";
+
+                String query2 = "UPDATE address SET streetNum = '" +
+                    streetNameNum + "', addressLine2 = '" +
+                    addr2 + "', city = '" +
+                    city + "', state = '" +
+                    state + "', zip = '" +
+                    zip +
+                    "' WHERE patron_id='" + id + "'";
+
+                //Need to convert month into proper DateTime format YYYY-MM-DD          
+                db.Query(query1);
+                db.Query(query2);
 
                 db.CloseAll();
                 var form = Form2.ActiveForm as Form2;
