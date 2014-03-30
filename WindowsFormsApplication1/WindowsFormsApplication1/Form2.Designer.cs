@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label1 = new System.Windows.Forms.Label();
             this.addrUpdateTextBox2 = new System.Windows.Forms.TextBox();
             this.zipLabel1 = new System.Windows.Forms.Label();
@@ -477,9 +478,9 @@
             this.confirmDeleteCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.confirmDeleteCheckBox.Location = new System.Drawing.Point(1025, 573);
             this.confirmDeleteCheckBox.Name = "confirmDeleteCheckBox";
-            this.confirmDeleteCheckBox.Size = new System.Drawing.Size(174, 28);
+            this.confirmDeleteCheckBox.Size = new System.Drawing.Size(168, 28);
             this.confirmDeleteCheckBox.TabIndex = 64;
-            this.confirmDeleteCheckBox.Text = "Cornfirm Deletion";
+            this.confirmDeleteCheckBox.Text = "Confirm Deletion";
             this.confirmDeleteCheckBox.UseVisualStyleBackColor = true;
             this.confirmDeleteCheckBox.Visible = false;
             this.confirmDeleteCheckBox.CheckedChanged += new System.EventHandler(this.confirmDeleteCheckBox_CheckedChanged);
@@ -525,9 +526,9 @@
             this.Controls.Add(this.miLabel);
             this.Controls.Add(this.lNameLabel);
             this.Controls.Add(this.fNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,10 +28,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         //Updates a patron's info. to the database 
         private void updateButton_Click(object sender, EventArgs e)
         {
