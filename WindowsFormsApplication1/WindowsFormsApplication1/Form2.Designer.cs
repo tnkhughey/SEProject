@@ -528,7 +528,7 @@
             this.Controls.Add(this.fNameLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Updater";
             this.ResumeLayout(false);
             this.PerformLayout();
 
