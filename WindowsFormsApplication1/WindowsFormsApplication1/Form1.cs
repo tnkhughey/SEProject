@@ -115,25 +115,40 @@ namespace WindowsFormsApplication1
 
         private void searchDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
 
-            DBConnect db = new DBConnect();
-            List<Patron> list = new List<Patron>();
-            String patronId = searchDataGrid[0, e.RowIndex].Value.ToString();
-            list = db.SelectPatron("SELECT * FROM patron WHERE patron_id = '" + patronId + "'");
-            Form2 f = new Form2();
-            f.Show();     
-            Edit edit = new Edit(list[0],f);
+                DBConnect db = new DBConnect();
+                List<Patron> list = new List<Patron>();
+                String patronId = searchDataGrid[0, e.RowIndex].Value.ToString();
+                list = db.SelectPatron("SELECT * FROM patron WHERE patron_id = '" + patronId + "'");
+                Form2 f = new Form2();
+                f.Show();
+                Edit edit = new Edit(list[0], f);
+            }
+            catch
+            {
+
+            }
         }
 
         private void viewAllDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DBConnect db = new DBConnect();
-            List<Patron> list = new List<Patron>();
-            String patronId = viewAllDataGrid[0, e.RowIndex].Value.ToString();
-            list = db.SelectPatron("SELECT * FROM patron WHERE patron_id = '" + patronId + "'");
-            Form2 f = new Form2();
-            f.Show();
-            Edit edit = new Edit(list[0], f);
+            try
+            {
+
+                DBConnect db = new DBConnect();
+                List<Patron> list = new List<Patron>();
+                String patronId = viewAllDataGrid[0, e.RowIndex].Value.ToString();
+                list = db.SelectPatron("SELECT * FROM patron WHERE patron_id = '" + patronId + "'");
+                Form2 f = new Form2();
+                f.Show();
+                Edit edit = new Edit(list[0], f);
+            }
+            catch
+            {
+
+            }
         }
 
         private void tab1Button1_Click(object sender, System.EventArgs e)

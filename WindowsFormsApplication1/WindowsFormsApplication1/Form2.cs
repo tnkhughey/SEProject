@@ -84,7 +84,26 @@ namespace WindowsFormsApplication1
             }
         }
 
-        
+        private void deleteCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (deleteCheckBox.Checked)
+            {
+                var form = Form2.ActiveForm as Form2;
+                form.confirmDeleteCheckBox.Visible = true;
+            }
+            else
+            {
+                var form = Form2.ActiveForm as Form2;
+                form.confirmDeleteCheckBox.Visible = false;
+
+            }
+        }
+
+        private void confirmDeleteCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            db.deletePatron(Convert.ToInt32(idTextBox.Text));
+        }
 
     }
 }

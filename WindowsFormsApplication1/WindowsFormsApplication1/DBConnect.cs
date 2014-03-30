@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
         {
             server = "localhost";
             database = "patrondb";
-            uid = "admin";
+            uid = "root";
             password = "admin";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
@@ -321,7 +321,7 @@ namespace WindowsFormsApplication1
                 cmd2.ExecuteNonQuery();
                 cmd3.ExecuteNonQuery();
 
-                this.CloseConnection();
+                CloseAll(); 
             }
 
 

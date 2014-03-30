@@ -62,6 +62,8 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.addNewVisit = new System.Windows.Forms.CheckBox();
+            this.deleteCheckBox = new System.Windows.Forms.CheckBox();
+            this.confirmDeleteCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -457,11 +459,38 @@
             this.addNewVisit.UseVisualStyleBackColor = true;
             this.addNewVisit.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // deleteCheckBox
+            // 
+            this.deleteCheckBox.AutoSize = true;
+            this.deleteCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.deleteCheckBox.Location = new System.Drawing.Point(1025, 539);
+            this.deleteCheckBox.Name = "deleteCheckBox";
+            this.deleteCheckBox.Size = new System.Drawing.Size(175, 28);
+            this.deleteCheckBox.TabIndex = 63;
+            this.deleteCheckBox.Text = "Delete this Patron";
+            this.deleteCheckBox.UseVisualStyleBackColor = true;
+            this.deleteCheckBox.CheckedChanged += new System.EventHandler(this.deleteCheckBox_CheckedChanged);
+            // 
+            // confirmDeleteCheckBox
+            // 
+            this.confirmDeleteCheckBox.AutoSize = true;
+            this.confirmDeleteCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.confirmDeleteCheckBox.Location = new System.Drawing.Point(1025, 573);
+            this.confirmDeleteCheckBox.Name = "confirmDeleteCheckBox";
+            this.confirmDeleteCheckBox.Size = new System.Drawing.Size(174, 28);
+            this.confirmDeleteCheckBox.TabIndex = 64;
+            this.confirmDeleteCheckBox.Text = "Cornfirm Deletion";
+            this.confirmDeleteCheckBox.UseVisualStyleBackColor = true;
+            this.confirmDeleteCheckBox.Visible = false;
+            this.confirmDeleteCheckBox.CheckedChanged += new System.EventHandler(this.confirmDeleteCheckBox_CheckedChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 607);
+            this.Controls.Add(this.confirmDeleteCheckBox);
+            this.Controls.Add(this.deleteCheckBox);
             this.Controls.Add(this.addNewVisit);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.idTextBox);
@@ -540,5 +569,7 @@
         public System.Windows.Forms.Label dateVistLabelTab1;
         public System.Windows.Forms.Label numChildLabel;
         public System.Windows.Forms.Label numAdultsLabel;
+        public System.Windows.Forms.CheckBox deleteCheckBox;
+        public System.Windows.Forms.CheckBox confirmDeleteCheckBox;
     }
 }
