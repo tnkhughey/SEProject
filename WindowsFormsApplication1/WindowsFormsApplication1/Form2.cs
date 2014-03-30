@@ -49,6 +49,11 @@ namespace WindowsFormsApplication1
                 {
                     updater.updateNoPrevVisit(fNameUpdateTextBox.Text, lNameUpdateTextBox.Text, miUpdateTextBox.Text, addrNumNameUpdateTextBox1.Text, addrUpdateTextBox2.Text, cityUpdateTextBox1.Text, stateUpdateTextBox1.Text, zipUpdateTextBox1.Text, phoneUpdateTextBox.Text, idTextBox.Text);
                 }
+                if (confirmDeleteCheckBox.Checked)
+                {
+                    DBConnect db = new DBConnect();
+                    db.deletePatron(Convert.ToInt32(idTextBox.Text)); 
+                }
             }
             catch
             {
@@ -101,9 +106,7 @@ namespace WindowsFormsApplication1
 
         private void confirmDeleteCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            DBConnect db = new DBConnect();
-            db.deletePatron(Convert.ToInt32(idTextBox.Text));
-        }
 
+        }
     }
 }
