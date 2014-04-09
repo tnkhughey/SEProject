@@ -32,6 +32,19 @@ namespace WindowsFormsApplication1
             searchBy = searchCriteria;
         }
 
+        public Statistics(int y, String searchCriteria)
+        {
+            year = y;
+            searchBy = searchCriteria;
+        }
+
+        public Statistics(int y, int m, String searchCriteria)
+        {
+            month = m;
+            year = y;
+            searchBy = searchCriteria;
+        }
+
      
         public void showStats()
         {

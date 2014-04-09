@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabs = new System.Windows.Forms.TabControl();
             this.addNewEntryTabPage = new System.Windows.Forms.TabPage();
@@ -92,7 +92,7 @@
             this.yearMenuTab3 = new System.Windows.Forms.TextBox();
             this.statsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.searchButtonTab3 = new System.Windows.Forms.Button();
-            this.searchMenuTab3 = new System.Windows.Forms.ComboBox();
+            this.searchCriteria3 = new System.Windows.Forms.ComboBox();
             this.monthMenuTab3 = new System.Windows.Forms.ComboBox();
             this.dayMenuTab3 = new System.Windows.Forms.ComboBox();
             this.viewAllTabPage = new System.Windows.Forms.TabPage();
@@ -229,7 +229,7 @@
             this.addrTextBox2.Location = new System.Drawing.Point(220, 219);
             this.addrTextBox2.Name = "addrTextBox2";
             this.addrTextBox2.Size = new System.Drawing.Size(315, 31);
-            this.addrTextBox2.TabIndex = 27;
+            this.addrTextBox2.TabIndex = 16;
             // 
             // zipLabel1
             // 
@@ -248,7 +248,7 @@
             this.zipTextBox1.Location = new System.Drawing.Point(1232, 165);
             this.zipTextBox1.Name = "zipTextBox1";
             this.zipTextBox1.Size = new System.Drawing.Size(90, 31);
-            this.zipTextBox1.TabIndex = 25;
+            this.zipTextBox1.TabIndex = 15;
             // 
             // stateTextBox1
             // 
@@ -257,7 +257,7 @@
             this.stateTextBox1.Location = new System.Drawing.Point(1067, 165);
             this.stateTextBox1.Name = "stateTextBox1";
             this.stateTextBox1.Size = new System.Drawing.Size(90, 31);
-            this.stateTextBox1.TabIndex = 24;
+            this.stateTextBox1.TabIndex = 14;
             // 
             // stateLabel1
             // 
@@ -276,7 +276,7 @@
             this.cityTextBox1.Location = new System.Drawing.Point(776, 171);
             this.cityTextBox1.Name = "cityTextBox1";
             this.cityTextBox1.Size = new System.Drawing.Size(189, 31);
-            this.cityTextBox1.TabIndex = 22;
+            this.cityTextBox1.TabIndex = 13;
             // 
             // cityLabelTab1
             // 
@@ -295,7 +295,7 @@
             this.saveButton.Location = new System.Drawing.Point(932, 505);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(275, 66);
-            this.saveButton.TabIndex = 20;
+            this.saveButton.TabIndex = 23;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -339,7 +339,7 @@
             this.dayMenuTab1.Location = new System.Drawing.Point(360, 433);
             this.dayMenuTab1.Name = "dayMenuTab1";
             this.dayMenuTab1.Size = new System.Drawing.Size(121, 33);
-            this.dayMenuTab1.TabIndex = 19;
+            this.dayMenuTab1.TabIndex = 21;
             this.dayMenuTab1.Text = "Day";
             // 
             // monthMenuTab1
@@ -362,7 +362,7 @@
             this.monthMenuTab1.Location = new System.Drawing.Point(176, 429);
             this.monthMenuTab1.Name = "monthMenuTab1";
             this.monthMenuTab1.Size = new System.Drawing.Size(121, 33);
-            this.monthMenuTab1.TabIndex = 18;
+            this.monthMenuTab1.TabIndex = 20;
             this.monthMenuTab1.Text = "Month";
             // 
             // yearTab1
@@ -372,7 +372,7 @@
             this.yearTab1.Location = new System.Drawing.Point(502, 431);
             this.yearTab1.Name = "yearTab1";
             this.yearTab1.Size = new System.Drawing.Size(208, 31);
-            this.yearTab1.TabIndex = 17;
+            this.yearTab1.TabIndex = 22;
             this.yearTab1.Text = "Year";
             // 
             // numChildTextBox
@@ -382,7 +382,7 @@
             this.numChildTextBox.Location = new System.Drawing.Point(230, 374);
             this.numChildTextBox.Name = "numChildTextBox";
             this.numChildTextBox.Size = new System.Drawing.Size(315, 31);
-            this.numChildTextBox.TabIndex = 16;
+            this.numChildTextBox.TabIndex = 19;
             // 
             // numAdultsTextBox
             // 
@@ -391,7 +391,7 @@
             this.numAdultsTextBox.Location = new System.Drawing.Point(220, 316);
             this.numAdultsTextBox.Name = "numAdultsTextBox";
             this.numAdultsTextBox.Size = new System.Drawing.Size(315, 31);
-            this.numAdultsTextBox.TabIndex = 15;
+            this.numAdultsTextBox.TabIndex = 18;
             // 
             // phoneTextBox
             // 
@@ -400,7 +400,7 @@
             this.phoneTextBox.Location = new System.Drawing.Point(120, 266);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(315, 31);
-            this.phoneTextBox.TabIndex = 14;
+            this.phoneTextBox.TabIndex = 17;
             // 
             // addrNumNameTextBox1
             // 
@@ -557,14 +557,14 @@
             this.searchDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.searchDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.searchDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.searchDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -585,9 +585,9 @@
             this.searchDataGrid.Location = new System.Drawing.Point(0, 109);
             this.searchDataGrid.Name = "searchDataGrid";
             this.searchDataGrid.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.searchDataGrid.Size = new System.Drawing.Size(1365, 499);
             this.searchDataGrid.TabIndex = 3;
             this.searchDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchDataGrid_CellClick);
@@ -725,7 +725,7 @@
             this.statsTabPage.Controls.Add(this.yearMenuTab3);
             this.statsTabPage.Controls.Add(this.statsChart);
             this.statsTabPage.Controls.Add(this.searchButtonTab3);
-            this.statsTabPage.Controls.Add(this.searchMenuTab3);
+            this.statsTabPage.Controls.Add(this.searchCriteria3);
             this.statsTabPage.Controls.Add(this.monthMenuTab3);
             this.statsTabPage.Controls.Add(this.dayMenuTab3);
             this.statsTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
@@ -746,25 +746,26 @@
             this.yearMenuTab3.Size = new System.Drawing.Size(173, 35);
             this.yearMenuTab3.TabIndex = 25;
             this.yearMenuTab3.Text = "Year";
+            this.yearMenuTab3.Visible = false;
             // 
             // statsChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.statsChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.statsChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.statsChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.statsChart.Legends.Add(legend2);
             this.statsChart.Location = new System.Drawing.Point(172, 111);
             this.statsChart.Name = "statsChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.Lime;
-            series1.Legend = "Legend1";
-            series1.Name = "Children";
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.Blue;
-            series2.Legend = "Legend1";
-            series2.Name = "Adults";
-            this.statsChart.Series.Add(series1);
-            this.statsChart.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.Lime;
+            series3.Legend = "Legend1";
+            series3.Name = "Children";
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.Blue;
+            series4.Legend = "Legend1";
+            series4.Name = "Adults";
+            this.statsChart.Series.Add(series3);
+            this.statsChart.Series.Add(series4);
             this.statsChart.Size = new System.Drawing.Size(880, 431);
             this.statsChart.TabIndex = 24;
             this.statsChart.Text = "chart1";
@@ -779,19 +780,20 @@
             this.searchButtonTab3.UseVisualStyleBackColor = true;
             this.searchButtonTab3.Click += new System.EventHandler(this.searchButtonTab3_Click);
             // 
-            // searchMenuTab3
+            // searchCriteria3
             // 
-            this.searchMenuTab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchMenuTab3.FormattingEnabled = true;
-            this.searchMenuTab3.Items.AddRange(new object[] {
+            this.searchCriteria3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchCriteria3.FormattingEnabled = true;
+            this.searchCriteria3.Items.AddRange(new object[] {
             "Year",
             "Month",
             "Day"});
-            this.searchMenuTab3.Location = new System.Drawing.Point(42, 33);
-            this.searchMenuTab3.Name = "searchMenuTab3";
-            this.searchMenuTab3.Size = new System.Drawing.Size(262, 37);
-            this.searchMenuTab3.TabIndex = 22;
-            this.searchMenuTab3.Text = "Search Criteria";
+            this.searchCriteria3.Location = new System.Drawing.Point(42, 33);
+            this.searchCriteria3.Name = "searchCriteria3";
+            this.searchCriteria3.Size = new System.Drawing.Size(262, 37);
+            this.searchCriteria3.TabIndex = 22;
+            this.searchCriteria3.Text = "Search Criteria";
+            this.searchCriteria3.SelectedIndexChanged += new System.EventHandler(this.searchMenuTab3_SelectedIndexChanged);
             // 
             // monthMenuTab3
             // 
@@ -815,6 +817,7 @@
             this.monthMenuTab3.Size = new System.Drawing.Size(229, 37);
             this.monthMenuTab3.TabIndex = 21;
             this.monthMenuTab3.Text = "January";
+            this.monthMenuTab3.Visible = false;
             // 
             // dayMenuTab3
             // 
@@ -857,6 +860,7 @@
             this.dayMenuTab3.Size = new System.Drawing.Size(223, 37);
             this.dayMenuTab3.TabIndex = 20;
             this.dayMenuTab3.Text = "Day";
+            this.dayMenuTab3.Visible = false;
             // 
             // viewAllTabPage
             // 
@@ -875,14 +879,14 @@
             // 
             this.viewAllDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.viewAllDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewAllDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.viewAllDataGrid.ColumnHeadersHeight = 41;
             this.viewAllDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdViewAll,
@@ -903,9 +907,9 @@
             this.viewAllDataGrid.Location = new System.Drawing.Point(3, 0);
             this.viewAllDataGrid.Name = "viewAllDataGrid";
             this.viewAllDataGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.viewAllDataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.viewAllDataGrid.Size = new System.Drawing.Size(1480, 533);
             this.viewAllDataGrid.TabIndex = 4;
@@ -1064,9 +1068,6 @@
         private System.Windows.Forms.TextBox searchTextTab2;
         private System.Windows.Forms.Button searchButtonTab2;
         private System.Windows.Forms.Button searchButtonTab3;
-        private System.Windows.Forms.ComboBox searchMenuTab3;
-        private System.Windows.Forms.ComboBox monthMenuTab3;
-        private System.Windows.Forms.ComboBox dayMenuTab3;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllMiddleInitial;
@@ -1076,7 +1077,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllAdults;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllChildren;
         private System.Windows.Forms.DataGridViewTextBoxColumn viewAllPrevVisit;
-        private System.Windows.Forms.TextBox yearMenuTab3;
         private System.Windows.Forms.Label cityLabelTab1;
         private System.Windows.Forms.Label stateLabel1;
         private System.Windows.Forms.Label zipLabel1;
@@ -1131,6 +1131,10 @@
         public System.Windows.Forms.TabControl tabs;
         public System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.TabPage SearchTabPage;
+        public System.Windows.Forms.ComboBox searchCriteria3;
+        public System.Windows.Forms.ComboBox monthMenuTab3;
+        public System.Windows.Forms.ComboBox dayMenuTab3;
+        public System.Windows.Forms.TextBox yearMenuTab3;
         //[TypeConverterAttribute(typeof(ImageIndexConverter))]
         public int ImageIndex { get; set; }
     }

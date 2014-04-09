@@ -102,9 +102,23 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                int month = DateTime.ParseExact(monthMenuTab3.Text, "MMMM", CultureInfo.CurrentCulture).Month;//need to convert month name to int
-                Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), month, Int32.Parse(dayMenuTab3.Text), searchMenuTab3.Text);//pass year, month and day
-                stat.showStats();//put stats on chart
+                if (searchCriteria3.Text == "Year")
+                {
+                    Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), searchCriteria3.Text); //pass year
+                    stat.showStats();//put stats on chart
+                }
+                if (searchCriteria3.Text == "Month")
+                {
+                    int month = DateTime.ParseExact(monthMenuTab3.Text, "MMMM", CultureInfo.CurrentCulture).Month;//need to convert month name to int
+                    Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), month, searchCriteria3.Text);//pass year, month and day
+                    stat.showStats();//put stats on chart
+                }
+                if (searchCriteria3.Text == "Day")
+                {
+                    int month = DateTime.ParseExact(monthMenuTab3.Text, "MMMM", CultureInfo.CurrentCulture).Month;//need to convert month name to int
+                    Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), month, Int32.Parse(dayMenuTab3.Text), searchCriteria3.Text);//pass year, month and day
+                    stat.showStats();//put stats on chart
+                }
 
             }
             catch
@@ -155,6 +169,29 @@ namespace WindowsFormsApplication1
         {
             //if (e.TabNumber -this doesnt work
             viewAll();
+        }
+
+        private void searchMenuTab3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (searchCriteria3.Text == "Year")
+            {
+                monthMenuTab3.Visible = false;
+                dayMenuTab3.Visible = false; 
+                yearMenuTab3.Visible = true;
+            }
+            if (searchCriteria3.Text == "Month")
+            {
+                monthMenuTab3.Visible = true;
+                dayMenuTab3.Visible = false;
+                yearMenuTab3.Visible = true;
+            }
+            if (searchCriteria3.Text == "Day")
+            {
+                monthMenuTab3.Visible = true;
+                dayMenuTab3.Visible = true;
+                yearMenuTab3.Visible = true;
+            } 
+
         }
 
       
