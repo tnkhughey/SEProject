@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -21,10 +20,10 @@ namespace WindowsFormsApplication1
         private MySqlConnection connection3;
         private MySqlConnection connection4;
 
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
+        private string server;//The name or IP address of server
+        private string database;//The name of the database which holds the tables for patron, address, and previous visit information
+        private string uid;//login username
+        private string password;//login password
 
         //Constructor
         public DBConnect()
@@ -113,10 +112,8 @@ namespace WindowsFormsApplication1
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
+                cmd.ExecuteNonQuery();
                 
-                    cmd.ExecuteNonQuery();
-                
-       
                 //close connection
                 this.CloseConnection();
             }
@@ -139,11 +136,10 @@ namespace WindowsFormsApplication1
                     int numChild = 0;
                     int numAdult = 0;
                     DateTime date = new DateTime();
-                    //get patron prev.visit data based on id
-                    id = (int)dataReader.GetValue(0);
-                    date = (DateTime)dataReader.GetValue(1);
-                    numChild = (int)dataReader.GetValue(2);
-                    numAdult = (int)dataReader.GetValue(3);
+                    id = (int)dataReader.GetValue(0);//Grab the id in the first column
+                    date = (DateTime)dataReader.GetValue(1);//Grab the date in the second column
+                    numChild = (int)dataReader.GetValue(2);//number on children in third column
+                    numAdult = (int)dataReader.GetValue(3);//number of adults in fourth column
                     PreviousVisit prevVis = new PreviousVisit(id, numChild, numAdult, date);
                     list.Add(prevVis);
                 }
@@ -199,8 +195,6 @@ namespace WindowsFormsApplication1
                         city = dataReader2.GetString(3);
                         state = dataReader2.GetString(4);
                         zip = dataReader2.GetString(5);
-                      
-
                     }
 
 
@@ -292,6 +286,7 @@ namespace WindowsFormsApplication1
                    pat.NumChildren + "', '" +
                    pat.NumAdults + "')";
 
+                
                 MySqlCommand cmd1 = new MySqlCommand(query1, connection);
                 MySqlCommand cmd2 = new MySqlCommand(query2, connection);
                 MySqlCommand cmd3 = new MySqlCommand(query3, connection);
@@ -375,8 +370,8 @@ namespace WindowsFormsApplication1
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        stats[0] = stats[0] + (int)dataReader.GetInt32(0);//get sum of adults
-                        stats[1] = stats[1] + (int)dataReader.GetInt32(1);//get sum of children
+                        stats[0] = stats[0] + (int)dataReader.GetInt32(0);//sum the number of adults for the given time frame from the query
+                        stats[1] = stats[1] + (int)dataReader.GetInt32(1);//sum the number of children
                     }
                 }
                 return stats;

@@ -7,20 +7,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 
+//The purpose of this class is mainly to be used with the Updater Form.
+//A user can change, delete or add data for a patron.
 namespace WindowsFormsApplication1
 {
-    //May need to add another button to save new visit? 
-    //Updater method: check comments below
+    
     public class Edit
     {
         Patron myPatron;
-        //private String id; 
         private String monthTab;
         private String yearTab;
         private String dayTab;
@@ -33,6 +32,8 @@ namespace WindowsFormsApplication1
             dayTab = "";
         }
         
+        //pat: the patron to be edited/viewed
+        //form:The Updater form(Form2)
         public Edit(Patron pat,Form2 form)
         {
             myPatron = new Patron();
@@ -44,34 +45,33 @@ namespace WindowsFormsApplication1
             form.cityUpdateTextBox1.Text = pat.City;
             form.stateUpdateTextBox1.Text = pat.State;
             form.zipUpdateTextBox1.Text = pat.Zip;
-            form.numAdultsUpdateTextBox.Text = ""; //Convert.ToString(pat.NumAdults);
-            form.numUpdateChildTextBox.Text = ""; // Convert.ToString(pat.NumChildren);
+            form.numAdultsUpdateTextBox.Text = ""; 
+            form.numUpdateChildTextBox.Text = ""; 
             form.phoneUpdateTextBox.Text = pat.Phone;
-            form.monthUpdateMenuTab1.Text = "Month";//CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(pat.Date.Month);
-            form.dayUpdateMenuTab1.Text = "Day";//pat.Date.Day.ToString();
-            form.yearUpdateTab1.Text = "Year"; // pat.Date.Year.ToString();
+            form.monthUpdateMenuTab1.Text = "Month";
+            form.dayUpdateMenuTab1.Text = "Day";
+            form.yearUpdateTab1.Text = "Year"; 
             form.idTextBox.Text = pat.Id.ToString();
-            //id = pat.Id.ToString(); 
 
-            //Populate prev. visits
+            //Populate prev. visits by getting patron visits from table
             DBConnect db=new DBConnect();
             String query="";
             query="SELECT * FROM previousvisits WHERE patron_id='"+pat.Id+"'";
             List<PreviousVisit> p = new List<PreviousVisit>();
             p=db.SelectPreviousVisit(query);
+            //Add in the previous visit dates to the drop down menu "Previous Visits"
             for (int x = 0; x < p.Count; x++)
                 form.prevVisitsUpdate.Items.Add(p.ElementAt(x).Date);
         }
+
         //Takes input from text fields in GUI and updates = patron info. 
         public void update(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String numC, String numA, String month, String year, String day, String id)
         {
             DBConnect db = new DBConnect();
-            //query1 and 2 are not fully correct. Need to add in correct patron id. All ids we are currently getting are 0
-            //We may want to just do a select query using fname, lastname, phone, addr, to identify correct patron. Then we can get id
-            //Also, do we need to update previousvisits?
+           
             try
             {
-                int formattedMonth = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month;
+                int formattedMonth = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month;//Convert a month name to the months corresponding number. Ex: Decemeber-> 12
                 String formattedDate = year + "-" + formattedMonth + "-" + Convert.ToInt32(day).ToString("D2") ;
                 //Different queries for different tables
                 String query1 = "UPDATE patron SET firstName = '" + 
@@ -108,18 +108,21 @@ namespace WindowsFormsApplication1
                 form.failureLabel.Visible = false;
                 form.successLabel.Visible = true;//Display success
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show("Cannot add patron's visit two times on same day");
                 var form = Form2.ActiveForm as Form2;
                 form.failureLabel.Visible = true;//Display patron not updated
+                form.successLabel.Visible = false;
+
             }
         }
+
+        //Update patron info. without adding a new visit
         public void updateNoPrevVisit(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String id)
         {
             DBConnect db = new DBConnect();
-            //query1 and 2 are not fully correct. Need to add in correct patron id. All ids we are currently getting are 0
-            //We may want to just do a select query using fname, lastname, phone, addr, to identify correct patron. Then we can get id
-            //Also, do we need to update previousvisits?
+           
             try
             {
                 //Different queries for different tables
@@ -138,7 +141,6 @@ namespace WindowsFormsApplication1
                     zip +
                     "' WHERE patron_id='" + id + "'";
 
-                //Need to convert month into proper DateTime format YYYY-MM-DD          
                 db.Query(query1);
                 db.Query(query2);
 

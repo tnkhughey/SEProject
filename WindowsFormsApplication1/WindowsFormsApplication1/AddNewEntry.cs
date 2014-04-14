@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
         private String dayTab1;
         Random rng = new Random();//for creating patron id
 
+        //Default AddNewEntry Constructor
         public AddNewEntry()
         {
             fNameTextField = "";
@@ -52,7 +53,7 @@ namespace WindowsFormsApplication1
             dayTab1 = "";
             
         }
-        //Takes patron info. from GUI textfields and stores
+        //Takes patron info. from GUI textfields and stores into object
         public AddNewEntry(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String numC, String numA, String month, String year, String day)
         {
             fNameTextField = fName;
@@ -93,19 +94,30 @@ namespace WindowsFormsApplication1
             try
             {
                 Address addr = new Address(idRand, cust.streetNumNameTextField, cust.addrTextField2, cust.cityTextField, cust.stateTextField, cust.zipTextField);
+                
+                //Format the date in the format "YYYY-MM-DD"
                 int month = DateTime.ParseExact(cust.monthTab1, "MMMM", CultureInfo.CurrentCulture).Month;
                 DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), month, Convert.ToInt32(cust.dayTab1));
-
+             
                 PreviousVisit pv = new PreviousVisit(idRand, Convert.ToInt32(cust.numChildTextField), Convert.ToInt32(cust.numAdultsTextField), d1);
                 Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.phoneTextField, addr, pv);
+               
+                //Add to the database the user's entry
                 db.addPatron(p);
+                //Close all connections
                 db.CloseAll();
                 EmptyTextBoxes();
+
+                //produce info. message that patron did  get added
+                var form = Form1.ActiveForm as Form1;
+                form.successLabel.Visible = true;
             }
             catch
             {
-                var form = Form1.ActiveForm as Form1;//produce info. message that patron did not get added
+                //produce info. message that patron did not get added
+                var form = Form1.ActiveForm as Form1;
                 form.failureLabel.Visible = true;
+                form.successLabel.Visible = false;
             }
         }
         //Clear textfields in GUI after patron added
@@ -127,7 +139,6 @@ namespace WindowsFormsApplication1
             form.dayMenuTab1.SelectedIndex = 0;
             form.yearTab1.Text = "Year";
             form.failureLabel.Visible = false;
-            form.successLabel.Visible = true;
             
         }
     }

@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
              searchBy = "";
         }
 
-       
+       //For getting data by a specific day
         public Statistics(int y, int m, int d, String searchCriteria)
         {
             day = d;
@@ -32,12 +32,14 @@ namespace WindowsFormsApplication1
             searchBy = searchCriteria;
         }
 
+        //For getting data by a specific year
         public Statistics(int y, String searchCriteria)
         {
             year = y;
             searchBy = searchCriteria;
         }
 
+        //For getting data by a specific month
         public Statistics(int y, int m, String searchCriteria)
         {
             month = m;
