@@ -129,9 +129,9 @@ namespace WindowsFormsApplication1
             form.miTextBox.Clear();
             form.addrNumNameTextBox1.Clear();
             form.addrTextBox2.Clear();
-            form.cityTextBox1.Clear();
-            form.stateTextBox1.Clear();
-            form.zipTextBox1.Clear();
+            form.cityTextBox1.Text = "Milledgeville";
+            form.stateTextBox1.Text = "GA";
+            form.zipTextBox1.Text = "31061";
             form.numAdultsTextBox.Clear();
             form.numChildTextBox.Clear();
             form.phoneTextBox.Clear();

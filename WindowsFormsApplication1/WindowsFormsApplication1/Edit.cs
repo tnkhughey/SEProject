@@ -56,12 +56,15 @@ namespace WindowsFormsApplication1
             //Populate prev. visits by getting patron visits from table
             DBConnect db=new DBConnect();
             String query="";
-            query="SELECT * FROM previousvisits WHERE patron_id='"+pat.Id+"'";
+            query="SELECT * FROM previousvisits WHERE patron_id='"+pat.Id+"' ORDER BY date DESC";
             List<PreviousVisit> p = new List<PreviousVisit>();
             p=db.SelectPreviousVisit(query);
             //Add in the previous visit dates to the drop down menu "Previous Visits"
             for (int x = 0; x < p.Count; x++)
-                form.prevVisitsUpdate.Items.Add(p.ElementAt(x).Date);
+            {
+                String[] row = { p.ElementAt(x).Date.ToShortDateString(), p.ElementAt(x).NumAdults.ToString(), p.ElementAt(x).NumChildren.ToString()  };
+                form.prevVisitsDataGrid.Rows.Add(row); 
+            }
         }
 
         //Takes input from text fields in GUI and updates = patron info. 

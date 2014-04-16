@@ -76,8 +76,8 @@ namespace WindowsFormsApplication1
             form.statsChart.Series["Children"].Points.Clear();
 
             //Display number of children and adults for certain d
-            form.statsChart.Series["Children"].Points.AddXY("Number of Children:"+numbers[1]+"       Number of Adults:"+numbers[0] ,numbers[1]);
-            form.statsChart.Series["Adults"].Points.AddXY("",numbers[0]);
+            form.statsChart.Series["Adults"].Points.AddXY("Number of Adults:"+numbers[1]+"       Number of Children:"+numbers[0] ,numbers[1]);
+            form.statsChart.Series["Children"].Points.AddXY("",numbers[0]);
         }
     }
 }

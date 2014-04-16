@@ -23,10 +23,15 @@ namespace WindowsFormsApplication1
             viewAll();
            // DBConnect db = new DBConnect();
            // db.Query("BACKUP DATABASE [patrondb] TO DISK = 'C:\\Users\\AS143_student\\Documents\\dumps\\Dump20140415-1.sql';");
+            cityTextBox1.Text = "Milledgeville";
+            stateTextBox1.Text = "GA";
+            zipTextBox1.Text = "31061";
+
             DateTime saveNow = DateTime.Now;
             monthMenuTab1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(saveNow.Month);//convert int to month name
             dayMenuTab1.Text = saveNow.Day+"";
             yearTab1.Text = saveNow.Year + "";
+
         }
 
        
@@ -178,11 +183,5 @@ namespace WindowsFormsApplication1
             } 
 
         }
-
-      
-
-      
-
-        
     }
 }
