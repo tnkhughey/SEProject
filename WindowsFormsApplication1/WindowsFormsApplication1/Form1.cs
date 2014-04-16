@@ -15,32 +15,18 @@ namespace WindowsFormsApplication1
 
         public Form1()
         {
-            /*
-             * dataGridView2
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllFirstName;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllLastName;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllMiddleInitial;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllAddressLine1;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllAddressLine2;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllPhone;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllAdults;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllChildren;
-            private System.Windows.Forms.DataGridViewTextBoxColumn viewAllPrevVisit;
-            */
-
+           
             InitializeComponent();
 
             tabs.ImageList = imageList1;
-           // tabs.TabPages.IndexOf(addNewEntryTabPage).
-            ///imageList1.
-            //tabs.TabPages.
-            //tabs.SelectedTab.ImageKey.Insert(0, "tabKey1");
-            //tabs.TabPages.
-            //tabs.TabPages.Add("tabKey1", "ADD NEW ENTRY", 0);
-            //tabs.TabPages.
+           
             viewAll();
-            
-            
+           // DBConnect db = new DBConnect();
+           // db.Query("BACKUP DATABASE [patrondb] TO DISK = 'C:\\Users\\AS143_student\\Documents\\dumps\\Dump20140415-1.sql';");
+            DateTime saveNow = DateTime.Now;
+            monthMenuTab1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(saveNow.Month);//convert int to month name
+            dayMenuTab1.Text = saveNow.Day+"";
+            yearTab1.Text = saveNow.Year + "";
         }
 
        
@@ -167,7 +153,6 @@ namespace WindowsFormsApplication1
 
         private void tab1Button1_Click(object sender, System.EventArgs e)
         {
-            //if (e.TabNumber -this doesnt work
             viewAll();
         }
 

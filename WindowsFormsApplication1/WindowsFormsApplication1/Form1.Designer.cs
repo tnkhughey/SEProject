@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabs = new System.Windows.Forms.TabControl();
             this.addNewEntryTabPage = new System.Windows.Forms.TabPage();
@@ -373,7 +373,7 @@
             this.yearTab1.Name = "yearTab1";
             this.yearTab1.Size = new System.Drawing.Size(208, 31);
             this.yearTab1.TabIndex = 22;
-            this.yearTab1.Text = "Year";
+            this.yearTab1.Text = "2014";
             // 
             // numChildTextBox
             // 
@@ -388,7 +388,7 @@
             // 
             this.numAdultsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numAdultsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numAdultsTextBox.Location = new System.Drawing.Point(220, 316);
+            this.numAdultsTextBox.Location = new System.Drawing.Point(230, 316);
             this.numAdultsTextBox.Name = "numAdultsTextBox";
             this.numAdultsTextBox.Size = new System.Drawing.Size(315, 31);
             this.numAdultsTextBox.TabIndex = 18;
@@ -452,7 +452,7 @@
             // 
             this.numChildLabel.AutoSize = true;
             this.numChildLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numChildLabel.Location = new System.Drawing.Point(27, 374);
+            this.numChildLabel.Location = new System.Drawing.Point(28, 322);
             this.numChildLabel.Name = "numChildLabel";
             this.numChildLabel.Size = new System.Drawing.Size(197, 25);
             this.numChildLabel.TabIndex = 7;
@@ -462,7 +462,7 @@
             // 
             this.numAdultsLabel.AutoSize = true;
             this.numAdultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.numAdultsLabel.Location = new System.Drawing.Point(28, 322);
+            this.numAdultsLabel.Location = new System.Drawing.Point(28, 374);
             this.numAdultsLabel.Name = "numAdultsLabel";
             this.numAdultsLabel.Size = new System.Drawing.Size(177, 25);
             this.numAdultsLabel.TabIndex = 6;
@@ -557,14 +557,14 @@
             this.searchDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.searchDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.searchDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.searchDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -585,9 +585,9 @@
             this.searchDataGrid.Location = new System.Drawing.Point(0, 109);
             this.searchDataGrid.Name = "searchDataGrid";
             this.searchDataGrid.ReadOnly = true;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.searchDataGrid.Size = new System.Drawing.Size(1365, 499);
             this.searchDataGrid.TabIndex = 3;
             this.searchDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchDataGrid_CellClick);
@@ -750,22 +750,22 @@
             // 
             // statsChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.statsChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.statsChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.statsChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.statsChart.Legends.Add(legend1);
             this.statsChart.Location = new System.Drawing.Point(172, 111);
             this.statsChart.Name = "statsChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.Lime;
-            series3.Legend = "Legend1";
-            series3.Name = "Children";
-            series4.ChartArea = "ChartArea1";
-            series4.Color = System.Drawing.Color.Blue;
-            series4.Legend = "Legend1";
-            series4.Name = "Adults";
-            this.statsChart.Series.Add(series3);
-            this.statsChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.Lime;
+            series1.Legend = "Legend1";
+            series1.Name = "Children";
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.Blue;
+            series2.Legend = "Legend1";
+            series2.Name = "Adults";
+            this.statsChart.Series.Add(series1);
+            this.statsChart.Series.Add(series2);
             this.statsChart.Size = new System.Drawing.Size(880, 431);
             this.statsChart.TabIndex = 24;
             this.statsChart.Text = "chart1";
@@ -879,14 +879,14 @@
             // 
             this.viewAllDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.viewAllDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewAllDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.viewAllDataGrid.ColumnHeadersHeight = 41;
             this.viewAllDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdViewAll,
@@ -907,9 +907,9 @@
             this.viewAllDataGrid.Location = new System.Drawing.Point(3, 0);
             this.viewAllDataGrid.Name = "viewAllDataGrid";
             this.viewAllDataGrid.ReadOnly = true;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewAllDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.viewAllDataGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.viewAllDataGrid.Size = new System.Drawing.Size(1480, 533);
             this.viewAllDataGrid.TabIndex = 4;
