@@ -64,7 +64,33 @@ namespace WindowsFormsApplication1
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__'";
             }
-            //get stats for whole year
+            else if (searchBy.Equals("Week"))
+            {
+                //Maybe get d,m,and y and then get week by looking at date picked
+
+                var cal = System.Globalization.DateTimeFormatInfo.CurrentInfo.Calendar;
+                var ms = cal.GetWeekOfYear(new DateTime(year, month, day), System.Globalization.CalendarWeekRule.FirstDay, System.DayOfWeek.Sunday);
+                //cal.get
+                MessageBox.Show(ms.ToString());//gets week number
+                //DateTime saveNow = cal.GetWeekOfYear(new DateTime(year, month, day), System.Globalization.CalendarWeekRule.FirstDay, System.DayOfWeek.Sunday);
+                DateTime saveNow = new DateTime(year, month, day);
+
+                MessageBox.Show(saveNow.ToShortDateString());
+                DayOfWeek d = new DayOfWeek();
+                MessageBox.Show(d.ToString());
+                int diff = saveNow.DayOfWeek - d;
+                if (diff < 0)
+                {
+                    diff += 7;
+                }
+                MessageBox.Show("" + saveNow.AddDays(-1 * diff).Date.Year + "Is htis working" + saveNow.AddDays(-1 * diff + 7).Date.Month + "  " + saveNow.AddDays((-1 * diff) + 7).Date.Day);
+                // d.Day = day;
+                // d.Month = month;
+
+                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date BETWEEN '" + saveNow.AddDays(-1 * diff).Date.Year + "-" + saveNow.AddDays(-1 * diff).Date.Month + "-"
+                    + saveNow.AddDays(-1 * diff).Date.Day + "' AND '" + saveNow.AddDays((-1 * diff) + 7).Date.Year + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Month + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Day + "'";
+                //get stats for whole year
+            }
             else
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";

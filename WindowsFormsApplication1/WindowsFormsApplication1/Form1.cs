@@ -43,6 +43,10 @@ namespace WindowsFormsApplication1
             AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
             adder.save(adder);
             viewAll();
+            DateTime saveNow = DateTime.Now;
+            monthMenuTab1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(saveNow.Month);//convert int to month name
+            dayMenuTab1.Text = saveNow.Day + "";
+            yearTab1.Text = saveNow.Year + "";
         }
 
       
@@ -104,7 +108,7 @@ namespace WindowsFormsApplication1
                     Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), month, searchCriteria3.Text);//pass year, month and day
                     stat.showStats();//put stats on chart
                 }
-                if (searchCriteria3.Text == "Day")
+                if (searchCriteria3.Text == "Day" || searchCriteria3.Text == "Week")
                 {
                     int month = DateTime.ParseExact(monthMenuTab3.Text, "MMMM", CultureInfo.CurrentCulture).Month;//need to convert month name to int
                     Statistics stat = new Statistics(Int32.Parse(yearMenuTab3.Text), month, Int32.Parse(dayMenuTab3.Text), searchCriteria3.Text);//pass year, month and day
@@ -175,7 +179,7 @@ namespace WindowsFormsApplication1
                 dayMenuTab3.Visible = false;
                 yearMenuTab3.Visible = true;
             }
-            if (searchCriteria3.Text == "Day")
+            if (searchCriteria3.Text == "Day" || searchCriteria3.Text == "Week")
             {
                 monthMenuTab3.Visible = true;
                 dayMenuTab3.Visible = true;
