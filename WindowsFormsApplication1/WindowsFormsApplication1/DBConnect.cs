@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 
 
@@ -19,6 +21,7 @@ namespace WindowsFormsApplication1
         private MySqlConnection connection2;
         private MySqlConnection connection3;
         private MySqlConnection connection4;
+        private MySqlConnection connection5;
 
         private string server;//The name or IP address of server
         private string database;//The name of the database which holds the tables for patron, address, and previous visit information
@@ -37,7 +40,7 @@ namespace WindowsFormsApplication1
             server = "localhost";
             database = "patrondb";
             uid = "root";
-            password = "root";
+            password = "admin";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -46,6 +49,7 @@ namespace WindowsFormsApplication1
             connection2 = new MySqlConnection(connectionString);
             connection3 = new MySqlConnection(connectionString);
             connection4 = new MySqlConnection(connectionString);
+            connection5 = new MySqlConnection(connectionString);
         }
 
         private bool OpenConnection()
@@ -268,7 +272,7 @@ namespace WindowsFormsApplication1
                 //address table
                 String query2 = "INSERT INTO address VALUES ('" +
                    pat.Id + "', '" +
-                  
+
                    pat.StreetName1 + "', '" +
                    pat.AddressLine2 + "', '" +
                    pat.City + "', '" +
@@ -278,7 +282,7 @@ namespace WindowsFormsApplication1
                 //Date should be YYYY-MM-DD format
                 String formattedDate = pat.Date.Year + "-" + pat.Date.Month + "-" + pat.Date.Day;
 
-                
+
                 //previsousvisits table
                 String query3 = "INSERT INTO previousvisits VALUES ('" +
                    pat.Id + "', '" +
@@ -286,7 +290,7 @@ namespace WindowsFormsApplication1
                    pat.NumChildren + "', '" +
                    pat.NumAdults + "')";
 
-                
+
                 MySqlCommand cmd1 = new MySqlCommand(query1, connection);
                 MySqlCommand cmd2 = new MySqlCommand(query2, connection);
                 MySqlCommand cmd3 = new MySqlCommand(query3, connection);
@@ -316,7 +320,8 @@ namespace WindowsFormsApplication1
                 cmd2.ExecuteNonQuery();
                 cmd3.ExecuteNonQuery();
 
-                CloseAll(); 
+                CloseAll();
+                //Backup();
             }
 
 
@@ -382,10 +387,26 @@ namespace WindowsFormsApplication1
             }
         }
 
+       
         //Backup
         public void Backup()
         {
+            String cmdChange = "C:\\Program Files (x86)\\MySQL\\MySQL Workbench CE 6.0.9";
+            String strCmdText;
+            String userName = "root";
+            String pass = "admin";
+            String storageLocation = "C:\\Users\\AS143_student\\Documents\\dumps\\pd.sql";
+            strCmdText = "mysqldump -u" + userName + " -p" + pass + "patrondb > " + storageLocation;
+            String back = "/C cd " +cmdChange+"&"+strCmdText;
+            Process.Start("CMD.exe", back);
+            
+            //MySqlScript script = new MySqlScript(connection5, File.ReadAllText("C:\\Users\\AS143_student\\Documents\\dumps\\pd.sql"));
+            //script.Delimiter = "$$";
+            //script.Execute();
+            CloseAll();
         }
+      
+
 
         //Restore
         public void Restore()

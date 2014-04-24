@@ -15,23 +15,27 @@ namespace WindowsFormsApplication1
 
         public Form1()
         {
-           
+            //create form componets
             InitializeComponent();
 
+            //specify the icons for the tabs
             tabs.ImageList = imageList1;
            
+            //Populate the ViewAll tab with all patron info.
             viewAll();
-           // DBConnect db = new DBConnect();
-           // db.Query("BACKUP DATABASE [patrondb] TO DISK = 'C:\\Users\\AS143_student\\Documents\\dumps\\Dump20140415-1.sql';");
+            
+            //Most patrons are from Milledgeville and this makes adding a patron more simpler by allowing the user to not have to type in city, zip, state often
             cityTextBox1.Text = "Milledgeville";
             stateTextBox1.Text = "GA";
             zipTextBox1.Text = "31061";
-
+           // DBConnect db = new DBConnect();
+         //   db.Backup();
+            //Populate the current date in the AddPatron tab to save user time of typing in the date a patron came on
             DateTime saveNow = DateTime.Now;
             monthMenuTab1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(saveNow.Month);//convert int to month name
             dayMenuTab1.Text = saveNow.Day+"";
             yearTab1.Text = saveNow.Year + "";
-
+            
         }
 
        
@@ -40,9 +44,13 @@ namespace WindowsFormsApplication1
         //Save and add a patron into the SQL database
         private void saveButton_Click(object sender, EventArgs e)
         {
+            //Pass all the user input into an AddNewEntry object
             AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
+            //Save the patron to the database
             adder.save(adder);
+            //Repopulate viewall to add in new patron
             viewAll();
+            //All fields are cleared so the user can freshly add a new patron. Needed to re-add in the current date since it was cleared.
             DateTime saveNow = DateTime.Now;
             monthMenuTab1.Text = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(saveNow.Month);//convert int to month name
             dayMenuTab1.Text = saveNow.Day + "";
@@ -122,6 +130,7 @@ namespace WindowsFormsApplication1
             }
         }
 
+        //If a cell is clicked in the search tab, bring up a patrons info in the Updater form
         private void searchDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -140,7 +149,7 @@ namespace WindowsFormsApplication1
 
             }
         }
-
+        //If a cell is clicked in the viewAll tab, bring up a patrons info in the Updater form
         private void viewAllDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -159,12 +168,14 @@ namespace WindowsFormsApplication1
 
             }
         }
-
+        
+        //Repopulate viewAll tab when it is clicked
         private void tab1Button1_Click(object sender, System.EventArgs e)
         {
             viewAll();
         }
 
+        //Add and remove text fields based on selection criteria for stats 
         private void searchMenuTab3_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (searchCriteria3.Text == "Year")
@@ -186,6 +197,25 @@ namespace WindowsFormsApplication1
                 yearMenuTab3.Visible = true;
             } 
 
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            try
+            {
+                db.Backup();
+                MessageBox.Show("Successfully backed up database to \"C:\\blahblah\"");
+            }
+            catch(Exception e1)
+            {
+                MessageBox.Show("Could not back up database! Contact Rob and Tommy! Exception: " + e1.ToString() + "");
+            }
         }
     }
 }

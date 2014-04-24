@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\Downloads\databaseConn-2014-03-06\databaseConn\ChardWrayDb.sln = ..\..\..\..\Downloads\databaseConn-2014-03-06\databaseConn\ChardWrayDb.sln
 		..\..\..\..\Downloads\databaseConn-2014-03-06\databaseConn\databaseConn.sln = ..\..\..\..\Downloads\databaseConn-2014-03-06\databaseConn\databaseConn.sln
+		..\..\..\..\Desktop\testers\Source Code\MySqlBackup.sln = ..\..\..\..\Desktop\testers\Source Code\MySqlBackup.sln
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChardWayFoodPantryProjectTests", "ChardWayFoodPantryProjectTests\ChardWayFoodPantryProjectTests.csproj", "{201259FD-2D92-483C-A5D9-65539A3F4060}"

@@ -250,7 +250,7 @@
             // 
             this.phoneUpdateTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneUpdateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.phoneUpdateTextBox.Location = new System.Drawing.Point(107, 258);
+            this.phoneUpdateTextBox.Location = new System.Drawing.Point(207, 258);
             this.phoneUpdateTextBox.Name = "phoneUpdateTextBox";
             this.phoneUpdateTextBox.Size = new System.Drawing.Size(315, 31);
             this.phoneUpdateTextBox.TabIndex = 41;
@@ -330,9 +330,9 @@
             this.phoneLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.phoneLabel2.Location = new System.Drawing.Point(14, 264);
             this.phoneLabel2.Name = "phoneLabel2";
-            this.phoneLabel2.Size = new System.Drawing.Size(74, 25);
+            this.phoneLabel2.Size = new System.Drawing.Size(126, 25);
             this.phoneLabel2.TabIndex = 33;
-            this.phoneLabel2.Text = "Phone";
+            this.phoneLabel2.Text = "Referred By";
             // 
             // addrNumName1
             // 

@@ -62,7 +62,8 @@ namespace WindowsFormsApplication1
             //Add in the previous visit dates to the drop down menu "Previous Visits"
             for (int x = 0; x < p.Count; x++)
             {
-                String[] row = { p.ElementAt(x).Date.ToShortDateString(), p.ElementAt(x).NumAdults.ToString(), p.ElementAt(x).NumChildren.ToString()  };
+                //BAD FIX, Calling children then adults, but is displaying adults and children correctly. Will correctly fix later. Maybe.
+                String[] row = { p.ElementAt(x).Date.ToShortDateString(), p.ElementAt(x).NumChildren.ToString(), p.ElementAt(x).NumAdults.ToString()  };
                 form.prevVisitsDataGrid.Rows.Add(row); 
             }
         }
