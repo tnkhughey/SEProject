@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-
+using MySql.Data.MySqlClient;
 
 
 
@@ -224,8 +224,6 @@ namespace WindowsFormsApplication1
                     }
 
 
-
-
                     connection2.Close();
                     dataReader2.Close();
                     connection3.Close();
@@ -321,7 +319,6 @@ namespace WindowsFormsApplication1
                 cmd3.ExecuteNonQuery();
 
                 CloseAll();
-                //Backup();
             }
 
 
@@ -391,26 +388,26 @@ namespace WindowsFormsApplication1
         //Backup
         public void Backup()
         {
+            
             String cmdChange = "C:\\Program Files (x86)\\MySQL\\MySQL Workbench CE 6.0.9";
             String strCmdText;
             String userName = "root";
             String pass = "admin";
-            String storageLocation = "C:\\Users\\AS143_student\\Documents\\dumps\\pd.sql";
-            strCmdText = "mysqldump -u" + userName + " -p" + pass + "patrondb > " + storageLocation;
+            String storageLocation = "C:\\backups\\patrondata.sql";
+            strCmdText = "mysqldump -u" + userName + " -p" + pass + " patrondb > " + storageLocation;
             String back = "/C cd " +cmdChange+"&"+strCmdText;
-            Process.Start("CMD.exe", back);
+            Process p = new Process();          
+            Process.Start("CMD.exe", back);           
+            CloseAll();   
+          /*  ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "CMD.EXE";
+            startInfo.Arguments = back;
+            Process.Start(startInfo);*/
             
-            //MySqlScript script = new MySqlScript(connection5, File.ReadAllText("C:\\Users\\AS143_student\\Documents\\dumps\\pd.sql"));
-            //script.Delimiter = "$$";
-            //script.Execute();
-            CloseAll();
         }
+        
+     
+
       
-
-
-        //Restore
-        public void Restore()
-        {
-        }
     }
 }

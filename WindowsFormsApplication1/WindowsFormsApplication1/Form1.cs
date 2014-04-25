@@ -210,12 +210,18 @@ namespace WindowsFormsApplication1
             try
             {
                 db.Backup();
-                MessageBox.Show("Successfully backed up database to \"C:\\blahblah\"");
+                MessageBox.Show("Successfully backed up database to \"C:\\backups\\patrondata\"");
             }
             catch(Exception e1)
             {
                 MessageBox.Show("Could not back up database! Contact Rob and Tommy! Exception: " + e1.ToString() + "");
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The software consists of 2 items: A user program application and a database. The application has been built using C# and the database has been built using MySQL. Adding new patron information, editing existing information, searching for information, seeing statistics and viewing all the patron information can be done using the application."+
+            "The database will store the records for the patron’s personal information, address data and visit information. Please refer to the software guide for help.");
         }
     }
 }
