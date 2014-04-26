@@ -53,16 +53,31 @@ namespace WindowsFormsApplication1
             DBConnect db = new DBConnect();
             String query = "";
             int[] numbers = new int[1];//holds the number of children in first element and adults in second element
-            
+            var f = Form1.ActiveForm as Form1;
             //user wants to see stats on a specific day of the year
             if (searchBy.Equals("Day"))
             {
-                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date = '" + year + "-" + month.ToString("D2") + "-" + day.ToString("D2") + "'";
+                if (f.outOfTowncCheckBox.Checked)
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits right join address on previousvisits.patron_id=address.patron_id WHERE date = '" + year + "-" + month.ToString("D2") + "-" + day.ToString("D2") + "'" + " AND city NOT IN ('Milledgeville')";
+                }
+                else
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits WHERE date = '" + year + "-" + month.ToString("D2") + "-" + day.ToString("D2") + "'";
+                }
             }
             //user wants to see stats for certain month of year
             else if (searchBy.Equals("Month"))
             {
-                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__'";
+                if (f.outOfTowncCheckBox.Checked)
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits right join address on previousvisits.patron_id=address.patron_id  WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__'" + " AND city NOT IN ('Milledgeville')";
+                }
+                else
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__'";
+                }
+
             }
              //Get stats for a week of a month
             else if (searchBy.Equals("Week"))
@@ -75,19 +90,33 @@ namespace WindowsFormsApplication1
                 {
                     diff += 7;
                 }
- 
-                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date BETWEEN '" + saveNow.AddDays(-1 * diff).Date.Year + "-" + saveNow.AddDays(-1 * diff).Date.Month + "-"
-                    + saveNow.AddDays(-1 * diff).Date.Day + "' AND '" + saveNow.AddDays((-1 * diff) + 7).Date.Year + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Month + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Day + "'";
-                
+
+                if (f.outOfTowncCheckBox.Checked)
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits right join address on previousvisits.patron_id=address.patron_id WHERE date BETWEEN '" + saveNow.AddDays(-1 * diff).Date.Year + "-" + saveNow.AddDays(-1 * diff).Date.Month + "-"
+                           + saveNow.AddDays(-1 * diff).Date.Day + "' AND '" + saveNow.AddDays((-1 * diff) + 7).Date.Year + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Month + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Day + "'" + " AND city NOT IN ('Milledgeville')";
+               
+                }
+                else
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits WHERE date BETWEEN '" + saveNow.AddDays(-1 * diff).Date.Year + "-" + saveNow.AddDays(-1 * diff).Date.Month + "-"
+                        + saveNow.AddDays(-1 * diff).Date.Day + "' AND '" + saveNow.AddDays((-1 * diff) + 7).Date.Year + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Month + "-" + saveNow.AddDays((-1 * diff) + 7).Date.Day + "'";
+                }
             }
             //get stats for whole year
             else
             {
-                query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";
+                if (f.outOfTowncCheckBox.Checked)
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits right join address on previousvisits.patron_id=address.patron_id WHERE date LIKE '" + year + "-_____'"+" AND city NOT IN ('Milledgeville')";
+
+                }
+                else
+                {
+                    query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";
+                }
             }
             
-            //QUERY FOR GETTING PATRONS BY OUT OF TOWN
-            //query = "SELECT numAdults, numChildren FROM previousvisits right join address on previousvisits.patron_id=address.patron_id WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__' AND city NOT IN ('Milledgeville')";
 
             numbers=db.getStats(query);
             var form = Form1.ActiveForm as Form1;//to access GUI elements
