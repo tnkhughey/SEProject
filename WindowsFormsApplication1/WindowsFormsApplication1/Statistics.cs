@@ -85,13 +85,17 @@ namespace WindowsFormsApplication1
             {
                 query = "SELECT numAdults, numChildren FROM previousvisits WHERE date LIKE '" + year + "-_____'";
             }
+            
+            //QUERY FOR GETTING PATRONS BY OUT OF TOWN
+            //query = "SELECT numAdults, numChildren FROM previousvisits right join address on previousvisits.patron_id=address.patron_id WHERE date LIKE '" + year + "-" + month.ToString("D2") + "-__' AND city NOT IN ('Milledgeville')";
+
             numbers=db.getStats(query);
             var form = Form1.ActiveForm as Form1;//to access GUI elements
             //clear any data already on the chart
             form.statsChart.Series["Adults"].Points.Clear();
             form.statsChart.Series["Children"].Points.Clear();
 
-            //Display number of children and adults for certain d
+            //Display number of children and adults for certain time
             form.statsChart.Series["Adults"].Points.AddXY("Number of Adults:"+numbers[1]+"       Number of Children:"+numbers[0] ,numbers[1]);
             form.statsChart.Series["Children"].Points.AddXY("",numbers[0]);
         }

@@ -387,23 +387,23 @@ namespace WindowsFormsApplication1
        
         //Backup
         public void Backup()
-        {
-            
+        {      
+            //This method works by opening a command prompt, changing to the directory which contains mysqldump.exe and running mysqldump with the correct attributes
             String cmdChange = "C:\\Program Files (x86)\\MySQL\\MySQL Workbench CE 6.0.9";
             String strCmdText;
             String userName = "root";
             String pass = "admin";
+
+            //Backup location
             String storageLocation = "C:\\backups\\patrondata.sql";
+   
+            //Backup command
             strCmdText = "mysqldump -u" + userName + " -p" + pass + " patrondb > " + storageLocation;
             String back = "/C cd " +cmdChange+"&"+strCmdText;
-            Process p = new Process();          
+           
+            //Begin backup
             Process.Start("CMD.exe", back);           
-            CloseAll();   
-          /*  ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "CMD.EXE";
-            startInfo.Arguments = back;
-            Process.Start(startInfo);*/
-            
+            CloseAll();                       
         }
         
      
