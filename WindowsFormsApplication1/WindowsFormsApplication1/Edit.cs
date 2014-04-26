@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             form.zipUpdateTextBox1.Text = pat.Zip;
             form.numAdultsUpdateTextBox.Text = ""; 
             form.numUpdateChildTextBox.Text = ""; 
-            form.phoneUpdateTextBox.Text = pat.Phone;
+            form.referredUpdateTextBox.Text = pat.Referred;
             form.monthUpdateMenuTab1.Text = "Month";
             form.dayUpdateMenuTab1.Text = "Day";
             form.yearUpdateTab1.Text = "Year"; 
@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
         }
 
         //Takes input from text fields in GUI and updates = patron info. 
-        public void update(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String numC, String numA, String month, String year, String day, String id)
+        public void update(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String referred, String numC, String numA, String month, String year, String day, String id)
         {
             DBConnect db = new DBConnect();
            
@@ -81,8 +81,8 @@ namespace WindowsFormsApplication1
                 String query1 = "UPDATE patron SET firstName = '" + 
                     fName + "', lastName = '" + 
                     lName + "', middleInitial = '" + 
-                    mi + "', phone = '" + 
-                    phone + 
+                    mi + "', referred = '" + 
+                    referred + 
                     "' WHERE patron_id = '" + id + "'";
 
                 String query2 = "UPDATE address SET streetNum = '" + 
@@ -123,7 +123,7 @@ namespace WindowsFormsApplication1
         }
 
         //Update patron info. without adding a new visit
-        public void updateNoPrevVisit(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String id)
+        public void updateNoPrevVisit(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String referred, String id)
         {
             DBConnect db = new DBConnect();
            
@@ -133,8 +133,8 @@ namespace WindowsFormsApplication1
                 String query1 = "UPDATE patron SET firstName = '" +
                     fName + "', lastName = '" +
                     lName + "', middleInitial = '" +
-                    mi + "', phone = '" +
-                    phone +
+                    mi + "', referred = '" +
+                    referred +
                     "' WHERE patron_id = '" + id + "'";
 
                 String query2 = "UPDATE address SET streetNum = '" +

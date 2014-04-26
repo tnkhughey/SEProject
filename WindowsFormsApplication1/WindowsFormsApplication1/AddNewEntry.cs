@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         private String stateTextField;
         private String zipTextField;
         private String addrTextField2;
-        private String phoneTextField;
+        private String referredTextBox;
         private String prevVisTextField;
         private String numChildTextField;
         private String numAdultsTextField;
@@ -44,7 +44,7 @@ namespace WindowsFormsApplication1
             stateTextField = "";
             zipTextField = "";
             addrTextField2 = "";
-            phoneTextField = "";
+            referredTextBox = "";
             prevVisTextField = "";
             numChildTextField = "";
             numAdultsTextField = "";
@@ -54,14 +54,14 @@ namespace WindowsFormsApplication1
 
         }
         //Takes patron info. from GUI textfields and stores into object
-        public AddNewEntry(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String phone, String numC, String numA, String month, String year, String day)
+        public AddNewEntry(String fName, String lName, String mi, String streetNameNum, String addr2, String city, String state, String zip, String referred, String numC, String numA, String month, String year, String day)
         {
             fNameTextField = fName;
             lNameTextField = lName;
             miTextField = mi;
             streetNumNameTextField = streetNameNum;
             addrTextField2 = addr2;
-            phoneTextField = phone;
+            referredTextBox = referred;
             cityTextField = city;
             stateTextField = state;
             zipTextField = zip;
@@ -100,7 +100,7 @@ namespace WindowsFormsApplication1
                 DateTime d1 = new DateTime(Convert.ToInt32(cust.yearTab1), month, Convert.ToInt32(cust.dayTab1));
 
                 PreviousVisit pv = new PreviousVisit(idRand, Convert.ToInt32(cust.numChildTextField), Convert.ToInt32(cust.numAdultsTextField), d1);
-                Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.phoneTextField, addr, pv);
+                Patron p = new Patron(idRand, cust.fNameTextField, cust.lNameTextField, cust.miTextField, cust.referredTextBox, addr, pv);
 
                 //Add to the database the user's entry
                 db.addPatron(p);
@@ -134,7 +134,7 @@ namespace WindowsFormsApplication1
             form.zipTextBox1.Text = "31061";
             form.numAdultsTextBox.Clear();
             form.numChildTextBox.Clear();
-            form.phoneTextBox.Clear();
+            form.referredTextBox.Clear();
             form.monthMenuTab1.SelectedIndex = 0;
             form.dayMenuTab1.SelectedIndex = 0;
             form.yearTab1.Text = "Year";

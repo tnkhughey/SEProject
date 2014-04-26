@@ -39,12 +39,12 @@ namespace WindowsFormsApplication1
             {
                 if (addNewVisit.Checked)
                 {
-                    updater.update(fNameUpdateTextBox.Text, lNameUpdateTextBox.Text, miUpdateTextBox.Text, addrNumNameUpdateTextBox1.Text, addrUpdateTextBox2.Text, cityUpdateTextBox1.Text, stateUpdateTextBox1.Text, zipUpdateTextBox1.Text, phoneUpdateTextBox.Text, numUpdateChildTextBox.Text, numAdultsUpdateTextBox.Text, monthUpdateMenuTab1.Text, yearUpdateTab1.Text, dayUpdateMenuTab1.Text, idTextBox.Text);
+                    updater.update(fNameUpdateTextBox.Text, lNameUpdateTextBox.Text, miUpdateTextBox.Text, addrNumNameUpdateTextBox1.Text, addrUpdateTextBox2.Text, cityUpdateTextBox1.Text, stateUpdateTextBox1.Text, zipUpdateTextBox1.Text, referredUpdateTextBox.Text, numUpdateChildTextBox.Text, numAdultsUpdateTextBox.Text, monthUpdateMenuTab1.Text, yearUpdateTab1.Text, dayUpdateMenuTab1.Text, idTextBox.Text);
                     //Updater dot update...my favorite line in the whole program :)
                 }
                 else
                 {
-                    updater.updateNoPrevVisit(fNameUpdateTextBox.Text, lNameUpdateTextBox.Text, miUpdateTextBox.Text, addrNumNameUpdateTextBox1.Text, addrUpdateTextBox2.Text, cityUpdateTextBox1.Text, stateUpdateTextBox1.Text, zipUpdateTextBox1.Text, phoneUpdateTextBox.Text, idTextBox.Text);
+                    updater.updateNoPrevVisit(fNameUpdateTextBox.Text, lNameUpdateTextBox.Text, miUpdateTextBox.Text, addrNumNameUpdateTextBox1.Text, addrUpdateTextBox2.Text, cityUpdateTextBox1.Text, stateUpdateTextBox1.Text, zipUpdateTextBox1.Text, referredUpdateTextBox.Text, idTextBox.Text);
                 }
                 if (confirmDeleteCheckBox.Checked)
                 {

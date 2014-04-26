@@ -56,7 +56,7 @@
             this.yearTab1 = new System.Windows.Forms.TextBox();
             this.numChildTextBox = new System.Windows.Forms.TextBox();
             this.numAdultsTextBox = new System.Windows.Forms.TextBox();
-            this.phoneTextBox = new System.Windows.Forms.TextBox();
+            this.referredTextBox = new System.Windows.Forms.TextBox();
             this.addrNumNameTextBox1 = new System.Windows.Forms.TextBox();
             this.miTextBox = new System.Windows.Forms.TextBox();
             this.lNameTextBox = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.dateVistLabelTab1 = new System.Windows.Forms.Label();
             this.numChildLabel = new System.Windows.Forms.Label();
             this.numAdultsLabel = new System.Windows.Forms.Label();
-            this.phoneLabel2 = new System.Windows.Forms.Label();
+            this.referredLabel2 = new System.Windows.Forms.Label();
             this.addrNumName1 = new System.Windows.Forms.Label();
             this.miLabel = new System.Windows.Forms.Label();
             this.lNameLabel = new System.Windows.Forms.Label();
@@ -72,19 +72,6 @@
             this.SearchTabPage = new System.Windows.Forms.TabPage();
             this.searchMenuTab2 = new System.Windows.Forms.ComboBox();
             this.searchDataGrid = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.midInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetNameNumColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addr2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adults = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.children = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastVisit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchButtonTab2 = new System.Windows.Forms.Button();
             this.searchTextTab2 = new System.Windows.Forms.TextBox();
             this.searchLabelTab2 = new System.Windows.Forms.Label();
@@ -98,6 +85,25 @@
             this.dayMenuTab3 = new System.Windows.Forms.ComboBox();
             this.viewAllTabPage = new System.Windows.Forms.TabPage();
             this.viewAllDataGrid = new System.Windows.Forms.DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.midInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetNameNumColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipColumnSearch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adults = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.children = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastVisit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdViewAll = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,12 +117,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabs.SuspendLayout();
             this.addNewEntryTabPage.SuspendLayout();
             this.SearchTabPage.SuspendLayout();
@@ -170,7 +170,7 @@
             this.addNewEntryTabPage.Controls.Add(this.yearTab1);
             this.addNewEntryTabPage.Controls.Add(this.numChildTextBox);
             this.addNewEntryTabPage.Controls.Add(this.numAdultsTextBox);
-            this.addNewEntryTabPage.Controls.Add(this.phoneTextBox);
+            this.addNewEntryTabPage.Controls.Add(this.referredTextBox);
             this.addNewEntryTabPage.Controls.Add(this.addrNumNameTextBox1);
             this.addNewEntryTabPage.Controls.Add(this.miTextBox);
             this.addNewEntryTabPage.Controls.Add(this.lNameTextBox);
@@ -178,7 +178,7 @@
             this.addNewEntryTabPage.Controls.Add(this.dateVistLabelTab1);
             this.addNewEntryTabPage.Controls.Add(this.numChildLabel);
             this.addNewEntryTabPage.Controls.Add(this.numAdultsLabel);
-            this.addNewEntryTabPage.Controls.Add(this.phoneLabel2);
+            this.addNewEntryTabPage.Controls.Add(this.referredLabel2);
             this.addNewEntryTabPage.Controls.Add(this.addrNumName1);
             this.addNewEntryTabPage.Controls.Add(this.miLabel);
             this.addNewEntryTabPage.Controls.Add(this.lNameLabel);
@@ -400,14 +400,14 @@
             this.numAdultsTextBox.Size = new System.Drawing.Size(315, 31);
             this.numAdultsTextBox.TabIndex = 19;
             // 
-            // phoneTextBox
+            // referredTextBox
             // 
-            this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.phoneTextBox.Location = new System.Drawing.Point(220, 266);
-            this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(315, 31);
-            this.phoneTextBox.TabIndex = 17;
+            this.referredTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.referredTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.referredTextBox.Location = new System.Drawing.Point(220, 266);
+            this.referredTextBox.Name = "referredTextBox";
+            this.referredTextBox.Size = new System.Drawing.Size(315, 31);
+            this.referredTextBox.TabIndex = 17;
             // 
             // addrNumNameTextBox1
             // 
@@ -475,15 +475,15 @@
             this.numAdultsLabel.TabIndex = 6;
             this.numAdultsLabel.Text = "Number of Adults";
             // 
-            // phoneLabel2
+            // referredLabel2
             // 
-            this.phoneLabel2.AutoSize = true;
-            this.phoneLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.phoneLabel2.Location = new System.Drawing.Point(27, 272);
-            this.phoneLabel2.Name = "phoneLabel2";
-            this.phoneLabel2.Size = new System.Drawing.Size(126, 25);
-            this.phoneLabel2.TabIndex = 5;
-            this.phoneLabel2.Text = "Referred By";
+            this.referredLabel2.AutoSize = true;
+            this.referredLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.referredLabel2.Location = new System.Drawing.Point(27, 272);
+            this.referredLabel2.Name = "referredLabel2";
+            this.referredLabel2.Size = new System.Drawing.Size(126, 25);
+            this.referredLabel2.TabIndex = 5;
+            this.referredLabel2.Text = "Referred By";
             // 
             // addrNumName1
             // 
@@ -582,7 +582,7 @@
             this.cityColumnSearch,
             this.stateColumnSearch,
             this.zipColumnSearch,
-            this.phone,
+            this.referred,
             this.adults,
             this.children,
             this.lastVisit});
@@ -597,107 +597,6 @@
             this.searchDataGrid.Size = new System.Drawing.Size(1365, 499);
             this.searchDataGrid.TabIndex = 3;
             this.searchDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchDataGrid_CellClick);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 79;
-            // 
-            // FirstName
-            // 
-            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.FirstName.FillWeight = 10F;
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            this.FirstName.Width = 236;
-            // 
-            // LastName
-            // 
-            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LastName.HeaderText = "LastName";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            this.LastName.Width = 233;
-            // 
-            // midInit
-            // 
-            this.midInit.HeaderText = "MI";
-            this.midInit.Name = "midInit";
-            this.midInit.ReadOnly = true;
-            this.midInit.Width = 90;
-            // 
-            // streetNameNumColumn1
-            // 
-            this.streetNameNumColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.streetNameNumColumn1.HeaderText = "St.Num/Name";
-            this.streetNameNumColumn1.Name = "streetNameNumColumn1";
-            this.streetNameNumColumn1.ReadOnly = true;
-            this.streetNameNumColumn1.Width = 302;
-            // 
-            // addr2
-            // 
-            this.addr2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.addr2.HeaderText = "Address Line 2";
-            this.addr2.Name = "addr2";
-            this.addr2.ReadOnly = true;
-            this.addr2.Width = 260;
-            // 
-            // cityColumnSearch
-            // 
-            this.cityColumnSearch.HeaderText = "City";
-            this.cityColumnSearch.Name = "cityColumnSearch";
-            this.cityColumnSearch.ReadOnly = true;
-            this.cityColumnSearch.Width = 117;
-            // 
-            // stateColumnSearch
-            // 
-            this.stateColumnSearch.HeaderText = "State";
-            this.stateColumnSearch.Name = "stateColumnSearch";
-            this.stateColumnSearch.ReadOnly = true;
-            this.stateColumnSearch.Width = 140;
-            // 
-            // zipColumnSearch
-            // 
-            this.zipColumnSearch.HeaderText = "Zip";
-            this.zipColumnSearch.Name = "zipColumnSearch";
-            this.zipColumnSearch.ReadOnly = true;
-            this.zipColumnSearch.Width = 103;
-            // 
-            // phone
-            // 
-            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phone.HeaderText = "Phone";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            this.phone.Width = 164;
-            // 
-            // adults
-            // 
-            this.adults.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.adults.HeaderText = "Adults";
-            this.adults.Name = "adults";
-            this.adults.ReadOnly = true;
-            this.adults.Width = 160;
-            // 
-            // children
-            // 
-            this.children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.children.HeaderText = "Children";
-            this.children.Name = "children";
-            this.children.ReadOnly = true;
-            this.children.Width = 201;
-            // 
-            // lastVisit
-            // 
-            this.lastVisit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lastVisit.HeaderText = "Last Visit";
-            this.lastVisit.Name = "lastVisit";
-            this.lastVisit.ReadOnly = true;
-            this.lastVisit.Width = 194;
             // 
             // searchButtonTab2
             // 
@@ -934,6 +833,158 @@
             this.viewAllDataGrid.TabIndex = 4;
             this.viewAllDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewAllDataGrid_CellClick);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "adding");
+            this.imageList1.Images.SetKeyName(1, "bamboo.jpg");
+            this.imageList1.Images.SetKeyName(2, "1395954944_user.png");
+            this.imageList1.Images.SetKeyName(3, "1395954951_eye.png");
+            this.imageList1.Images.SetKeyName(4, "1395955050_Down.png");
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem,
+            this.exitToolStripMenuItem1});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.exitToolStripMenuItem.Text = "Backup";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 79;
+            // 
+            // FirstName
+            // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.FirstName.FillWeight = 10F;
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Width = 236;
+            // 
+            // LastName
+            // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Width = 233;
+            // 
+            // midInit
+            // 
+            this.midInit.HeaderText = "MI";
+            this.midInit.Name = "midInit";
+            this.midInit.ReadOnly = true;
+            this.midInit.Width = 90;
+            // 
+            // streetNameNumColumn1
+            // 
+            this.streetNameNumColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.streetNameNumColumn1.HeaderText = "St.Num/Name";
+            this.streetNameNumColumn1.Name = "streetNameNumColumn1";
+            this.streetNameNumColumn1.ReadOnly = true;
+            this.streetNameNumColumn1.Width = 302;
+            // 
+            // addr2
+            // 
+            this.addr2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.addr2.HeaderText = "Address Line 2";
+            this.addr2.Name = "addr2";
+            this.addr2.ReadOnly = true;
+            this.addr2.Width = 260;
+            // 
+            // cityColumnSearch
+            // 
+            this.cityColumnSearch.HeaderText = "City";
+            this.cityColumnSearch.Name = "cityColumnSearch";
+            this.cityColumnSearch.ReadOnly = true;
+            this.cityColumnSearch.Width = 117;
+            // 
+            // stateColumnSearch
+            // 
+            this.stateColumnSearch.HeaderText = "State";
+            this.stateColumnSearch.Name = "stateColumnSearch";
+            this.stateColumnSearch.ReadOnly = true;
+            this.stateColumnSearch.Width = 140;
+            // 
+            // zipColumnSearch
+            // 
+            this.zipColumnSearch.HeaderText = "Zip";
+            this.zipColumnSearch.Name = "zipColumnSearch";
+            this.zipColumnSearch.ReadOnly = true;
+            this.zipColumnSearch.Width = 103;
+            // 
+            // referred
+            // 
+            this.referred.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.referred.HeaderText = "Referred";
+            this.referred.Name = "referred";
+            this.referred.ReadOnly = true;
+            this.referred.Width = 206;
+            // 
+            // adults
+            // 
+            this.adults.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.adults.HeaderText = "Adults";
+            this.adults.Name = "adults";
+            this.adults.ReadOnly = true;
+            this.adults.Width = 160;
+            // 
+            // children
+            // 
+            this.children.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.children.HeaderText = "Children";
+            this.children.Name = "children";
+            this.children.ReadOnly = true;
+            this.children.Width = 201;
+            // 
+            // lastVisit
+            // 
+            this.lastVisit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lastVisit.HeaderText = "Last Visit";
+            this.lastVisit.Name = "lastVisit";
+            this.lastVisit.ReadOnly = true;
+            this.lastVisit.Width = 194;
+            // 
             // IdViewAll
             // 
             this.IdViewAll.HeaderText = "Id";
@@ -1006,10 +1057,10 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Referred";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 164;
+            this.dataGridViewTextBoxColumn6.Width = 206;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -1034,57 +1085,6 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 213;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "adding");
-            this.imageList1.Images.SetKeyName(1, "bamboo.jpg");
-            this.imageList1.Images.SetKeyName(2, "1395954944_user.png");
-            this.imageList1.Images.SetKeyName(3, "1395954951_eye.png");
-            this.imageList1.Images.SetKeyName(4, "1395955050_Down.png");
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
-            this.exitToolStripMenuItem1});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.exitToolStripMenuItem.Text = "Backup";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1124,7 +1124,7 @@
         private System.Windows.Forms.Label dateVistLabelTab1;
         private System.Windows.Forms.Label numChildLabel;
         private System.Windows.Forms.Label numAdultsLabel;
-        private System.Windows.Forms.Label phoneLabel2;
+        private System.Windows.Forms.Label referredLabel2;
         private System.Windows.Forms.Label addrNumName1;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label searchLabelTab2;
@@ -1154,7 +1154,7 @@
         public System.Windows.Forms.TextBox yearTab1;
         public System.Windows.Forms.TextBox numChildTextBox;
         public System.Windows.Forms.TextBox numAdultsTextBox;
-        public System.Windows.Forms.TextBox phoneTextBox;
+        public System.Windows.Forms.TextBox referredTextBox;
         public System.Windows.Forms.TextBox addrNumNameTextBox1;
         public System.Windows.Forms.TextBox lNameTextBox;
         public System.Windows.Forms.TextBox stateTextBox1;
@@ -1165,32 +1165,6 @@
         public System.Windows.Forms.Label successLabel;
         public System.Windows.Forms.Label failureLabel;
         public System.Windows.Forms.DataVisualization.Charting.Chart statsChart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdViewAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn City;
-        private System.Windows.Forms.DataGridViewTextBoxColumn State;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zip;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn midInit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn streetNameNumColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addr2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityColumnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateColumnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zipColumnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adults;
-        private System.Windows.Forms.DataGridViewTextBoxColumn children;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisit;
         public System.Windows.Forms.DataGridView viewAllDataGrid;
         private System.Windows.Forms.ComboBox searchMenuTab2;
         public System.Windows.Forms.TabControl tabs;
@@ -1206,6 +1180,32 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         public System.Windows.Forms.CheckBox outOfTowncCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn midInit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn streetNameNumColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addr2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityColumnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateColumnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zipColumnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referred;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn children;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdViewAll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City;
+        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         //[TypeConverterAttribute(typeof(ImageIndexConverter))]
         public int ImageIndex { get; set; }
     }

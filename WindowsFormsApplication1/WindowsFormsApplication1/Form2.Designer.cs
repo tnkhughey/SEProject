@@ -42,7 +42,7 @@
             this.yearUpdateTab1 = new System.Windows.Forms.TextBox();
             this.numUpdateChildTextBox = new System.Windows.Forms.TextBox();
             this.numAdultsUpdateTextBox = new System.Windows.Forms.TextBox();
-            this.phoneUpdateTextBox = new System.Windows.Forms.TextBox();
+            this.referredUpdateTextBox = new System.Windows.Forms.TextBox();
             this.addrNumNameUpdateTextBox1 = new System.Windows.Forms.TextBox();
             this.miUpdateTextBox = new System.Windows.Forms.TextBox();
             this.lNameUpdateTextBox = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             this.dateVistLabelTab1 = new System.Windows.Forms.Label();
             this.numChildLabel = new System.Windows.Forms.Label();
             this.numAdultsLabel = new System.Windows.Forms.Label();
-            this.phoneLabel2 = new System.Windows.Forms.Label();
+            this.referredLabel2 = new System.Windows.Forms.Label();
             this.addrNumName1 = new System.Windows.Forms.Label();
             this.miLabel = new System.Windows.Forms.Label();
             this.lNameLabel = new System.Windows.Forms.Label();
@@ -246,14 +246,14 @@
             this.numAdultsUpdateTextBox.Visible = false;
             this.numAdultsUpdateTextBox.TextChanged += new System.EventHandler(this.numAdultsTextBox_TextChanged);
             // 
-            // phoneUpdateTextBox
+            // referredUpdateTextBox
             // 
-            this.phoneUpdateTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phoneUpdateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.phoneUpdateTextBox.Location = new System.Drawing.Point(207, 258);
-            this.phoneUpdateTextBox.Name = "phoneUpdateTextBox";
-            this.phoneUpdateTextBox.Size = new System.Drawing.Size(315, 31);
-            this.phoneUpdateTextBox.TabIndex = 41;
+            this.referredUpdateTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.referredUpdateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.referredUpdateTextBox.Location = new System.Drawing.Point(207, 258);
+            this.referredUpdateTextBox.Name = "referredUpdateTextBox";
+            this.referredUpdateTextBox.Size = new System.Drawing.Size(315, 31);
+            this.referredUpdateTextBox.TabIndex = 41;
             // 
             // addrNumNameUpdateTextBox1
             // 
@@ -324,15 +324,15 @@
             this.numAdultsLabel.Text = "Number of Adults";
             this.numAdultsLabel.Visible = false;
             // 
-            // phoneLabel2
+            // referredLabel2
             // 
-            this.phoneLabel2.AutoSize = true;
-            this.phoneLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.phoneLabel2.Location = new System.Drawing.Point(14, 264);
-            this.phoneLabel2.Name = "phoneLabel2";
-            this.phoneLabel2.Size = new System.Drawing.Size(126, 25);
-            this.phoneLabel2.TabIndex = 33;
-            this.phoneLabel2.Text = "Referred By";
+            this.referredLabel2.AutoSize = true;
+            this.referredLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.referredLabel2.Location = new System.Drawing.Point(14, 264);
+            this.referredLabel2.Name = "referredLabel2";
+            this.referredLabel2.Size = new System.Drawing.Size(126, 25);
+            this.referredLabel2.TabIndex = 33;
+            this.referredLabel2.Text = "Referred By";
             // 
             // addrNumName1
             // 
@@ -538,7 +538,7 @@
             this.Controls.Add(this.yearUpdateTab1);
             this.Controls.Add(this.numUpdateChildTextBox);
             this.Controls.Add(this.numAdultsUpdateTextBox);
-            this.Controls.Add(this.phoneUpdateTextBox);
+            this.Controls.Add(this.referredUpdateTextBox);
             this.Controls.Add(this.addrNumNameUpdateTextBox1);
             this.Controls.Add(this.miUpdateTextBox);
             this.Controls.Add(this.lNameUpdateTextBox);
@@ -546,7 +546,7 @@
             this.Controls.Add(this.dateVistLabelTab1);
             this.Controls.Add(this.numChildLabel);
             this.Controls.Add(this.numAdultsLabel);
-            this.Controls.Add(this.phoneLabel2);
+            this.Controls.Add(this.referredLabel2);
             this.Controls.Add(this.addrNumName1);
             this.Controls.Add(this.miLabel);
             this.Controls.Add(this.lNameLabel);
@@ -575,12 +575,12 @@
         public System.Windows.Forms.TextBox yearUpdateTab1;
         public System.Windows.Forms.TextBox numUpdateChildTextBox;
         public System.Windows.Forms.TextBox numAdultsUpdateTextBox;
-        public System.Windows.Forms.TextBox phoneUpdateTextBox;
+        public System.Windows.Forms.TextBox referredUpdateTextBox;
         public System.Windows.Forms.TextBox addrNumNameUpdateTextBox1;
         public System.Windows.Forms.TextBox miUpdateTextBox;
         public System.Windows.Forms.TextBox lNameUpdateTextBox;
         public System.Windows.Forms.TextBox fNameUpdateTextBox;
-        private System.Windows.Forms.Label phoneLabel2;
+        private System.Windows.Forms.Label referredLabel2;
         private System.Windows.Forms.Label addrNumName1;
         private System.Windows.Forms.Label miLabel;
         private System.Windows.Forms.Label lNameLabel;

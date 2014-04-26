@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1
                     String fName = dataReader.GetString(1);//gets first name column data
                     String lName = dataReader.GetString(2);//continues...
                     String mInitial = dataReader.GetString(3);
-                    String phone = dataReader.GetString(4);
+                    String referred = dataReader.GetString(4);
 
                     String stNum = "";
                     String addrLine2 = "";
@@ -234,7 +234,7 @@ namespace WindowsFormsApplication1
                     //Build data for patron
                     Address address = new Address(Int32.Parse(id), stNum, addrLine2, city, state, zip);
                     PreviousVisit prevVis = new PreviousVisit(Int32.Parse(id), numChild, numAdult, date);
-                    Patron patron = new Patron(Int32.Parse(id), fName, lName, mInitial, phone, address, prevVis);
+                    Patron patron = new Patron(Int32.Parse(id), fName, lName, mInitial, referred, address, prevVis);
 
                     list.Add(patron);//add the patron to the list until all patrons of query are selected
                 }
@@ -266,7 +266,7 @@ namespace WindowsFormsApplication1
                     pat.FirstName + "', '" +
                     pat.LastName + "', '" +
                     pat.MiddleInitial + "', '" +
-                    pat.Phone + "')";
+                    pat.Referred + "')";
                 //address table
                 String query2 = "INSERT INTO address VALUES ('" +
                    pat.Id + "', '" +

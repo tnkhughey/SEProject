@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
         private void saveButton_Click(object sender, EventArgs e)
         {
             //Pass all the user input into an AddNewEntry object
-            AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, phoneTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
+            AddNewEntry adder = new AddNewEntry(fNameTextBox.Text, lNameTextBox.Text, miTextBox.Text, addrNumNameTextBox1.Text, addrTextBox2.Text, cityTextBox1.Text, stateTextBox1.Text, zipTextBox1.Text, referredTextBox.Text, numChildTextBox.Text, numAdultsTextBox.Text, monthMenuTab1.Text, yearTab1.Text, dayMenuTab1.Text);
             //Save the patron to the database
             adder.save(adder);
             //Repopulate viewall to add in new patron
@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
                 children += list[x].NumChildren;
                 String adults = "";
                 adults += list[x].NumAdults;
-                string[] row = { Convert.ToString(list[x].Id),list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
+                string[] row = { Convert.ToString(list[x].Id),list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Referred, children, adults, date };
                 viewAllDataGrid.Rows.Add(row);
             }
             db.CloseAll(); //close all database connections
@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1
             //<!---------END VIEW ALL POPULATOR---------->
         }
 
-        //Searches for a patron based on first and last name, last time visited, or phone number
+        //Searches for a patron based on first and last name, last time visited
         private void searchButtonTab2_Click(object sender, EventArgs e)
         {
             searchDataGrid.Rows.Clear();
@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("The software consists of 2 items: A user program application and a database. The application has been built using C# and the database has been built using MySQL. Adding new patron information, editing existing information, searching for information, seeing statistics and viewing all the patron information can be done using the application."+
-            "The database will store the records for the patron’s personal information, address data and visit information. Please refer to the software guide for help.");
+            "The database will store the records for the patron’s personal information, address data and visit information. Please refer to the software guide for help. \n This sowftare was developed for Chard Wray Food Pantry. \n Authors: Rob Grimes and Thomas Hughey Georgia College Class of 2014");
         }
 
         

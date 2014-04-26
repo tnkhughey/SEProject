@@ -62,22 +62,22 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Please enter the first and last name again in the format:(Bob Smith)");
                 }
             }
-            //user wants to search records by phone number
-            else if (criteriaMenuText.Equals("Phone"))
+            //for a future date
+          /*  else if (criteriaMenuText.Equals("Referred"))
             {
                 try
                 {
-                    searchCriteriaColumn = "phone";
+                    searchCriteriaColumn = "referred";
                     searchTextField = textField;
                     selection = criteriaMenuText;
                 }
                 catch
                 {
-                    MessageBox.Show("Please enter the phone # in the format:(123456789)");
+                    MessageBox.Show("Please enter the referred # in the format:(123456789)");
 
                 }
 
-            }
+            }*/
             //user wants to search records by date of patron's last visit
             //format of date is YYYY-MM-DD
             else if (criteriaMenuText.Equals("LastVisit"))
@@ -141,9 +141,9 @@ namespace WindowsFormsApplication1
                count = db.Count(query);
 
            }
-           else if (search.selection.Equals("Phone"))
+           else if (search.selection.Equals("Referred"))
            {
-               //get all patron info. where phone# match user input
+               //get all patron info. where referred# match user input
                query = "SELECT * FROM patron WHERE " + search.searchCriteriaColumn + "='" + search.searchTextField + "'";
                count = db.Count(query);
            }
@@ -184,7 +184,7 @@ namespace WindowsFormsApplication1
                    String adults = "";
                    adults += list[x].NumAdults;
                    //Insert data into rows. The id goes into a hidden column. It is used for identifying patrons using the Edit class
-                   string[] row = { Convert.ToString(list[x].Id), list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Phone, children, adults, date };
+                   string[] row = { Convert.ToString(list[x].Id), list[x].FirstName, list[x].LastName, list[x].MiddleInitial, list[x].StreetName1, list[x].AddressLine2, list[x].City, list[x].State, list[x].Zip, list[x].Referred, children, adults, date };
                    form.searchDataGrid.Rows.Add(row);
                }
            

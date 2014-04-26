@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         private String firstName;
         private String lastName;
         private String middleInitial;
-        private String phone;
+        private String referred;
         private Address address;
         private PreviousVisit pv;
 
@@ -26,18 +26,18 @@ namespace WindowsFormsApplication1
             setPatron(0, "", "", "", "", null, null);
         }
 
-        public Patron(int id, String firstName, String lastName, String middleInitial, String phone, Address address, PreviousVisit previousVisit)
+        public Patron(int id, String firstName, String lastName, String middleInitial, String referred, Address address, PreviousVisit previousVisit)
         {
-            setPatron(id, firstName, lastName, middleInitial, phone, address, previousVisit);
+            setPatron(id, firstName, lastName, middleInitial, referred, address, previousVisit);
         }
 
-        public void setPatron(int id, String firstName, String lastName, String middleInitial, String phone, Address address, PreviousVisit previousVisit)
+        public void setPatron(int id, String firstName, String lastName, String middleInitial, String referred, Address address, PreviousVisit previousVisit)
         {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.middleInitial = middleInitial;
-            this.phone = phone;
+            this.referred = referred;
             this.address = address;
             this.pv = previousVisit;
         }
@@ -66,10 +66,10 @@ namespace WindowsFormsApplication1
             get { return middleInitial; }
         }
 
-        public String Phone
+        public String Referred
         {
-            set { phone = value; }
-            get { return phone; }
+            set { referred = value; }
+            get { return referred; }
         }
 
         
